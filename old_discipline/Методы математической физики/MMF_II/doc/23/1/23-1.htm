@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js animations" lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Гамма-функция — Википедия</title>
+<meta name="generator" content="MediaWiki 1.25wmf12">
+<link rel="alternate" href="android-app://org.wikipedia/http/ru.m.wikipedia.org/wiki/%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F">
+<link rel="alternate" type="application/x-wiki" title="Править" href="https://ru.m.wikipedia.org/w/index.php?title=%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F&amp;action=edit">
+<link rel="edit" title="Править" href="https://ru.m.wikipedia.org/w/index.php?title=%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F&amp;action=edit">
+<link rel="apple-touch-icon" href="https://bits.wikimedia.org/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://bits.wikimedia.org/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://ru.m.wikipedia.org/w/opensearch_desc.php" title="Википедия (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://ru.wikipedia.org/w/api.php?action=rsd">
+<link rel="alternate" hreflang="x-default" href="https://ru.m.wikipedia.org/wiki/%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F">
+<link rel="copyright" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Википедия&nbsp;— Atom-лента" href="https://ru.m.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+<link rel="canonical" href="http://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F">
+<link rel="stylesheet" href="23-1_files/load.css">
+<style>
+@media print{#centralNotice{display:none}}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:ddb0c98a055632ae8e349c9cf48ac703 */
+.fancycaptcha-reload-loading{background-image:url(data:image/gif;base64,R0lGODlhQABAAPIEALOzs05OTouLixoaGkxMTAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAEACwAAAAAQABAAAAD/0i63P4wyknrGnjYzW3OXSgyHzaeXamhaOAGkRoBNMBC7wvJT13fjpxrV4L4aMCGcOjgNY7IJGP5cDKgUiW1YVVAbdnp9lK8YsNiIbe8+KK1avLHfHzDcyQ2wc3SRZYwCk58RlF/cQ9jBHNtdYU+EoCBd0wSZ0+EiZKTC3gVkJhfYDibnFmiP5GlpiyoqRSrSa6jG5uyoieSt5e5iK2OSX67dsTFxsfICgLLzM3NdrOvztPOaNGg1NkC1tdR2tTc3crf1WHdhuTM0NfJ7e7v8BHqUq9A07v1I9n4oCLa/P02kAMIbEK6U7MMfluHSsLCULQs5dvTUB44B7weTaSYsVTBPY2GONLq2Cjgg3kgDV3KhDHkiEy8WL6BWVCmuYw4SdLLadImwZYmRW4EQrJowZ1HvSQV6pLoUqYpww3VqfNX05JDRcZTGnRrVK8UqoKlE3EsvAQAIfkEBQoABAAsBQABACwAMAAAA5dIutzOIYZHq21S3s1Vjl1YfZNoQl81rMP5kBTLulj6yCuNZjfe6h5bwwdcwIbEIuG48P2UTIVTGeQ1k9TodCHo0phbRXcscFmluAaZTMWK1+yizAFfUyt1+/2RH+8pfX+AdYJ4eoWDZYiLjI2Oj5CRkpOUlZaXlgCakpqdAI+eno6hooukoYinqIWqnYytn6+noKuQrpIJACH5BAUKAAQALAEABQA6AB4AAAOLSLrc8qLJKYMNNFMItSfX9X3cM2ahdWqluTKp+m7lvMQ2Xc8xlk+tyKr303FexCKwdUoqJcEm7rncaZyTgfbH9Eyz2nCue02Bw+JxZxSSoN8D6hP+lv/odbsNn9bv8X5FgIF3eYSCW4eKi4yNOQCQkZKSjhOTl5OVDZicAJoMnZifC6GXo6SlkKcKCQAh+QQFCgAEACwFAAEAOgAiAAADiki63M4iikervVRKzDvXkSeOEEieHjihrKW28PPGtDLX8Y23+o72PhIwKBoSO0YWYPkznQLQxnIKOGme0CyDSj06suDAltv1hsNj8vR4RqfVTFzb7YCvaXPtxV7Le+B9bSRkgWAtd4VeiouMjY4kA5GSk5OPDJSYlJYKmZ0DmwSemaCimKChpZEECQAh+QQFCgAEACwPAAUAMAAsAAADjEiwQP4wyieqmJgxzKO1HaQtYfhVpTOSqXSi7dq656zINvFe9trMu9xtZAsKfS3jEVdSLommlzDC5EinImjnin1okqCueEwum8/otHrNbrvf8LicEKjb7/c2fo9n8/8BfoB7goN5hYZziouMLQOPjQSPkwOMlJSKl5hympecnZtwoJOfoJmdlp6NpBAJACH5BAUKAAQALB0AAQAeADoAAAOQSLBA/jBKyNi8uC7Mo25d+IWiRnbjmZnqlbbSC1PsTFe2V+fKnsstgdCBmwmPAh4BicwxmbYnNChtUqtJY5W35U6VyyF4TC6bz+i0es1uuzGBeDlOD4zrdSU+n9vj+358M4F0HAOHAxKEdheIiBOBGI6HcH+Nk4mVjJKYYJiZSp+enaOTY6ShqDyqOaytjxwJACH5BAUKAAQALB0ABQAiADoAAAOTSLrc8KDJSReENdf7tGdc933hSJZmFkapirbTCm/vDNa2xeXxzkuXn3BILBqPyKRyyWwqBNCoVDqbWqewq1aQ3Vq7Xio47Cybz+i0et0MuAPH99s2qA8YcvfMbl/k9S18dXh/gYKEeYZ8DX9wJoJ3iHIpkBKNj4eWiSOVmpsenZ5zH6GMnxqlpoCkmUSpP6+wfUYJACH5BAUKAAQALA8ADwAsADAAAAOUSLrc/pCBGauNM4PLrdZd2HyfaJKlyaGp6rGUu7JySNcdiZ/x7v/AoHBILBqPyKRyyWw6BdAndMqcWgXKqzWpvSK73iOY2hiYB74xlnE+/8DlNnoRqAdcWrZ8TrDbZWQKe3x9fndAgwyGhz6JioaIew2LP46PfpVyD5Q7lpd/nZqbkKFtEJylhJOkSqhJrkiwsaA7CQAh+QQFCgAEACwFAB0AOgAeAAADhEi63P7wgUlrjThrYrvdYOiNQGhmpHeuUvqx8OJScW3feK6fQ7/jveDgFxMKiSzjERlSGpkb5xOakQapUasjwA2ABGABTProdjXhcHJaNnszafDYF3Fz0XEx0f7Gx/d2X3k/fCZ5ejmFIYc6ioaDOIEskDaOJ4yVbjWUMZIwnJ1nNmkhCQAh+QQFCgAEACwBAB0AOgAiAAADjUiz3E0wykmrrS67y7vX4OCNZBRqZdqdmepaLPPOdG3feK7fQb8DwFpvGMgBjwAXkWhEHktLJs6J9ESXTeqzcsXqtM5Jd7iTgLeQcbFsPku6bAv47VUJ7oIXVex74fEzaDl/d3E0hHmGfoSKi3+NLoiQdoyTJZKWJJiZHpucHJ6fFqGiFKSlEqeoEY83CQAh+QQFCgAEACwBAA8AMAAsAAADjkiq0/swyklZuzVrevvY4OZ5YSmNpKlaKLaqrfua8by29jvms8z/wKBwCAoYj0gkcZFsJpcEpzQAnTqr1ic2S4V6v+CweEwum8/o9FjAFoAAcMCv3dbE4zw6236X2/R7GX1wM4BuG4N+KoZvgyuMIYmLgCWSJZCVjiGUK5obmCaWGpwvnhmknX2bdTl3BAkAIfkEBQoABAAsBQAFAB4AOgAAA49Iukzzo8k5IaS42pi72o/ngWIHciV1pirJatsrrVlgZ/Rk7wHm6rwd7EIJBmfEopEnUyyPzaewSZBSncvrwqhlTLvgsHhMLpvP6LR6TRG4w+64QCuXX+t2Gb7+2vNZfnFNgXODe3R/LwCLAAqCTYyMYJGLk5SWkZiSXZSNnJefmaGbWp2alaOopaCroqMECQA7) !important;background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/images/ajax-loader.gif?2014-12-10T20:13:20Z) !important!ie}.loading.spinner{height:54px;text-align:center;background-position:50%}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:c15a3c1e9241509006f4a823c43f74b8 */
+#notifications{height:0;position:absolute;z-index:5;width:100%}.toast,.drawer{bottom:0;left:0;right:0;background-color:#f3f3f3;box-shadow:0 -1px 8px 0 rgba(0,0,0,0.35);word-wrap:break-word;z-index:5;display:none}.toast.visible,.drawer.visible{display:block}.animations .toast,.animations .drawer{display:block;visibility:hidden; -webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0);bottom:100px;opacity:0;-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform .25s,opacity .25s,visibility 0s .25s,bottom 0s .25s;transition:transform .25s,opacity .25s,visibility 0s .25s,bottom 0s .25s}.animations .toast.visible,.animations .drawer.visible{bottom:0;-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform .25s,opacity .25s;transition:transform .25s,opacity .25s;visibility:visible;opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.toast{font-size:.9em;padding:.9em 1em;background-color:#373737;color:#fff;margin:0 10% 20px;width:80%;text-align:center;border-radius:3px}.toast.error{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/images/error.png?2014-12-10T20:13:20Z);background-position:16px 50%;background-repeat:no-repeat;padding-left:5%;width:75%;border:none}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:36f34ced1bda66ce9c18d94a815a357a */
+.drawer.references{max-height:10em;overflow-y:auto}.stable .references h3{margin:0;padding-right:4px;display:inline}.stable .references .mw-cite-backlink{display:none}.stable .references .icon{float:right;margin-top:.7em}.stable .references .mw-ui-icon{float:right;line-height:normal}.alpha .drawer.references,.beta .drawer.references{background-color:#111;color:#CCC;padding:20px}.alpha .drawer.references.text,.beta .drawer.references.text{font-size:1em}.alpha .drawer.references a,.beta .drawer.references a{background-image:none;color:#5880C0}.alpha .drawer.references .cite,.beta .drawer.references .cite{padding-bottom:20px}.alpha .drawer.references .cite:after,.beta .drawer.references .cite:after{content:"";display:table;clear:both}.alpha .drawer.references .cite .text,.beta .drawer.references .cite .text{color:#888;cursor:default;letter-spacing:.2em;float:left;font-size:0.75em;text-transform:uppercase}.alpha .drawer.references .cite .cancel,.beta .drawer.references .cite .cancel{float:right;line-height:normal}.alpha .drawer.references .mw-cite-backlink,.beta .drawer.references .mw-cite-backlink{display:none}.alpha .drawer.references .reference-text,.beta .drawer.references .reference-text{line-height:1.4}.alpha .drawer.references .cite .text{line-height:2.5em;height:2em}.beta .drawer.references .cite .text{padding:.75em 0 0 2.5em}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:e71f3b83bff12da2c9fd005c1a3e6589 */
+.mw-ui-input{-webkit-appearance:none;border:1px solid #CCC;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%;padding:.4em .3em .2em .6em;display:block;vertical-align:middle;border-radius:2px;color:inherit;background-color:inherit;font-family:inherit;font-size:inherit;line-height:inherit;-webkit-transition:border linear .2s,box-shadow linear .2s;-moz-transition:border linear .2s,box-shadow linear .2s;-o-transition:border linear .2s,box-shadow linear .2s;transition:border linear .2s,box-shadow linear .2s}.mw-ui-input::-webkit-input-placeholder{font-style:italic;font-weight:normal}.mw-ui-input::-moz-placeholder{font-style:italic;font-weight:normal}.mw-ui-input:-moz-placeholder{font-style:italic;font-weight:normal}.mw-ui-input:-ms-input-placeholder{font-style:italic;font-weight:normal}.mw-ui-input:invalid{box-shadow:none}.mw-ui-input:focus{box-shadow:inset .45em 0 0 #347bff;border-color:#898989;outline:0}.mw-ui-input:disabled{border-color:#EEE;color:#CCC}textarea.mw-ui-input{min-height:8em}input[type="number"],.mw-ui-input-inline{display:inline-block;width:auto}.mw-ui-input-large{margin-top:0;margin-bottom:0}.mw-ui-input-large + .mw-ui-input-large{margin-top:-1px}.mw-ui-input-large:focus{position:relative}input.mw-ui-input-large{font-size:1.75em;font-weight:bold;line-height:1.25em}@media all and (min-width:768px){.mw-ui-input-inline{min-width:320px}}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:346ff2efd30f644472bc162fa3d793b7 */
+.client-js .collapsible-heading,.client-js .collapsible-block{clear:both}.client-js .collapsible-heading{cursor:pointer;position:relative;border-bottom:solid 1px #E2E3E4}.client-js .collapsible-heading .icon{margin-right:12px}.client-js .collapsible-heading .indicator{float:left}.client-js .collapsible-heading .indicator.mw-ui-icon{margin-top:.7em;font-size:.4em}.client-js .section-heading.open-block{padding-right:45px;margin-bottom:.5em}.client-js .collapsible-block{width:100%;display:none}.client-js .collapsible-block.open-block{display:block}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:27a5e3c9203cfac4e0fd7e013b259320 */</style><style>
+.overlay-enabled #mw-mf-page-center{overflow:hidden;display:block}.overlay-enabled .overlay,.overlay-enabled #mw-mf-page-center{height:100%}.overlay{position:absolute;top:0;left:0;width:100%;background:#fff;z-index:4;padding-top:3.35em;display:none}.overlay.visible{display:block}.overlay input,.overlay textarea{padding:.5em}.overlay .captcha-word,.overlay .summary{margin:0 0 .7em;width:100%}.overlay .wikitext-editor{min-height:50%;line-height:1.5;border:none}.overlay .panel{padding:12px 16px;border-bottom:1px solid #EEE}.overlay .license{font-size:.9em;color:#777;margin-top:.5em;line-height:1.4}.overlay .content .cancel{display:block;margin:1em auto}.overlay .content-header{background:#f3f3f3;border-bottom:1px solid #e2e2e2;padding:20px 16px;line-height:inherit}.overlay-header{display:table;width:100%;border-spacing:0;border-collapse:collapse;border-bottom:1px solid #CCC}.overlay-header .overlay-title{width:100%}.overlay-header .overlay-title,.overlay-header .overlay-search{padding:.15em .5em 0}.overlay-header .overlay-action a,.overlay-header .overlay-action button{display:table-cell;vertical-align:middle;width:auto;padding:0 1.2em;font-weight:bold;white-space:nowrap;text-decoration:none;border-radius:0;height:3.35em;cursor:pointer;position:relative}.overlay-header .overlay-action a:before,.overlay-header .overlay-action button:before{top:0}.overlay-header .overlay-action a[disabled],.overlay-header .overlay-action button[disabled]{opacity:.5}.overlay-header .continue{color:white;background-color:#347bff}.overlay-header .submit{color:white;background-color:#00af89}.overlay-header h2{display:table;width:100%;font-size:1em}.overlay-header h2 > *{width:1em;display:table-cell;padding-right:.4em}.overlay-header h2 span{width:auto;max-width:1em}.overlay-header > ul,.overlay-header > div{display:table-cell;vertical-align:middle}.overlay-header > ul li{display:block}.overlay-header > ul,.overlay-header button{width:3.35em}.overlay-header .overlay-action a,.overlay-header button{min-height:3.35em}.overlay-header-container,.overlay-footer-container{width:100%;background:#fff;z-index:5}.overlay-header-container.position-fixed,.overlay-footer-container.position-fixed{left:0;right:0}.overlay-header-container{top:0}.overlay-footer-container{background-color:#FFF;bottom:0}.overlay-footer-container a{display:block;padding:1em 1em 1em 10px;border-top:1px solid #CCC;text-align:center}.overlay-bottom{border-top:1px solid #CCC;top:auto;bottom:0;height:auto !important;background:#F9F9F9}.overlay-bottom .overlay-header-container{background:#F9F9F9}.ios .overlay-header-container{position:absolute !important}.ios .overlay-footer-container{position:absolute !important}.ios .overlay-content{overflow-y:scroll;-webkit-overflow-scrolling:touch}@media all and (min-width:768px){.overlay .panel{padding:12px 3.35em}}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:70afa332ccd717e6b09b2a446f9362ff */
+.page-list .watch-this-article{position:absolute;right:0;top:50%;margin-top:-24px;width:48px;height:48px}.animations .mw-ui-icon.watch-this-article,.animations .icon.watch-this-article{-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform .5s;transition:transform .5s}.animations .mw-ui-icon.watch-this-article.mw-ui-icon-watched,.animations .mw-ui-icon.watch-this-article.icon-watched,.animations .icon.watch-this-article.mw-ui-icon-watched,.animations .icon.watch-this-article.icon-watched{-webkit-transform:rotate(72deg);transform:rotate(72deg)}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:1475c945fcd1c0e5fba0b7196bb3c563 */
+.icon-toc{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/toc/images/contents-ltr.png?2014-12-10T20:13:20Z);background-image:-webkit-linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/toc/images/contents-ltr.svg?2014-12-10T20:13:20Z);background-image:linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/toc/images/contents-ltr.svg?2014-12-10T20:13:20Z)}.stable .toc-mobile .collapsible-heading{line-height:1.4}.client-js .toc-mobile{position:relative;background-color:#F9F9F9;border:solid 1px #EEE;font-size:1.3em;float:left;clear:left;margin:1em 0}.client-js .toc-mobile .toc-button{float:left;display:block}.client-js .toc-mobile .toc-button.mw-ui-icon{font-size:.8em}.client-js .toc-mobile .collapsible-heading{font-family:"Helvetica Neue","Helvetica","Nimbus Sans L","Arial","Liberation Sans",sans-serif;font-size:.8em;background-position:right center;font-weight:bold;padding:0.7em 0;border-bottom:none}.client-js .toc-mobile .collapsible-heading.icon{border-right:24px solid transparent}.client-js .toc-mobile .collapsible-heading .indicator{margin-top:.4em;float:right;margin-left:.5em}.client-js .toc-mobile .collapsible-block{border-bottom:none;margin-left:52px;margin-right:24px;font-size:0.7em}.client-js .toc-mobile .collapsible-block > ul{padding-bottom:1.3em}.client-js .toc-mobile .collapsible-block ul{list-style:none;margin-bottom:1px}.client-js .toc-mobile .collapsible-block ul li{padding-top:.8em;line-height:1.2}.client-js .beta .toc-mobile .collapsible-heading,.client-js .stable .toc-mobile .collapsible-heading{padding-left:.8em}.client-js .beta .toc-mobile .collapsible-heading .indicator,.client-js .stable .toc-mobile .collapsible-heading .indicator{margin-top:0}.client-js .collapsible-heading .indicator{margin-top:0.2em}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:fe16f9819fee9bfc34ebd8b6b32e5f4b */
+.mw-mf-cleanup{display:inline-block;padding:10px 15px 10px 44px;margin-bottom:4px}.beta .mw-mf-cleanup,.stable .mw-mf-cleanup{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/blue-triangle.png?2014-12-10T20:13:20Z);background-image:-webkit-linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Cpath%20fill%3D%22%2336b%22%20d%3D%22M1.112%2073.678l38.885-67.356%2038.892%2067.356z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M43.525%2057.7v7.103h-6.823v-7.103h6.823zm-2.029-5.905h-3.272l-1.753-12.245v-7.854h6.824v7.854l-1.799%2012.245z%22%2F%3E%3C%2Fsvg%3E);background-image:-webkit-linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/blue-triangle.svg?2014-12-10T20:13:20Z)!ie;background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Cpath%20fill%3D%22%2336b%22%20d%3D%22M1.112%2073.678l38.885-67.356%2038.892%2067.356z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M43.525%2057.7v7.103h-6.823v-7.103h6.823zm-2.029-5.905h-3.272l-1.753-12.245v-7.854h6.824v7.854l-1.799%2012.245z%22%2F%3E%3C%2Fsvg%3E);background-image:linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/blue-triangle.svg?2014-12-10T20:13:20Z)!ie;background-position:10px center left}.beta .overlay .cleanup li .issue-notice,.stable .overlay .cleanup li .issue-notice{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/gray-triangle.png?2014-12-10T20:13:20Z);background-image:-webkit-linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Cpath%20fill%3D%22%23ccc%22%20d%3D%22M1.092%2073.695l38.906-67.39%2038.91%2067.39z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M43.528%2057.71v7.104h-6.829v-7.104h6.829zm-2.03-5.908h-3.275l-1.754-12.253v-7.859h6.828v7.858l-1.799%2012.254z%22%2F%3E%3C%2Fsvg%3E);background-image:-webkit-linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/gray-triangle.svg?2014-12-10T20:13:20Z)!ie;background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Cpath%20fill%3D%22%23ccc%22%20d%3D%22M1.092%2073.695l38.906-67.39%2038.91%2067.39z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M43.528%2057.71v7.104h-6.829v-7.104h6.829zm-2.03-5.908h-3.275l-1.754-12.253v-7.859h6.828v7.858l-1.799%2012.254z%22%2F%3E%3C%2Fsvg%3E);background-image:linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/gray-triangle.svg?2014-12-10T20:13:20Z)!ie;background-position:center 24px}.overlay .cleanup li{border-bottom:solid 1px #CCC}.overlay .cleanup li .issue-notice{padding:60px 16px 24px 16px}.overlay .cleanup li .issue-notice:before{top:24px;left:50%;position:absolute;height:auto}@media all and (min-width:768px){.overlay .cleanup li .issue-notice{padding:2em 1em 2em 60px;margin:0 1em 0 3.35em}.overlay .cleanup li .issue-notice.icon{-o-background-size:50px 50px;-webkit-background-size:50px 50px;background-size:50px 50px;background-position:left center}.overlay .cleanup li .issue-notice:before{top:0;left:0;height:100%;width:50px}}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:c97b07a0713824124f36cf5cf949df59 */
+.search-overlay{background:rgba(255,255,255,0.8)}.search-overlay .overlay-header,.search-overlay .results{background-color:#fff}.search-overlay input{border:none;padding:0}.search-overlay .overlay-content{height:100%;width:100%}.search-overlay .search-content{border-bottom:1px solid #CCC;cursor:pointer}.search-overlay .search-content button{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/search/../images/searchContent.png?2014-12-10T20:13:20Z)}.search-overlay .search-content .caption{padding:1em .5em}.search-overlay .results{box-shadow:0 3px 3px 0 rgba(117,117,117,0.3)}.search-overlay .results li{padding-left:3.85em}.search-overlay .results li .list-thumb{width:3.35em}.search-overlay .results li:last-child{border-bottom:none}.search-overlay .results h2{font:inherit}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:95056ba599fe9a28ffe8cf501d1c4ef5 */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script src="23-1_files/load_002.php"></script><script src="23-1_files/load.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Гамма-функция","wgTitle":"Гамма-функция","wgCurRevisionId":67662040,"wgRevisionId":67662040,"wgArticleId":23670,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Специальные функции"],"wgBreakFrames":false,"wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgMonthNamesShort":["","янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"],"wgRelevantPageName":"Гамма-функция","wgRelevantArticleId":23670,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"ru","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"8":true,"9":true,"10":true,"11":true,"12":true,"13":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"828":true,"829":true}},"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["ru-ru","ru","en-us","en"],"wgULSCurrentAutonym":"русский","wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3,"quality":2,"pristine":4}}},"wgStableRevisionId":67534379,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q190573","wgMFUseCentralAuthToken":true,"wgMFAjaxUploadProgressSupport":true,"wgMFAnonymousEditing":false,"wgMFPhotoUploadAppendToDesc":"{{Uploaded from Mobile|platform=Web|version=}}\n{{subst:unc}}","wgMFLeadPhotoUploadCssSelector":"img, .navbox","wgMFEnableCssAnimations":true,"wgMFPhotoUploadEndpoint":"//commons.m.wikimedia.org/w/api.php","wgPreferredVariant":"ru","wgIsPageEditable":true,"wgMFDeviceWidthTablet":768,"wgMFMode":"stable","wgMFCollapseSectionsByDefault":true,"wgTOC":true,"wgMFPageSections":true,"wgMFShowRedLinks":false,"wgImagesDisabled":false,"wgUserCanUpload":false});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"ru"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: ruwiki:resourceloader:filter:minify-js:7:115d09ffb88d9e770c8e4ad3962b675d */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mobile.head","ext.centralNotice.bannerController.mobiledevice","ext.centralNotice.bannerController.mobile","ext.centralNotice.bannerController.lib","ext.centralNotice.bannerChoiceData"]);
+}</script>
+<link rel="dns-prefetch" href="https://meta.m.wikimedia.org/">
+<link rel="apple-touch-icon" href="https://bits.wikimedia.org/apple-touch/wikipedia.png">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width">
+</head>
+<body class="mediawiki ltr sitedir-ltr stable mw-mobile-mode skin-minerva action-view">
+		<div id="mw-mf-viewport">
+			<div id="mw-mf-page-left" class="navigation-drawer">
+						<ul>
+		<li><a href="https://ru.m.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" class="icon icon-text icon-home">Домой</a></li><li><a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0/#/random" class="icon icon-text icon-random" id="randomButton">Случайная</a></li><li class="jsonly"><a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9F%D0%BE%D0%B1%D0%BB%D0%B8%D0%B7%D0%BE%D1%81%D1%82%D0%B8" class="icon icon-text icon-nearby">Рядом</a></li>		</ul>
+		<ul>
+		<li class="jsonly"><a href="https://ru.m.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F%3A%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA+%D0%BD%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F" class="icon icon-text icon-watchlist">Список наблюдения</a></li><li><a href="https://ru.m.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8_%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8&amp;returnto=%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" class="icon icon-text icon-settings">Настройки</a></li><li class="jsonly"><a href="https://ru.m.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F&amp;returntoquery=welcome%3Dyes" class="icon icon-text icon-anonymous-white icon-anon">Представиться системе</a></li>		</ul>
+		<ul class="hlist">
+		<li><a href="https://ru.m.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">Описание Википедии</a></li><li><a href="https://ru.m.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>		</ul>
+					</div>
+			<div id="mw-mf-page-center">
+				<div id="siteNotice"><div id="centralNotice"></div></div>				<div class="header">
+					<a title="Открыть главное меню" href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BC%D0%B5%D0%BD%D1%8E" class="icon icon-mainmenu" id="mw-mf-main-menu-button"></a>							<form action="/w/index.php" class="search-box">
+							<input readonly="readonly" name="search" placeholder="Искать в Википедии" title="Искать в Википедии [f]" accesskey="f" id="searchInput" class="search" autocomplete="off" type="search"><input name="fulltext" value="Найти" title="Найти страницы, содержащие указанный текст" class="fulltext-search no-js-only icon icon-search" type="submit">							</form>
+											</div>
+				<div id="content_wrapper">
+				<div class="top-bar truncated-text" id="mw-mf-last-modified"><a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:History/%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F"><span class="mediaWiki_htmlEmitter">Последняя правка сделана 3 дней назад</span></a> анонимным участником</div>		<script>
+			if ( window.mw && mw.mobileFrontend ) { mw.mobileFrontend.emit( 'header-loaded' ); }
+		</script>
+				<div class="pre-content">
+			<h1 id="section_0">Гамма-функция</h1><ul id="page-actions" class="hlist"><li id="ca-edit" class="icon icon-32px icon-edit-enabled" title="Редактировать ведущий раздел страницы."></li><li title="Наблюдать за этой страницей" id="ca-watch" class="icon icon-watch icon-32px watch-this-article"><a>Наблюдать за этой страницей</a></li></ul>		</div>
+		<div id="content" class="content" dir="ltr" lang="ru">			<div><div class="dablink noprint">У этого термина существуют и другие значения, см. <a href="https://ru.m.wikipedia.org/wiki/%D0%93%D0%B0%D0%BC%D0%BC%D0%B0" title="Гамма" class="mw-disambig">Гамма</a>.</div>
+<p><b>Гамма-функция</b> — <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0" title="Математика">математическая</a> <a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%28%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0%29" title="Функция (математика)">функция</a>, которая расширяет понятие <a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB" title="Факториал">факториала</a> на поле нецелых действительных и <a href="https://ru.m.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D1%8B%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%B0" title="Комплексные числа" class="mw-redirect">комплексных чисел</a>. Обычно обозначается <img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z)" src="23-1_files/cccb1748f0baadce9089fe5189996c7c.png">.</p>
+<p>Была введена <a href="https://ru.m.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BE%D0%BD%D0%B0%D1%80%D0%B4_%D0%AD%D0%B9%D0%BB%D0%B5%D1%80" title="Леонард Эйлер" class="mw-redirect">Леонардом Эйлером</a>, а своим обозначением гамма-функция обязана <a href="https://ru.m.wikipedia.org/wiki/%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80,_%D0%90%D0%B4%D1%80%D0%B8%D0%B5%D0%BD_%D0%9C%D0%B0%D1%80%D0%B8" title="Лежандр, Адриен Мари">Лежандру</a>.</p>
+<p></p>
+<div class="toc-mobile"><h2 aria-controls="collapsible-block-0" aria-haspopup="true" tabindex="0" class="collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><div class="icon icon-toc  toc-button" title=""></div><span>Содержание</span></h2>
+<div aria-expanded="true" aria-pressed="true" id="collapsible-block-0" class="collapsible-block open-block">
+	<ul>
+	<li>
+		<a href="#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F">Определения</a>
+		<ul>
+			<li>
+			<a href="#.D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5">Интегральное определение</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D0.93.D0.B0.D1.83.D1.81.D1.81.D1.83">Определение по Гауссу</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D0.AD.D0.B9.D0.BB.D0.B5.D1.80.D1.83">Определение по Эйлеру</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D0.92.D0.B5.D0.B9.D0.B5.D1.80.D1.88.D1.82.D1.80.D0.B0.D1.81.D1.81.D1.83">Определение по Вейерштрассу</a>
+			<ul>
+			</ul>
+		</li>
+	</ul>
+	</li>
+	<li>
+		<a href="#.D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0">Свойства</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.9B.D0.BE.D0.B3.D0.B0.D1.80.D0.B8.D1.84.D0.BC_.D0.B3.D0.B0.D0.BC.D0.BC.D0.B0-.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8">Логарифм гамма-функции</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.A7.D0.B0.D1.81.D1.82.D0.BD.D1.8B.D0.B5_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D1.8F">Частные значения</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.9E.D0.B1.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F">Обобщения</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0_.D0.B8_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Литература и ссылки</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5">См. также</a>
+		<ul>
+		</ul>
+	</li>
+	</ul>
+</div>
+
+
+
+</div></div><h2 aria-controls="collapsible-block-0" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F">Определения</span><a href="#/editor/1" title="Редактировать раздел «Определения»" data-section="1" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-0" class="collapsible-block open-block">
+<div class="thumb tright">
+<div class="thumbinner" style="width:242px;"><a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Gamma_plot.svg" class="image"><img alt="" src="23-1_files/240px-Gamma_plot.png" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gamma_plot.svg/360px-Gamma_plot.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gamma_plot.svg/480px-Gamma_plot.svg.png 2x" data-file-width="600" data-file-height="480" height="192" width="240"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Gamma_plot.svg" class="internal" title="Увеличить"></a></div>
+График гамма-функции действительного переменного</div>
+</div>
+</div>
+<h3><span class="mw-headline" id=".D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5">Интегральное определение</span><a href="#/editor/2" title="Редактировать раздел «Интегральное определение»" data-section="2" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<p>Если вещественная часть комплексного числа <img class="mwe-math-fallback-image-inline tex" alt="z" src="23-1_files/fbade9e36a3f36d3d676c1b808451dd7.png"> положительна, то Гамма-функция определяется через абсолютно сходящийся <a href="https://ru.m.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D0%BB" title="Интеграл">интеграл</a></p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z)=\int\limits_0^{\infty}\!t^{\,{\mathrm z}-1}e^{-t}\,dt,\quad z\in\mathbb{C}\colon \mathrm{Re}(z)&gt;0" src="23-1_files/8731e0b83b05bf4515d9571c8ed2fe0e.png"></dd>
+</dl>
+<p>Это определение было получено Лежандром из оригинального определения Эйлера</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z)=\int\limits_0^1 (-\ln{x})^{z-1} \, dx " src="23-1_files/c6f244b3f0a2c91e83702af766e2d616.png"></dd>
+</dl>
+<p>полученного им в 1730 г., через замену переменной, и на сегодняшний 
+день, именно определение Лежандра известно как «классическое» 
+определение гамма-функции.</p>
+<p>Интегрируя по частям классическое определение, легко видеть что для целых n, имеем <img class="mwe-math-fallback-image-inline tex" alt="\Gamma(n) = (n-1)!" src="23-1_files/807baf53c91496dfe6e629802f3ebd9a.png">, и вообще <img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z+1)=z\Gamma(z)." src="23-1_files/b56c4bbb9c914259df6c65d40690141b.png"></p>
+<p>Существует непосредственное аналитическое продолжение исходной 
+формулы на всю комплексную плоскость, называемое интегралом 
+Римана-Ханкеля</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="~\Gamma(z)=\frac{1}{e^{i 2\pi {\mathrm z}}-1}\int\limits_L\!t^{\,{\mathrm z}-1}e^{-t}\,dt,\quad z\in\mathbb{C}\setminus\{0,-1,-2,\ldots\}." src="23-1_files/ee3aabc1d2c0ac45d9f8d1a5bb2d8e60.png"></dd>
+</dl>
+<p>где контур <img class="mwe-math-fallback-image-inline tex" alt="L" src="23-1_files/d20caec3b48a1eef164cb4ca81ba2587.png"> — любой контур на комплексной плоскости, обходящий точку <img class="mwe-math-fallback-image-inline tex" alt="t = 0" src="23-1_files/3e8f7b0adf6d7024b951f29a18225e4a.png"> против часовой стрелки, и концы которого уходят на бесконечность вдоль положительной вещественной оси.</p>
+<p>Последующие выражения служат альтернативными определениями Гамма-функции.</p>
+<h3><span class="mw-headline" id=".D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D0.93.D0.B0.D1.83.D1.81.D1.81.D1.83">Определение по <a href="https://ru.m.wikipedia.org/wiki/%D0%93%D0%B0%D1%83%D1%81%D1%81,_%D0%9A%D0%B0%D1%80%D0%BB_%D0%A4%D1%80%D0%B8%D0%B4%D1%80%D0%B8%D1%85" title="Гаусс, Карл Фридрих">Гауссу</a></span><a href="#/editor/3" title="Редактировать раздел «Определение по Гауссу»" data-section="3" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<p>Оно верно для всех комплексных <img class="mwe-math-fallback-image-inline tex" alt="z" src="23-1_files/fbade9e36a3f36d3d676c1b808451dd7.png">, за исключением 0 и отрицательных целых чисел</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z)=\lim\limits_{n\to\infty}\frac{(n-1)! \,n^z}{z(z+1)(z+2)\cdots(z+n-1)}, \quad z\in\mathbb{C}\setminus\{0,-1,-2,\ldots\}." src="23-1_files/f7ea46112657f7fb5d2eb70a52589f42.png"></dd>
+</dl>
+<h3><span class="mw-headline" id=".D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D0.AD.D0.B9.D0.BB.D0.B5.D1.80.D1.83">Определение по <a href="https://ru.m.wikipedia.org/wiki/%D0%AD%D0%B9%D0%BB%D0%B5%D1%80,_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B0%D1%80%D0%B4" title="Эйлер, Леонард">Эйлеру</a></span><a href="#/editor/4" title="Редактировать раздел «Определение по Эйлеру»" data-section="4" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z)=\frac{1}{z}\left(\prod\limits_{n=1}^\infty {\left(1+\frac{1}{n}\right)}^z{\left(1+\frac{z}{n}\right)}^{-1}\right)= \frac{1}{z} \prod_{n=1}^\infty \frac{\left(1+\frac{1}{n}\right)^{\mathrm z}}{1+\frac{\mathrm z}{n}},\quad z\in\mathbb{C}\setminus\{0,-1,-2,\ldots\}." src="23-1_files/3328fb75004821365ca0c6e04d45a81a.png"></dd>
+</dl>
+<h3><span class="mw-headline" id=".D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D0.92.D0.B5.D0.B9.D0.B5.D1.80.D1.88.D1.82.D1.80.D0.B0.D1.81.D1.81.D1.83">Определение по <a href="https://ru.m.wikipedia.org/wiki/%D0%92%D0%B5%D0%B9%D0%B5%D1%80%D1%88%D1%82%D1%80%D0%B0%D1%81%D1%81,_%D0%9A%D0%B0%D1%80%D0%BB" title="Вейерштрасс, Карл">Вейерштрассу</a></span><a href="#/editor/5" title="Редактировать раздел «Определение по Вейерштрассу»" data-section="5" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z)=\frac{e^{-\gamma z}}{z} \prod_{n=1}^\infty \left(1 + \frac{z}{n}\right)^{-1} e^{z/n},\quad z\in\mathbb{C}\setminus\{0,-1,-2,\ldots\}." src="23-1_files/c00365133a1084e1289bf0389a8e325b.png"></dd>
+</dl>
+<p>где <img class="mwe-math-fallback-image-inline tex" alt="\gamma=\lim\limits_{n\to\infty}\left(\sum\limits_{k=1}^n\frac{1}{k}-\ln{n}\right)\approx 0,57722" src="23-1_files/18658ea9ed66b8f82c42b98a816acc19.png"> — <a href="https://ru.m.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D0%AD%D0%B9%D0%BB%D0%B5%D1%80%D0%B0_%E2%80%94_%D0%9C%D0%B0%D1%81%D0%BA%D0%B5%D1%80%D0%BE%D0%BD%D0%B8" title="Постоянная Эйлера — Маскерони">постоянная Эйлера — Маскерони</a>.</p>
+<p><b>Примечание:</b> иногда используется альтернативная, так называемая <i>пи-функция</i>, связанная с гамма-функцией следующим образом: <img class="mwe-math-fallback-image-inline tex" alt="\Pi(z)=\Gamma(z+1)=z!" src="23-1_files/87f40a8276fb218efb02132c7ac4aadd.png">. Именно этой функцией (а не Г-функцией) пользовались Гаусс, Риман, и многие другие немецкие математики XIX-ого века.</p>
+</div><h2 aria-controls="collapsible-block-1" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0">Свойства</span><a href="#/editor/6" title="Редактировать раздел «Свойства»" data-section="6" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-1" class="collapsible-block open-block">
+<div class="thumb tright">
+<div class="thumbinner" style="width:242px;"><a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Gamma_abs.png" class="image"><img alt="" src="23-1_files/240px-Gamma_abs.png" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/44/Gamma_abs.png/360px-Gamma_abs.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/44/Gamma_abs.png/480px-Gamma_abs.png 2x" data-file-width="719" data-file-height="483" height="161" width="240"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Gamma_abs.png" class="internal" title="Увеличить"></a></div>
+График модуля гамма-функции на комплексной плоскости.</div>
+</div>
+</div>
+<p>Основное свойство гамма-функции это её рекуррентное уравнение</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z+1)=z\Gamma(z)" src="23-1_files/78391c207f026023d24b094c8c524cd2.png"></dd>
+</dl>
+<p>которое, при фиксированном начальном условии, единственным образом 
+определяет логарифмически выпуклое решение, то есть саму гамма-функцию. <span class="new">Теорема о единственности</span>.<br>
+Для Г-функции справедлива формула дополнения Эйлера:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(1-z)\Gamma(z)={\pi\over\sin\pi z}" src="23-1_files/1a1872579f4cce7639dd67c7b1f895ce.png">.</dd>
+</dl>
+<p>И формула умножения Гаусса:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z)\Gamma\left(z+\frac{1}{n}\right)\cdots\Gamma\left(z+\frac{n-1}{n}\right)=n^{\frac{1}{2}-nz}\cdot(2\pi)^{\frac{n-1}{2}}\Gamma(nz)," src="23-1_files/e1ec99c8546947725ba2bee35b52c6f9.png"></dd>
+</dl>
+<p>Частный случай которой при n=2 был получен Лежандром:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="
+\Gamma(z) \; \Gamma\left(z + \frac{1}{2}\right) = 2^{1-2z} \; \sqrt{\pi} \; \Gamma(2z). \,\!
+" src="23-1_files/36a3ea6a1e187ae6ca04314243286edc.png"></dd>
+</dl>
+<p>Гамма-функция не имеет нулей на всей комплексной плоскости. <img class="mwe-math-fallback-image-inline tex" alt="\Gamma(z)" src="23-1_files/cccb1748f0baadce9089fe5189996c7c.png"> является <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%B5%D1%80%D0%BE%D0%BC%D0%BE%D1%80%D1%84%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Мероморфная функция">мероморфной</a> на комплексной плоскости и имеющей <a href="https://ru.m.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D1%8E%D1%81_%28%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%29" title="Полюс (комплексный анализ)">простые полюса</a> в точках <img class="mwe-math-fallback-image-inline tex" alt="z=0,\;-1,\;-2,\;-3,\;\ldots" src="23-1_files/a5c8aa5d60b98350c1ad337a07044670.png"> Гамма-функция имеет <a href="https://ru.m.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D1%8E%D1%81_%28%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%29" title="Полюс (комплексный анализ)">полюс</a> первого порядка в <img class="mwe-math-fallback-image-inline tex" alt="z=-n" src="23-1_files/7fbd3eac9369caad8762ba869da98b49.png"> для любого натурального <img class="mwe-math-fallback-image-inline tex" alt="n" src="23-1_files/7b8b965ad4bca0e41ab51de7b31363a1.png"> и нуля; <a href="https://ru.m.wikipedia.org/wiki/%D0%92%D1%8B%D1%87%D0%B5%D1%82_%28%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%29" title="Вычет (комплексный анализ)">вычет</a> в этой точке задается так</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\operatorname{\mathrm{Res}}_{z=-n}\,\Gamma(z)=\frac{(-1)^n}{n!}" src="23-1_files/702a6fea33f15bd0ba0b144969ae6ece.png">.</dd>
+</dl>
+<p>Основное, но полезное свойство, которое может быть получено из предельного определения:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\overline{\Gamma(z)} = \Gamma(\overline{z})" src="23-1_files/da098ded204e023a51ec10bbc2abf2e2.png">.</dd>
+</dl>
+<p>Гамма-функция дифференцируема бесконечное число раз, и <img class="mwe-math-fallback-image-inline tex" alt="\Gamma^\prime(x)=\psi(x)\Gamma(x)" src="23-1_files/4ced6af36dbd10a7bdae082b4b4f6024.png">, где <img class="mwe-math-fallback-image-inline tex" alt="\psi(x)" src="23-1_files/698b57e05ac6f85e4fac6369b9c25672.png"> часто называют «пси-функцией», или <a href="https://ru.m.wikipedia.org/wiki/%D0%94%D0%B8%D0%B3%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Дигамма-функция">дигамма-функцией</a>. Гамма-функция и <a href="https://ru.m.wikipedia.org/wiki/%D0%91%D0%B5%D1%82%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Бета-функция">бета-функция</a> связаны следующим соотношением:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Beta(x,\;y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}" src="23-1_files/842a293c4cf8ee57adcb617d39b0271b.png">.</dd>
+</dl>
+</div><h2 aria-controls="collapsible-block-2" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.9B.D0.BE.D0.B3.D0.B0.D1.80.D0.B8.D1.84.D0.BC_.D0.B3.D0.B0.D0.BC.D0.BC.D0.B0-.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8">Логарифм гамма-функции</span><a href="#/editor/7" title="Редактировать раздел «Логарифм гамма-функции»" data-section="7" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-2" class="collapsible-block open-block">
+<p>По целому ряду причин, наряду с гамма-функцией часто рассматривают и логарифм гамма-функции — первообразную <a href="https://ru.m.wikipedia.org/wiki/%D0%94%D0%B8%D0%B3%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Дигамма-функция">дигамма-функции</a>. Для него справедливы следующие интегральные представления</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="
+\ln\Gamma(z) \, =\, \left(z-{\frac{1}{\,2\,}}\right)\!\ln z -z +{\frac{1}{\,2\,}}\ln2\pi
++\!\int\limits_0^{\,\infty} \!\left[\frac{1}{e^x-1}-\frac{1}{x}+\frac{1}{2} \right] \frac{e^{-xz}}{x}\,dx
+\,,\qquad \operatorname{Re}{z}&gt;0
+" src="23-1_files/8a6c6462258fa3d9fb2ef7f4616a8673.png"></dd>
+</dl>
+<p>и</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="
+\ln\Gamma(z) \, =\, \left(z-{\frac{1}{\,2\,}}\right)\!\ln z -z +{\frac{1}{\,2\,}}\ln2\pi
++2\!\int\limits_0^{\,\infty} \!\frac{\,\operatorname{arctg}(x/z)\,}{e^{2\pi x}-1}\, dx\,,\qquad \operatorname{Re}{z}&gt;0
+" src="23-1_files/2a3bd0698ac8b1eebdb35880dfa317fa.png"></dd>
+</dl>
+<p>данные <a href="https://ru.m.wikipedia.org/wiki/%D0%91%D0%B8%D0%BD%D0%B5,_%D0%96%D0%B0%D0%BA_%D0%A4%D0%B8%D0%BB%D0%B8%D0%BF%D0%BF_%D0%9C%D0%B0%D1%80%D0%B8" title="Бине, Жак Филипп Мари">Жаком Бине</a> в 1839-ом году (эти формулы ещё часто называют первой и второй формулой Бине соответственно для логарифма гамма-функции).<sup id="cite_ref-bateman_1-0" class="reference"><a href="#cite_note-bateman-1">[1]</a></sup> Несколько отличные интегральные формулы для логарифма гамма-функции также появлялись в работах <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D1%8C%D0%BC%D1%81%D1%82%D0%B5%D0%BD,_%D0%9A%D0%B0%D1%80%D0%BB_%D0%99%D0%BE%D1%85%D0%B0%D0%BD" title="Мальмстен, Карл Йохан">Мальмстена</a>, <a href="https://ru.m.wikipedia.org/wiki/%D0%9B%D0%B5%D1%80%D1%85,_%D0%9C%D0%B0%D1%82%D0%B8%D0%B0%D1%88" title="Лерх, Матиаш">Лерха</a> и некоторых других. Так, <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D1%8C%D0%BC%D1%81%D1%82%D0%B5%D0%BD,_%D0%9A%D0%B0%D1%80%D0%BB_%D0%99%D0%BE%D1%85%D0%B0%D0%BD" title="Мальмстен, Карл Йохан">Мальмстен</a> получил формулу схожую с первой формулой <a href="https://ru.m.wikipedia.org/wiki/%D0%91%D0%B8%D0%BD%D0%B5,_%D0%96%D0%B0%D0%BA_%D0%A4%D0%B8%D0%BB%D0%B8%D0%BF%D0%BF_%D0%9C%D0%B0%D1%80%D0%B8" title="Бине, Жак Филипп Мари">Бине</a><sup id="cite_ref-bateman_1-1" class="reference"><a href="#cite_note-bateman-1">[1]</a></sup></p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="
+\ln\Gamma(z) \, = \int\limits_0^{\,\infty} \!\left[z-1-\frac{1-e^{-(z-1)x}}{1-e^{-x}} \right] \frac{e^{-x}}{x}\,dx
+\,,\qquad \operatorname{Re}{z}&gt;0
+" src="23-1_files/85597bdbc69439526f352777cbdac332.png"></dd>
+</dl>
+<p>а <a href="https://ru.m.wikipedia.org/wiki/%D0%9B%D0%B5%D1%80%D1%85,_%D0%9C%D0%B0%D1%82%D0%B8%D0%B0%D1%88" title="Лерх, Матиаш">Лерх</a> показывает что все интегралы вида</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt=" 
+\int\limits_0^{\,\infty} \!\frac{\,e^{2\pi x}\!\cos\varphi - 1\,}{e^{4\pi x}-2e^{2\pi x}\!\cos\varphi + 1}\operatorname{arctg}\frac{u}{x} \; dx \,,\qquad 0&lt;u\leqslant1\,, \quad 0&lt;\varphi&lt;2\pi u
+" src="23-1_files/a31a99cdda9285fe3b6f9ac66b6f8766.png"></dd>
+</dl>
+<p>также сводятся к логарифмам гамма-функции. В частности, формула 
+аналогичная второй формуле Бине с «сопряжённым» знаменателем имеет 
+следующий вид</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="
+\ln\Gamma(z) = -\biggl(z-{\frac{1}{2}}\biggr)\cdot\left\{1-\ln\biggl(z-{\frac{1}{2}}\biggr) \!\right\} +{\frac{1}{2}}\ln2\pi
+- \,2\!\int\limits_0^{\infty} \!\frac{\operatorname{arctg}\big[x/\big(z-\tfrac{1}{2}\big)\big]}{e^{2\pi x}+1}\,dx,
+\qquad  \operatorname{Re}{z}&gt;\frac{1}{2}
+" src="23-1_files/83ac6c3be6588456e4ed2856b5626ccf.png"></dd>
+</dl>
+<p>см. упр. 40 в<sup id="cite_ref-iaroslav_06_2-0" class="reference"><a href="#cite_note-iaroslav_06-2">[2]</a></sup>. Кроме того, <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D1%8C%D0%BC%D1%81%D1%82%D0%B5%D0%BD,_%D0%9A%D0%B0%D1%80%D0%BB_%D0%99%D0%BE%D1%85%D0%B0%D0%BD" title="Мальмстен, Карл Йохан">Мальмстен</a>
+ также получил ряд интегральных формул для логарифма гамма-функции 
+содержащих гиперболические функции с логарифмом в подынтегральном 
+выражении (или, что то-же, логарифм логарифма с полиномами). В 
+частности,</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="
+\ln\Gamma(z)=\,\frac{1}{2}\ln\pi \,-\, \frac{1}{2}\ln\sin\pi z \,- \,\frac{2z-1}{2}\ln2\pi\, - \,\frac{\sin2\pi z}{2\pi}\!
+\int\limits_0^\infty \!\!\frac{\,\ln{x}\,}{\,\operatorname{ch}{x}-\cos2\pi z\,}\,dx\,,\qquad 0&lt;\operatorname{Re} z &lt;1
+" src="23-1_files/f104208d81b9d10f9f9fa2384e5eebcf.png"></dd>
+</dl>
+<p>см. упр. 2, 29-h, 30 в<sup id="cite_ref-iaroslav_06_2-1" class="reference"><a href="#cite_note-iaroslav_06-2">[2]</a></sup>. Ярослав Благушин показал, что при рациональном аргументе <img class="mwe-math-fallback-image-inline tex" alt="z=k/n" src="23-1_files/710297d0a29031f72d6177d2227767f5.png">, где <img class="mwe-math-fallback-image-inline tex" alt="k" src="23-1_files/8ce4b16b22b58894aa86c421e8759df3.png"> и <img class="mwe-math-fallback-image-inline tex" alt="n" src="23-1_files/7b8b965ad4bca0e41ab51de7b31363a1.png"> целые положительные числа такие что <img class="mwe-math-fallback-image-inline tex" alt="k" src="23-1_files/8ce4b16b22b58894aa86c421e8759df3.png"> не превосходит <img class="mwe-math-fallback-image-inline tex" alt="n" src="23-1_files/7b8b965ad4bca0e41ab51de7b31363a1.png">, справедливо следующее представление</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="
+\ln\Gamma \biggl(\!\frac{k}{n}\!\biggr)=\frac{(n-2k)\ln2\pi}{2n} + \frac{1}{2}\left\{\ln\pi-\ln\sin\frac{\pi k}{n} \right\} + " src="23-1_files/3ce9ec561947efaff485bd40b313883e.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt=" + \frac{1}{\pi}\!\sum_{r=1}^{n-1}\frac{\gamma+\ln{r}}{r}\cdot\sin\frac{2\pi r k}{n}- 
+\frac{1}{2\pi}\sin\frac{2\pi k}{n}\cdot\!\int\limits_0^\infty \!\!\frac{\,e^{-nx}\!\cdot\ln{x}\,}{\,\operatorname{ch}{x}-\cos\dfrac{2\pi k}{n}\,}\,dx\,,\qquad k\neq\frac{n}{2}
+" src="23-1_files/0aa582bb8fa25256f31643fb7424ef9e.png"></dd>
+</dl>
+<p>см. приложение C в<sup id="cite_ref-iaroslav_07_3-0" class="reference"><a href="#cite_note-iaroslav_07-3">[3]</a></sup>, а также упр. 60 и 58 в<sup id="cite_ref-iaroslav_06_2-2" class="reference"><a href="#cite_note-iaroslav_06-2">[2]</a></sup>.
+ Более того, и в более общих случаях интегралы содержащие 
+гиперболические функции с логарифмом (или арктангенсом), в 
+подынтегральном выражении часто сводятся к логарифмам гамма-функции и <a href="https://ru.m.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B8%D0%B3%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Полигамма-функция">её производным</a>, в том числе и комплексного аргумента, см. напр. упр. 4-b, 7-а и 13-b в<sup id="cite_ref-iaroslav_06_2-3" class="reference"><a href="#cite_note-iaroslav_06-2">[2]</a></sup>.</p>
+<p>Логарифм гамма-функции также тесно связан с аналитическим продолжением <a href="https://ru.m.wikipedia.org/wiki/%D0%94%D0%B7%D0%B5%D1%82%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%93%D1%83%D1%80%D0%B2%D0%B8%D1%86%D0%B0" title="Дзета-функция Гурвица">обобщённой дзета-функции</a></p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt=" 
+\ln\Gamma(z)=\zeta'(0,z)-\zeta'(0)=\zeta'(0,z)+\frac{1}{2}\ln2\pi
+" src="23-1_files/3e52167f2fec084521b5db7475f0818b.png"></dd>
+</dl>
+<p>Это важнейшее взаимоотношение выведенное <a href="https://ru.m.wikipedia.org/wiki/%D0%9B%D0%B5%D1%80%D1%85,_%D0%9C%D0%B0%D1%82%D0%B8%D0%B0%D1%88" title="Лерх, Матиаш">Лерхом</a> позволяет получить большое количество интегральных представлений для логарифма гамма-функции через известные формулы для <a href="https://ru.m.wikipedia.org/wiki/%D0%94%D0%B7%D0%B5%D1%82%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%93%D1%83%D1%80%D0%B2%D0%B8%D1%86%D0%B0" title="Дзета-функция Гурвица">обобщённой дзета-функции</a>.</p>
+<p>Ряд Фурье для логарифма гамма-функции имеет следующий вид</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt=" 
+\ln\Gamma(x) = \left(\frac{1}{2}-x\right)(\gamma+\ln2)+(1-x)\ln\pi 
+- \frac{1}{2}\ln\sin\pi x  + \frac{1}{\pi}\sum_{n=1}^{\infty}\frac{\sin 2\pi n x \cdot\ln{n}}{n}\,, \qquad 0&lt;x&lt;1
+" src="23-1_files/b5d0d732d50d2a8dba91dc748b8d87ee.png"></dd>
+</dl>
+<p>Эта формула обычно приписывается <a href="https://ru.m.wikipedia.org/wiki/%D0%9A%D1%83%D0%BC%D0%BC%D0%B5%D1%80,_%D0%AD%D1%80%D0%BD%D1%81%D1%82_%D0%AD%D0%B4%D1%83%D0%B0%D1%80%D0%B4" title="Куммер, Эрнст Эдуард">Ернсту Куммеру</a>, который её вывел в 1847 г. (в авторитетной литературе<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup><sup id="cite_ref-bateman_1-2" class="reference"><a href="#cite_note-bateman-1">[1]</a></sup><sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup>
+ этот ряд даже называется рядом Куммера для логарифма Гамма-функции). 
+Однако, недавно было открыто что эта формула была получена ещё в 1842 г.
+ <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D1%8C%D0%BC%D1%81%D1%82%D0%B5%D0%BD,_%D0%9A%D0%B0%D1%80%D0%BB_%D0%99%D0%BE%D1%85%D0%B0%D0%BD" title="Мальмстен, Карл Йохан">Карлом Мальмстеном</a> (см. Ярослав Благушин<sup id="cite_ref-iaroslav_06_2-4" class="reference"><a href="#cite_note-iaroslav_06-2">[2]</a></sup>).</p>
+<p>Помимо разложения в ряд Фурье, существуют и другие разложения в ряды. Одно из самых известных это ряд <a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D1%82%D0%B8%D1%80%D0%BB%D0%B8%D0%BD%D0%B3,_%D0%94%D0%B6%D0%B5%D0%B9%D0%BC%D1%81" title="Стирлинг, Джеймс">Стирлинга</a></p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\ln \Gamma(z) = \left(z-\frac{1}{\,2\,}\right)\!\ln z -z +\frac{1}{\,2\,}\ln2\pi
++\sum_{n=1}^N \frac{B_{2n}}{2n(2n-1)z^{2n-1}}+ O(z^{-2N-1})\,,\qquad |\arg z|&lt;\frac{\pi}{2} 
+" src="23-1_files/1fb658aa1d0cc81ca56b125a702fb8e0.png"></dd>
+</dl>
+<p>В его стандартной вариации</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\ln \Gamma(z) = z\ln z + O(z)" src="23-1_files/3dae471e6a4998c213936b052e0eea3b.png"></dd>
+</dl>
+<p>где коэффициенты <img class="mwe-math-fallback-image-inline tex" alt="B_{2n}" src="23-1_files/76d22dfbdbfbc417d2b56a5008fc22f0.png"> означают <a href="https://ru.m.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%91%D0%B5%D1%80%D0%BD%D1%83%D0%BB%D0%BB%D0%B8" title="Числа Бернулли">числа Бернулли</a>.</p>
+<p>Из определения гамма-функции по Вейерштрассу, следует ещё одно важное представление рядом<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">[6]</a></sup></p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\ln \Gamma(z) = -\gamma z -\ln z + \sum_{n=1}^\infty \left[\frac{z}{n}-\ln\!\left(1+\frac{z}{n}\right)\right] 
+" src="23-1_files/76785dc4f5031f28703ecb462c5fc675.png"></dd>
+</dl>
+</div><h2 aria-controls="collapsible-block-3" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.A7.D0.B0.D1.81.D1.82.D0.BD.D1.8B.D0.B5_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D1.8F">Частные значения</span><a href="#/editor/8" title="Редактировать раздел «Частные значения»" data-section="8" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-3" class="collapsible-block open-block">
+<p>Гамма-функция целого и полуцелого аргументов выражается через элементарные функции. В частности</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(1)=0!=1" src="23-1_files/4bf8908d01c21c32719cb10a3a9db526.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(2)=1!=1" src="23-1_files/f31992223821d4158e1a4e090219d744.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(3)=2!=2" src="23-1_files/6d523d87bb8acc0fdc1030497cb6bb95.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(4)=3!=6" src="23-1_files/ab0ac4002442611405418f03a5d92f87.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(5)=4!=24" src="23-1_files/ca97f6921d3de02838f794bcc67d57a1.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma\left(\tfrac{1}{2}\right)=\sqrt{\pi}." src="23-1_files/998b518470a569423692013881ec1dbd.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma\left(\tfrac{3}{2}\right)=\tfrac{1}{2}\sqrt{\pi}." src="23-1_files/29e2de63dd45a11048024c10d059c750.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma\left(\tfrac{5}{2}\right)=\tfrac{3}{4}\sqrt{\pi}." src="23-1_files/a2fe9ef4a10b4002267b126e46498cc7.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma\left(\tfrac{7}{2}\right)=\tfrac{15}{8}\sqrt{\pi}." src="23-1_files/5d69c20c6754317a735095db710effbb.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma\left(-\tfrac{1}{2}\right)=\tfrac{4}{3}\sqrt{\pi}." src="23-1_files/25ba691cc2f9f1b400ebf6045c7348ac.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma\left(-\tfrac{3}{2}\right)=-2\sqrt{\pi}." src="23-1_files/8b75b8eabc87ae211984032c716c7af5.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma\left(\tfrac{1}{2}+n\right) = {(2n)! \over 4^n n!} \sqrt{\pi} = \frac{(2n-1)!!}{2^n}\, \sqrt{\pi} = \sqrt{\pi} \cdot \left[ {n-\frac{1}{2}\choose n} n! \right] " src="23-1_files/6d8138de208bee4211290db42dbcacc7.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma\left(\tfrac{1}{2}-n\right) = {(-4)^n n! \over (2n)!} \sqrt{\pi} = \frac{(-2)^n}{(2n-1)!!}\, \sqrt{\pi} = \sqrt{\pi} / \left[ {-\frac{1}{2} \choose n} n! \right] " src="23-1_files/fef0022fec1f6e09a56f1b67216c1237.png"></dd>
+</dl>
+<p>Частные значения гамма-функции от других аргументов (не целых и не 
+полуцелых) остаются на данный момент ещё неизвестными и представляют 
+большой интерес для науки. Так, поиск значения Гамма-функции в точках 
+1/4 и 1/3 являлся ещё объектом подробных изысканий Эйлера, Гаусса и 
+Лежандра, однако им не удалось подсчитать эти значения в замкнутом виде.
+ На сегодняшний день неизвестно является-ли например Γ(1/4) рациональным
+ числом, однако известно что <img class="mwe-math-fallback-image-inline tex" alt="\Gamma(1/4)/\sqrt[4]{\pi}" src="23-1_files/02c57565caf72482b264cc7604f55f87.png"> трансцендентое число.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7">[7]</a></sup>
+ Кроме того, есть также ряд относительно свежих и ещё недостаточно 
+тщательно изученных работ по трансцендентости и алгебраической 
+независимости значений Γ(1/3) и Γ(1/4), см. работы <a href="https://ru.m.wikipedia.org/wiki/%D0%91%D1%80%D0%B0%D1%82%D1%8C%D1%8F_%D0%A7%D1%83%D0%B4%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5" title="Братья Чудновские">братьев Чудновских</a> и <a href="https://ru.m.wikipedia.org/wiki/%D0%9D%D0%B5%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%BD%D0%BA%D0%BE,_%D0%AE%D1%80%D0%B8%D0%B9_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87" title="Нестеренко, Юрий Валентинович">Юрия Нестеренко</a> соответственно. Также, обращает на себя внимание ряд интересных представлений в незамкнутом виде для Γ(1/4)</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(\tfrac14) = \sqrt \frac{(2 \pi)^{\frac{3}{2}}}{\mathrm{AGM}(\sqrt 2, 1)}" src="23-1_files/0fd19b110850544763ff393f0730cb90.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(\tfrac14) = (2 \pi)^{\frac{3}{4}} \prod_{k=1}^\infty \mathrm{th} \left( \frac{\pi k}{2} \right)" src="23-1_files/a7d46e1c88ddd40305acbd84e75cf249.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(\tfrac14) = A^3 e^{-\frac{G}{\pi}} \sqrt{\pi} 2^{\frac{1}{6}} \prod_{k=1}^\infty \left(1-\frac{1}{2k}\right)^{k(-1)^k}" src="23-1_files/938fe4b1d7046af12d76a701d6676995.png"></dd>
+</dl>
+<p>где <a href="https://en.wikipedia.org/wiki/Arithmetic%E2%80%93geometric_mean" class="extiw" title="en:Arithmetic–geometric mean">AGM — функция арифметико-геометрического среднего</a>, <a href="https://ru.m.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%B0%D0%BD%D0%B0" title="Постоянная Каталана">G — постоянная Каталана</a> и <a href="https://ru.m.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D0%93%D0%BB%D0%B5%D0%B9%D1%88%D0%B5%D1%80%D0%B0_%E2%80%94_%D0%9A%D0%B8%D0%BD%D0%BA%D0%B5%D0%BB%D0%B8%D0%BD%D0%B0" title="Постоянная Глейшера — Кинкелина">A — постоянная Глейшера—Кинкелина</a>.</p>
+</div><h2 aria-controls="collapsible-block-4" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.9E.D0.B1.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F">Обобщения</span><a href="#/editor/9" title="Редактировать раздел «Обобщения»" data-section="9" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-4" class="collapsible-block open-block">
+<p>В классическом интегральном определении гамма-функции, пределы интегрирования фиксированы. Рассматривают также <span class="new">неполную гамма-функцию</span>,
+ определяемую аналогичным интегралом с переменным верхним либо нижним 
+пределом интегрирования. Различают верхнюю неполную гамма-функцию, часто
+ обозначаемую как гамма-функцию от двух аргументов:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\Gamma(a,z)=\int\limits_{\mathrm z}^\infty\!{e^{-t}t^{a-1}\,dt}" src="23-1_files/9af74e86a13b3cc4ecf40e2eb15ee1c6.png"></dd>
+</dl>
+<p>и нижнюю неполную гамма-функцию, аналогично обозначаемую строчной буквой «гамма»:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\gamma(a,z)=\int\limits_0^{\mathrm z}\!{e^{-t}t^{a-1}\,dt}" src="23-1_files/89f44a520e22c9b31500a8c20c33354e.png">.</dd>
+</dl>
+</div><h2 aria-controls="collapsible-block-5" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0_.D0.B8_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Литература и ссылки</span><a href="#/editor/10" title="Редактировать раздел «Литература и ссылки»" data-section="10" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-5" class="collapsible-block open-block">
+<ul>
+<li>В. Я. Арсенин. <i>Математическая физика: основные уравнения и специальные функции</i>, глава X, сс. 225—233. Наука, Москва, 1966.</li>
+<li>М. А. Евграфов. <i>Аналитические функции</i>, глава VI, сс. 267—273. Наука, Москва, 1968.</li>
+<li>М. А. Евграфов и др. <i>Сборник задач по теории аналитических функций</i>, сс. 307—316. Наука, Москва, 1969.</li>
+<li>Г. М. Фихтенгольц. <i>Курс дифференциального и интегрального исчисления</i> (7-ое изд.), глава XIV, сс. 750—794. Наука, Москва, 1969.</li>
+<li>А. И. Маркушевич. <i>Теория аналитических функций</i> (2-ое изд.), том 2, сс. 303—324. Наука, Москва, 1968.</li>
+<li>Н. Н. Лебедев. <i>Специальные функции и их приложения</i> (2-ое изд.), глава I, сс. 11—27. ФМ, Москва, 1963.</li>
+<li>А. Ф. Никифоров и В. Б. Уваров. <i>Специальные функции математической физики</i>, сс. 263—268. Наука, Москва, 1978.</li>
+<li>R. Campbell. <i>Les intégrales eulériennes et leurs applications</i>, Dunod, Paris, 1966.</li>
+<li>M. Godefroy. <i>La fonction Gamma; Théorie, Histoire, Bibliographie</i>, Gauthier-Villars, Paris, 1901.</li>
+<li>E. Artin. <i>Einführung in die Theorie der Gammafunktion</i>, Teubner, Leipzig, 1931.</li>
+<li>N. Nielson. <i>Handbuch der Theorie der Gammafunktion</i>, Teubner, Leipzig, 1906.</li>
+</ul>
+<div class="references-small" style="column-count:2;-moz-column-count:2;-webkit-column-count:2;">
+<ol class="references">
+<li id="cite_note-bateman-1"><span class="mw-cite-backlink">↑ <a href="#cite_ref-bateman_1-0"><sup><i><b>1</b></i></sup></a> <a href="#cite_ref-bateman_1-1"><sup><i><b>2</b></i></sup></a> <a href="#cite_ref-bateman_1-2"><sup><i><b>3</b></i></sup></a></span> <span class="reference-text">Harry Bateman and Arthur Erdélyi <i>Higher Transcendental Functions [in 3 volumes]</i>. Mc Graw-Hill Book Company, 1955.</span></li>
+<li id="cite_note-iaroslav_06-2"><span class="mw-cite-backlink">↑ <a href="#cite_ref-iaroslav_06_2-0"><sup><i><b>1</b></i></sup></a> <a href="#cite_ref-iaroslav_06_2-1"><sup><i><b>2</b></i></sup></a> <a href="#cite_ref-iaroslav_06_2-2"><sup><i><b>3</b></i></sup></a> <a href="#cite_ref-iaroslav_06_2-3"><sup><i><b>4</b></i></sup></a> <a href="#cite_ref-iaroslav_06_2-4"><sup><i><b>5</b></i></sup></a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://link.springer.com/article/10.1007/s11139-013-9528-5">Iaroslav V. Blagouchine <i>Rediscovery of Malmsten’s integrals, their evaluation by contour integration methods and some related results.</i> The Ramanujan Journal, vol. 35, no. 1, pp. 21-110, 2014.</a> <a rel="nofollow" class="external text" href="https://www.researchgate.net/publication/257381156_Rediscovery_of_Malmsten%27s_integrals_their_evaluation_by_contour_integration_methods_and_some_related_results">PDF</a></span></li>
+<li id="cite_note-iaroslav_07-3"><b><a href="#cite_ref-iaroslav_07_3-0">↑</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.sciencedirect.com/science/article/pii/S0022314X14002820">Iaroslav V. Blagouchine <i>A
+ theorem for the closed-form evaluation of the first generalized 
+Stieltjes constant at rational arguments and some related summations</i> Journal of Number Theory (Elsevier), vol. 148, pp. 537-592, 2015.</a></span></li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">↑</a></b> <span class="reference-text">E.T. Whittaker and G. N. Watson <i>A
+ course of modern analysis. An introduction to the general theory of 
+infinite processes and of analytic functions, with an account of the 
+principal transcendental functions (third edition). Cambridge at the 
+University Press, 1920.</i></span></li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">↑</a></b> <span class="reference-text">H.M. Srivastava and J. Choi <i>Series Associated with the Zeta and Related Functions</i>. Kluwer Academic Publishers. The Netherlands, 2001</span></li>
+<li id="cite_note-6"><b><a href="#cite_ref-6">↑</a></b> <span class="reference-text">Д. С. Кузнецов. <i>Специальные функции</i> (2-ое изд.). Высшая Школа, Москва, 1965.</span></li>
+<li id="cite_note-7"><b><a href="#cite_ref-7">↑</a></b> <span class="reference-text">Philip J. Davis <i>Leonhard Euler’s Integral: A Historical Profile of the Gamma-Function</i>. American Mathematical Monthly, vol. 66, pp. 849—869, 1959.</span></li>
+</ol>
+</div>
+</div><h2 aria-controls="collapsible-block-6" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5">См. также</span><a href="#/editor/11" title="Редактировать раздел «См. также»" data-section="11" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-6" class="collapsible-block open-block">
+<ul>
+<li><a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2,_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%B2_%D1%87%D0%B5%D1%81%D1%82%D1%8C_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B0%D1%80%D0%B4%D0%B0_%D0%AD%D0%B9%D0%BB%D0%B5%D1%80%D0%B0" title="Список объектов, названных в честь Леонарда Эйлера">Список объектов, названных в честь Леонарда Эйлера</a></li>
+<li><a href="https://ru.m.wikipedia.org/wiki/K-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="K-функция">K-функция</a></li>
+<li><span class="new">G-функция Барнеса</span></li>
+<li><a href="https://ru.m.wikipedia.org/wiki/%D0%91%D0%B5%D1%82%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Бета-функция">Бета-функция</a></li>
+<li><a href="https://ru.m.wikipedia.org/wiki/%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5" title="Гамма-распределение">Гамма-распределение</a></li>
+<li><span class="new">Неполная гамма-функция</span></li>
+</ul>
+
+
+
+
+
+
+
+<noscript><img src="//ru.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div><div id="page-secondary-actions"><a class="mw-ui-button button languageSelector" href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:MobileLanguages/%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F">Читать на другом языке</a></div>			</div>
+							</div><div class="transparent-shield cloaked-element"></div>
+						<div id="footer">
+							<ul class="footer-info">
+					<li id="footer-info-mobile-switcher"><h2>Википедия ™</h2>
+<ul>
+	<li>Мобильный‌</li><li><a id="mw-mf-display-toggle" href="http://ru.wikipedia.org/w/index.php?title=%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F&amp;mobileaction=toggle_view_desktop">Стационарный</a></li>
+</ul></li><li id="footer-info-mobile-license">Содержимое доступно в соответствии с <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, если не указано иное.</li>				</ul>
+							<ul class="footer-places">
+					<li id="footer-places-terms-use"><a href="https://m.wikimediafoundation.org/wiki/Special:MyLanguage/Terms_of_Use/ru">Условия использования</a></li><li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="wikimedia:Политика конфиденциальности">Конфиденциальность</a></li>				</ul>
+					</div>
+					</div>
+		<div id="notifications"><div class="toast position-fixed"></div><div class="drawer position-fixed text references"><div class="icon icon-cancel  cancel" title="">Закрыть</div>
+<h3></h3>
+
+</div><div class="drawer position-fixed"><div class="icon icon-arrow-down  cancel" title=""></div>
+<p>Помогите улучшить эту страницу!</p>
+<div class="mw-ui-button-group">
+	<a class="mw-ui-button mw-ui-block mw-ui-progressive" href="https://ru.m.wikipedia.org/wiki/Special:UserLogin?returnto=%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F&amp;campaign=mobile_editPageActionCta">Представиться</a>
+	<a class="mw-ui-progressive mw-ui-anchor mw-ui-block" href="https://ru.m.wikipedia.org/wiki/Special:UserLogin?returnto=%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F&amp;campaign=mobile_editPageActionCta&amp;type=signup&amp;returntoquery=article_action%3Dsignup-edit">Зарегистрироваться</a>
+</div>
+</div><div class="drawer position-fixed"><div class="icon icon-arrow-down  cancel" title=""></div>
+<p>Следить за этой страницей, и всеми изменениями на ней.</p>
+<div class="mw-ui-button-group">
+	<a class="mw-ui-button mw-ui-block mw-ui-progressive" href="https://ru.m.wikipedia.org/wiki/Special:UserLogin?returnto=%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F&amp;campaign=mobile_watchPageActionCta&amp;returntoquery=article_action%3Dwatch">Представиться</a>
+	<a class="mw-ui-progressive mw-ui-anchor mw-ui-block" href="https://ru.m.wikipedia.org/wiki/Special:UserLogin?returnto=%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F&amp;campaign=mobile_watchPageActionCta&amp;returntoquery=article_action%3Dwatch&amp;type=signup">Зарегистрироваться</a>
+</div>
+</div></div></div>
+		<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":255,"wgHostname":"mw1083"});
+}</script><script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.user","mediawiki.hidpi","mobile.stable","mobile.editor","mobile.toggling","mobile.loggingSchemas","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector"],null,true);
+}</script>
+		
+		
+		</body></html>

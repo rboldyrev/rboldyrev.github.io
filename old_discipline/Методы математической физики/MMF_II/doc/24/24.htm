@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js animations" lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Многочлены Лежандра — Википедия</title>
+<meta name="generator" content="MediaWiki 1.25wmf12">
+<link rel="alternate" href="android-app://org.wikipedia/http/ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0">
+<link rel="alternate" type="application/x-wiki" title="Править" href="https://ru.m.wikipedia.org/w/index.php?title=%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0&amp;action=edit">
+<link rel="edit" title="Править" href="https://ru.m.wikipedia.org/w/index.php?title=%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0&amp;action=edit">
+<link rel="apple-touch-icon" href="https://bits.wikimedia.org/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://bits.wikimedia.org/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://ru.m.wikipedia.org/w/opensearch_desc.php" title="Википедия (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://ru.wikipedia.org/w/api.php?action=rsd">
+<link rel="alternate" hreflang="x-default" href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0">
+<link rel="copyright" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Википедия&nbsp;— Atom-лента" href="https://ru.m.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+<link rel="canonical" href="http://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0">
+<link rel="stylesheet" href="24_files/load.css">
+<style>
+@media print{#centralNotice{display:none}}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:ddb0c98a055632ae8e349c9cf48ac703 */
+.fancycaptcha-reload-loading{background-image:url(data:image/gif;base64,R0lGODlhQABAAPIEALOzs05OTouLixoaGkxMTAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAEACwAAAAAQABAAAAD/0i63P4wyknrGnjYzW3OXSgyHzaeXamhaOAGkRoBNMBC7wvJT13fjpxrV4L4aMCGcOjgNY7IJGP5cDKgUiW1YVVAbdnp9lK8YsNiIbe8+KK1avLHfHzDcyQ2wc3SRZYwCk58RlF/cQ9jBHNtdYU+EoCBd0wSZ0+EiZKTC3gVkJhfYDibnFmiP5GlpiyoqRSrSa6jG5uyoieSt5e5iK2OSX67dsTFxsfICgLLzM3NdrOvztPOaNGg1NkC1tdR2tTc3crf1WHdhuTM0NfJ7e7v8BHqUq9A07v1I9n4oCLa/P02kAMIbEK6U7MMfluHSsLCULQs5dvTUB44B7weTaSYsVTBPY2GONLq2Cjgg3kgDV3KhDHkiEy8WL6BWVCmuYw4SdLLadImwZYmRW4EQrJowZ1HvSQV6pLoUqYpww3VqfNX05JDRcZTGnRrVK8UqoKlE3EsvAQAIfkEBQoABAAsBQABACwAMAAAA5dIutzOIYZHq21S3s1Vjl1YfZNoQl81rMP5kBTLulj6yCuNZjfe6h5bwwdcwIbEIuG48P2UTIVTGeQ1k9TodCHo0phbRXcscFmluAaZTMWK1+yizAFfUyt1+/2RH+8pfX+AdYJ4eoWDZYiLjI2Oj5CRkpOUlZaXlgCakpqdAI+eno6hooukoYinqIWqnYytn6+noKuQrpIJACH5BAUKAAQALAEABQA6AB4AAAOLSLrc8qLJKYMNNFMItSfX9X3cM2ahdWqluTKp+m7lvMQ2Xc8xlk+tyKr303FexCKwdUoqJcEm7rncaZyTgfbH9Eyz2nCue02Bw+JxZxSSoN8D6hP+lv/odbsNn9bv8X5FgIF3eYSCW4eKi4yNOQCQkZKSjhOTl5OVDZicAJoMnZifC6GXo6SlkKcKCQAh+QQFCgAEACwFAAEAOgAiAAADiki63M4iikervVRKzDvXkSeOEEieHjihrKW28PPGtDLX8Y23+o72PhIwKBoSO0YWYPkznQLQxnIKOGme0CyDSj06suDAltv1hsNj8vR4RqfVTFzb7YCvaXPtxV7Le+B9bSRkgWAtd4VeiouMjY4kA5GSk5OPDJSYlJYKmZ0DmwSemaCimKChpZEECQAh+QQFCgAEACwPAAUAMAAsAAADjEiwQP4wyieqmJgxzKO1HaQtYfhVpTOSqXSi7dq656zINvFe9trMu9xtZAsKfS3jEVdSLommlzDC5EinImjnin1okqCueEwum8/otHrNbrvf8LicEKjb7/c2fo9n8/8BfoB7goN5hYZziouMLQOPjQSPkwOMlJSKl5hympecnZtwoJOfoJmdlp6NpBAJACH5BAUKAAQALB0AAQAeADoAAAOQSLBA/jBKyNi8uC7Mo25d+IWiRnbjmZnqlbbSC1PsTFe2V+fKnsstgdCBmwmPAh4BicwxmbYnNChtUqtJY5W35U6VyyF4TC6bz+i0es1uuzGBeDlOD4zrdSU+n9vj+358M4F0HAOHAxKEdheIiBOBGI6HcH+Nk4mVjJKYYJiZSp+enaOTY6ShqDyqOaytjxwJACH5BAUKAAQALB0ABQAiADoAAAOTSLrc8KDJSReENdf7tGdc933hSJZmFkapirbTCm/vDNa2xeXxzkuXn3BILBqPyKRyyWwqBNCoVDqbWqewq1aQ3Vq7Xio47Cybz+i0et0MuAPH99s2qA8YcvfMbl/k9S18dXh/gYKEeYZ8DX9wJoJ3iHIpkBKNj4eWiSOVmpsenZ5zH6GMnxqlpoCkmUSpP6+wfUYJACH5BAUKAAQALA8ADwAsADAAAAOUSLrc/pCBGauNM4PLrdZd2HyfaJKlyaGp6rGUu7JySNcdiZ/x7v/AoHBILBqPyKRyyWw6BdAndMqcWgXKqzWpvSK73iOY2hiYB74xlnE+/8DlNnoRqAdcWrZ8TrDbZWQKe3x9fndAgwyGhz6JioaIew2LP46PfpVyD5Q7lpd/nZqbkKFtEJylhJOkSqhJrkiwsaA7CQAh+QQFCgAEACwFAB0AOgAeAAADhEi63P7wgUlrjThrYrvdYOiNQGhmpHeuUvqx8OJScW3feK6fQ7/jveDgFxMKiSzjERlSGpkb5xOakQapUasjwA2ABGABTProdjXhcHJaNnszafDYF3Fz0XEx0f7Gx/d2X3k/fCZ5ejmFIYc6ioaDOIEskDaOJ4yVbjWUMZIwnJ1nNmkhCQAh+QQFCgAEACwBAB0AOgAiAAADjUiz3E0wykmrrS67y7vX4OCNZBRqZdqdmepaLPPOdG3feK7fQb8DwFpvGMgBjwAXkWhEHktLJs6J9ESXTeqzcsXqtM5Jd7iTgLeQcbFsPku6bAv47VUJ7oIXVex74fEzaDl/d3E0hHmGfoSKi3+NLoiQdoyTJZKWJJiZHpucHJ6fFqGiFKSlEqeoEY83CQAh+QQFCgAEACwBAA8AMAAsAAADjkiq0/swyklZuzVrevvY4OZ5YSmNpKlaKLaqrfua8by29jvms8z/wKBwCAoYj0gkcZFsJpcEpzQAnTqr1ic2S4V6v+CweEwum8/o9FjAFoAAcMCv3dbE4zw6236X2/R7GX1wM4BuG4N+KoZvgyuMIYmLgCWSJZCVjiGUK5obmCaWGpwvnhmknX2bdTl3BAkAIfkEBQoABAAsBQAFAB4AOgAAA49Iukzzo8k5IaS42pi72o/ngWIHciV1pirJatsrrVlgZ/Rk7wHm6rwd7EIJBmfEopEnUyyPzaewSZBSncvrwqhlTLvgsHhMLpvP6LR6TRG4w+64QCuXX+t2Gb7+2vNZfnFNgXODe3R/LwCLAAqCTYyMYJGLk5SWkZiSXZSNnJefmaGbWp2alaOopaCroqMECQA7) !important;background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/images/ajax-loader.gif?2014-12-10T20:13:20Z) !important!ie}.loading.spinner{height:54px;text-align:center;background-position:50%}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:c15a3c1e9241509006f4a823c43f74b8 */
+#notifications{height:0;position:absolute;z-index:5;width:100%}.toast,.drawer{bottom:0;left:0;right:0;background-color:#f3f3f3;box-shadow:0 -1px 8px 0 rgba(0,0,0,0.35);word-wrap:break-word;z-index:5;display:none}.toast.visible,.drawer.visible{display:block}.animations .toast,.animations .drawer{display:block;visibility:hidden; -webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0);bottom:100px;opacity:0;-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform .25s,opacity .25s,visibility 0s .25s,bottom 0s .25s;transition:transform .25s,opacity .25s,visibility 0s .25s,bottom 0s .25s}.animations .toast.visible,.animations .drawer.visible{bottom:0;-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform .25s,opacity .25s;transition:transform .25s,opacity .25s;visibility:visible;opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.toast{font-size:.9em;padding:.9em 1em;background-color:#373737;color:#fff;margin:0 10% 20px;width:80%;text-align:center;border-radius:3px}.toast.error{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/images/error.png?2014-12-10T20:13:20Z);background-position:16px 50%;background-repeat:no-repeat;padding-left:5%;width:75%;border:none}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:36f34ced1bda66ce9c18d94a815a357a */
+.drawer.references{max-height:10em;overflow-y:auto}.stable .references h3{margin:0;padding-right:4px;display:inline}.stable .references .mw-cite-backlink{display:none}.stable .references .icon{float:right;margin-top:.7em}.stable .references .mw-ui-icon{float:right;line-height:normal}.alpha .drawer.references,.beta .drawer.references{background-color:#111;color:#CCC;padding:20px}.alpha .drawer.references.text,.beta .drawer.references.text{font-size:1em}.alpha .drawer.references a,.beta .drawer.references a{background-image:none;color:#5880C0}.alpha .drawer.references .cite,.beta .drawer.references .cite{padding-bottom:20px}.alpha .drawer.references .cite:after,.beta .drawer.references .cite:after{content:"";display:table;clear:both}.alpha .drawer.references .cite .text,.beta .drawer.references .cite .text{color:#888;cursor:default;letter-spacing:.2em;float:left;font-size:0.75em;text-transform:uppercase}.alpha .drawer.references .cite .cancel,.beta .drawer.references .cite .cancel{float:right;line-height:normal}.alpha .drawer.references .mw-cite-backlink,.beta .drawer.references .mw-cite-backlink{display:none}.alpha .drawer.references .reference-text,.beta .drawer.references .reference-text{line-height:1.4}.alpha .drawer.references .cite .text{line-height:2.5em;height:2em}.beta .drawer.references .cite .text{padding:.75em 0 0 2.5em}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:e71f3b83bff12da2c9fd005c1a3e6589 */
+.mw-ui-input{-webkit-appearance:none;border:1px solid #CCC;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%;padding:.4em .3em .2em .6em;display:block;vertical-align:middle;border-radius:2px;color:inherit;background-color:inherit;font-family:inherit;font-size:inherit;line-height:inherit;-webkit-transition:border linear .2s,box-shadow linear .2s;-moz-transition:border linear .2s,box-shadow linear .2s;-o-transition:border linear .2s,box-shadow linear .2s;transition:border linear .2s,box-shadow linear .2s}.mw-ui-input::-webkit-input-placeholder{font-style:italic;font-weight:normal}.mw-ui-input::-moz-placeholder{font-style:italic;font-weight:normal}.mw-ui-input:-moz-placeholder{font-style:italic;font-weight:normal}.mw-ui-input:-ms-input-placeholder{font-style:italic;font-weight:normal}.mw-ui-input:invalid{box-shadow:none}.mw-ui-input:focus{box-shadow:inset .45em 0 0 #347bff;border-color:#898989;outline:0}.mw-ui-input:disabled{border-color:#EEE;color:#CCC}textarea.mw-ui-input{min-height:8em}input[type="number"],.mw-ui-input-inline{display:inline-block;width:auto}.mw-ui-input-large{margin-top:0;margin-bottom:0}.mw-ui-input-large + .mw-ui-input-large{margin-top:-1px}.mw-ui-input-large:focus{position:relative}input.mw-ui-input-large{font-size:1.75em;font-weight:bold;line-height:1.25em}@media all and (min-width:768px){.mw-ui-input-inline{min-width:320px}}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:346ff2efd30f644472bc162fa3d793b7 */
+.client-js .collapsible-heading,.client-js .collapsible-block{clear:both}.client-js .collapsible-heading{cursor:pointer;position:relative;border-bottom:solid 1px #E2E3E4}.client-js .collapsible-heading .icon{margin-right:12px}.client-js .collapsible-heading .indicator{float:left}.client-js .collapsible-heading .indicator.mw-ui-icon{margin-top:.7em;font-size:.4em}.client-js .section-heading.open-block{padding-right:45px;margin-bottom:.5em}.client-js .collapsible-block{width:100%;display:none}.client-js .collapsible-block.open-block{display:block}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:27a5e3c9203cfac4e0fd7e013b259320 */</style><style>
+.overlay-enabled #mw-mf-page-center{overflow:hidden;display:block}.overlay-enabled .overlay,.overlay-enabled #mw-mf-page-center{height:100%}.overlay{position:absolute;top:0;left:0;width:100%;background:#fff;z-index:4;padding-top:3.35em;display:none}.overlay.visible{display:block}.overlay input,.overlay textarea{padding:.5em}.overlay .captcha-word,.overlay .summary{margin:0 0 .7em;width:100%}.overlay .wikitext-editor{min-height:50%;line-height:1.5;border:none}.overlay .panel{padding:12px 16px;border-bottom:1px solid #EEE}.overlay .license{font-size:.9em;color:#777;margin-top:.5em;line-height:1.4}.overlay .content .cancel{display:block;margin:1em auto}.overlay .content-header{background:#f3f3f3;border-bottom:1px solid #e2e2e2;padding:20px 16px;line-height:inherit}.overlay-header{display:table;width:100%;border-spacing:0;border-collapse:collapse;border-bottom:1px solid #CCC}.overlay-header .overlay-title{width:100%}.overlay-header .overlay-title,.overlay-header .overlay-search{padding:.15em .5em 0}.overlay-header .overlay-action a,.overlay-header .overlay-action button{display:table-cell;vertical-align:middle;width:auto;padding:0 1.2em;font-weight:bold;white-space:nowrap;text-decoration:none;border-radius:0;height:3.35em;cursor:pointer;position:relative}.overlay-header .overlay-action a:before,.overlay-header .overlay-action button:before{top:0}.overlay-header .overlay-action a[disabled],.overlay-header .overlay-action button[disabled]{opacity:.5}.overlay-header .continue{color:white;background-color:#347bff}.overlay-header .submit{color:white;background-color:#00af89}.overlay-header h2{display:table;width:100%;font-size:1em}.overlay-header h2 > *{width:1em;display:table-cell;padding-right:.4em}.overlay-header h2 span{width:auto;max-width:1em}.overlay-header > ul,.overlay-header > div{display:table-cell;vertical-align:middle}.overlay-header > ul li{display:block}.overlay-header > ul,.overlay-header button{width:3.35em}.overlay-header .overlay-action a,.overlay-header button{min-height:3.35em}.overlay-header-container,.overlay-footer-container{width:100%;background:#fff;z-index:5}.overlay-header-container.position-fixed,.overlay-footer-container.position-fixed{left:0;right:0}.overlay-header-container{top:0}.overlay-footer-container{background-color:#FFF;bottom:0}.overlay-footer-container a{display:block;padding:1em 1em 1em 10px;border-top:1px solid #CCC;text-align:center}.overlay-bottom{border-top:1px solid #CCC;top:auto;bottom:0;height:auto !important;background:#F9F9F9}.overlay-bottom .overlay-header-container{background:#F9F9F9}.ios .overlay-header-container{position:absolute !important}.ios .overlay-footer-container{position:absolute !important}.ios .overlay-content{overflow-y:scroll;-webkit-overflow-scrolling:touch}@media all and (min-width:768px){.overlay .panel{padding:12px 3.35em}}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:70afa332ccd717e6b09b2a446f9362ff */
+.page-list .watch-this-article{position:absolute;right:0;top:50%;margin-top:-24px;width:48px;height:48px}.animations .mw-ui-icon.watch-this-article,.animations .icon.watch-this-article{-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform .5s;transition:transform .5s}.animations .mw-ui-icon.watch-this-article.mw-ui-icon-watched,.animations .mw-ui-icon.watch-this-article.icon-watched,.animations .icon.watch-this-article.mw-ui-icon-watched,.animations .icon.watch-this-article.icon-watched{-webkit-transform:rotate(72deg);transform:rotate(72deg)}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:1475c945fcd1c0e5fba0b7196bb3c563 */
+.icon-toc{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/toc/images/contents-ltr.png?2014-12-10T20:13:20Z);background-image:-webkit-linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/toc/images/contents-ltr.svg?2014-12-10T20:13:20Z);background-image:linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/toc/images/contents-ltr.svg?2014-12-10T20:13:20Z)}.stable .toc-mobile .collapsible-heading{line-height:1.4}.client-js .toc-mobile{position:relative;background-color:#F9F9F9;border:solid 1px #EEE;font-size:1.3em;float:left;clear:left;margin:1em 0}.client-js .toc-mobile .toc-button{float:left;display:block}.client-js .toc-mobile .toc-button.mw-ui-icon{font-size:.8em}.client-js .toc-mobile .collapsible-heading{font-family:"Helvetica Neue","Helvetica","Nimbus Sans L","Arial","Liberation Sans",sans-serif;font-size:.8em;background-position:right center;font-weight:bold;padding:0.7em 0;border-bottom:none}.client-js .toc-mobile .collapsible-heading.icon{border-right:24px solid transparent}.client-js .toc-mobile .collapsible-heading .indicator{margin-top:.4em;float:right;margin-left:.5em}.client-js .toc-mobile .collapsible-block{border-bottom:none;margin-left:52px;margin-right:24px;font-size:0.7em}.client-js .toc-mobile .collapsible-block > ul{padding-bottom:1.3em}.client-js .toc-mobile .collapsible-block ul{list-style:none;margin-bottom:1px}.client-js .toc-mobile .collapsible-block ul li{padding-top:.8em;line-height:1.2}.client-js .beta .toc-mobile .collapsible-heading,.client-js .stable .toc-mobile .collapsible-heading{padding-left:.8em}.client-js .beta .toc-mobile .collapsible-heading .indicator,.client-js .stable .toc-mobile .collapsible-heading .indicator{margin-top:0}.client-js .collapsible-heading .indicator{margin-top:0.2em}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:fe16f9819fee9bfc34ebd8b6b32e5f4b */
+.mw-mf-cleanup{display:inline-block;padding:10px 15px 10px 44px;margin-bottom:4px}.beta .mw-mf-cleanup,.stable .mw-mf-cleanup{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/blue-triangle.png?2014-12-10T20:13:20Z);background-image:-webkit-linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Cpath%20fill%3D%22%2336b%22%20d%3D%22M1.112%2073.678l38.885-67.356%2038.892%2067.356z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M43.525%2057.7v7.103h-6.823v-7.103h6.823zm-2.029-5.905h-3.272l-1.753-12.245v-7.854h6.824v7.854l-1.799%2012.245z%22%2F%3E%3C%2Fsvg%3E);background-image:-webkit-linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/blue-triangle.svg?2014-12-10T20:13:20Z)!ie;background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Cpath%20fill%3D%22%2336b%22%20d%3D%22M1.112%2073.678l38.885-67.356%2038.892%2067.356z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M43.525%2057.7v7.103h-6.823v-7.103h6.823zm-2.029-5.905h-3.272l-1.753-12.245v-7.854h6.824v7.854l-1.799%2012.245z%22%2F%3E%3C%2Fsvg%3E);background-image:linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/blue-triangle.svg?2014-12-10T20:13:20Z)!ie;background-position:10px center left}.beta .overlay .cleanup li .issue-notice,.stable .overlay .cleanup li .issue-notice{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/gray-triangle.png?2014-12-10T20:13:20Z);background-image:-webkit-linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Cpath%20fill%3D%22%23ccc%22%20d%3D%22M1.092%2073.695l38.906-67.39%2038.91%2067.39z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M43.528%2057.71v7.104h-6.829v-7.104h6.829zm-2.03-5.908h-3.275l-1.754-12.253v-7.859h6.828v7.858l-1.799%2012.254z%22%2F%3E%3C%2Fsvg%3E);background-image:-webkit-linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/gray-triangle.svg?2014-12-10T20:13:20Z)!ie;background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Cpath%20fill%3D%22%23ccc%22%20d%3D%22M1.092%2073.695l38.906-67.39%2038.91%2067.39z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M43.528%2057.71v7.104h-6.829v-7.104h6.829zm-2.03-5.908h-3.275l-1.754-12.253v-7.859h6.828v7.858l-1.799%2012.254z%22%2F%3E%3C%2Fsvg%3E);background-image:linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/images/issues/gray-triangle.svg?2014-12-10T20:13:20Z)!ie;background-position:center 24px}.overlay .cleanup li{border-bottom:solid 1px #CCC}.overlay .cleanup li .issue-notice{padding:60px 16px 24px 16px}.overlay .cleanup li .issue-notice:before{top:24px;left:50%;position:absolute;height:auto}@media all and (min-width:768px){.overlay .cleanup li .issue-notice{padding:2em 1em 2em 60px;margin:0 1em 0 3.35em}.overlay .cleanup li .issue-notice.icon{-o-background-size:50px 50px;-webkit-background-size:50px 50px;background-size:50px 50px;background-position:left center}.overlay .cleanup li .issue-notice:before{top:0;left:0;height:100%;width:50px}}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:c97b07a0713824124f36cf5cf949df59 */
+.search-overlay{background:rgba(255,255,255,0.8)}.search-overlay .overlay-header,.search-overlay .results{background-color:#fff}.search-overlay input{border:none;padding:0}.search-overlay .overlay-content{height:100%;width:100%}.search-overlay .search-content{border-bottom:1px solid #CCC;cursor:pointer}.search-overlay .search-content button{background-image:url(//bits.wikimedia.org/static-1.25wmf12/extensions/MobileFrontend/less/modules/search/../images/searchContent.png?2014-12-10T20:13:20Z)}.search-overlay .search-content .caption{padding:1em .5em}.search-overlay .results{box-shadow:0 3px 3px 0 rgba(117,117,117,0.3)}.search-overlay .results li{padding-left:3.85em}.search-overlay .results li .list-thumb{width:3.35em}.search-overlay .results li:last-child{border-bottom:none}.search-overlay .results h2{font:inherit}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:95056ba599fe9a28ffe8cf501d1c4ef5 */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script src="24_files/load_002.php"></script><script src="24_files/load.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Многочлены_Лежандра","wgTitle":"Многочлены Лежандра","wgCurRevisionId":66016494,"wgRevisionId":66016494,"wgArticleId":632225,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Ортогональные многочлены"],"wgBreakFrames":false,"wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgMonthNamesShort":["","янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"],"wgRelevantPageName":"Многочлены_Лежандра","wgRelevantArticleId":632225,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"ru","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"8":true,"9":true,"10":true,"11":true,"12":true,"13":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"828":true,"829":true}},"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["ru-ru","ru","en-us","en"],"wgULSCurrentAutonym":"русский","wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3,"quality":2,"pristine":4}}},"wgStableRevisionId":66016494,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q215405","wgMFUseCentralAuthToken":true,"wgMFAjaxUploadProgressSupport":true,"wgMFAnonymousEditing":false,"wgMFPhotoUploadAppendToDesc":"{{Uploaded from Mobile|platform=Web|version=}}\n{{subst:unc}}","wgMFLeadPhotoUploadCssSelector":"img, .navbox","wgMFEnableCssAnimations":true,"wgMFPhotoUploadEndpoint":"//commons.m.wikimedia.org/w/api.php","wgPreferredVariant":"ru","wgIsPageEditable":true,"wgMFDeviceWidthTablet":768,"wgMFMode":"stable","wgMFCollapseSectionsByDefault":true,"wgTOC":true,"wgMFPageSections":true,"wgMFShowRedLinks":false,"wgImagesDisabled":false,"wgUserCanUpload":false});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"ru"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: ruwiki:resourceloader:filter:minify-js:7:115d09ffb88d9e770c8e4ad3962b675d */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mobile.head","ext.centralNotice.bannerController.mobiledevice","ext.centralNotice.bannerController.mobile","ext.centralNotice.bannerController.lib","ext.centralNotice.bannerChoiceData"]);
+}</script>
+<link rel="dns-prefetch" href="https://meta.m.wikimedia.org/">
+<link rel="apple-touch-icon" href="https://bits.wikimedia.org/apple-touch/wikipedia.png">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width">
+</head>
+<body class="mediawiki ltr sitedir-ltr stable mw-mobile-mode skin-minerva action-view">
+		<div id="mw-mf-viewport">
+			<div id="mw-mf-page-left" class="navigation-drawer">
+						<ul>
+		<li><a href="https://ru.m.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" class="icon icon-text icon-home">Домой</a></li><li><a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0/#/random" class="icon icon-text icon-random" id="randomButton">Случайная</a></li><li class="jsonly"><a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9F%D0%BE%D0%B1%D0%BB%D0%B8%D0%B7%D0%BE%D1%81%D1%82%D0%B8" class="icon icon-text icon-nearby">Рядом</a></li>		</ul>
+		<ul>
+		<li class="jsonly"><a href="https://ru.m.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F%3A%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA+%D0%BD%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F" class="icon icon-text icon-watchlist">Список наблюдения</a></li><li><a href="https://ru.m.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8_%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8&amp;returnto=%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B+%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0" class="icon icon-text icon-settings">Настройки</a></li><li class="jsonly"><a href="https://ru.m.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B+%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0&amp;returntoquery=welcome%3Dyes" class="icon icon-text icon-anonymous-white icon-anon">Представиться системе</a></li>		</ul>
+		<ul class="hlist">
+		<li><a href="https://ru.m.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">Описание Википедии</a></li><li><a href="https://ru.m.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>		</ul>
+					</div>
+			<div id="mw-mf-page-center">
+				<div id="siteNotice"><div id="centralNotice"></div></div>				<div class="header">
+					<a title="Открыть главное меню" href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BC%D0%B5%D0%BD%D1%8E" class="icon icon-mainmenu" id="mw-mf-main-menu-button"></a>							<form action="/w/index.php" class="search-box">
+							<input readonly="readonly" name="search" placeholder="Искать в Википедии" title="Искать в Википедии [f]" accesskey="f" id="searchInput" class="search" autocomplete="off" type="search"><input name="fulltext" value="Найти" title="Найти страницы, содержащие указанный текст" class="fulltext-search no-js-only icon icon-search" type="submit">							</form>
+											</div>
+				<div id="content_wrapper">
+				<div class="top-bar truncated-text" id="mw-mf-last-modified"><a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:History/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0"><span class="mediaWiki_htmlEmitter">Последняя правка сделана 3 месяцев назад</span></a> участником <a href="https://ru.m.wikipedia.org/wiki/Special:UserProfile/%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D1%88%D0%B8%D1%88%D0%B8%D0%BD">Антоншишин</a></div>		<script>
+			if ( window.mw && mw.mobileFrontend ) { mw.mobileFrontend.emit( 'header-loaded' ); }
+		</script>
+				<div class="pre-content">
+			<h1 id="section_0">Многочлены Лежандра</h1><ul id="page-actions" class="hlist"><li id="ca-edit" class="icon icon-32px icon-edit-enabled" title="Редактировать ведущий раздел страницы."></li><li title="Наблюдать за этой страницей" id="ca-watch" class="icon icon-watch icon-32px watch-this-article"><a>Наблюдать за этой страницей</a></li></ul>		</div>
+		<div id="content" class="content" dir="ltr" lang="ru">			<div><table class="infobox vcard" style="">
+<tbody><tr>
+<td colspan="2" class="fn" style="text-align:center; font-size: 125%; font-weight: bold; background-color:#DEDEE2; font-size: 130%;">Многочлены Лежандра</td>
+</tr>
+<tr>
+<th colspan="2" style="text-align:center; background-color:#DEDEE2">Общая информация</th>
+</tr>
+<tr>
+<th style="text-align: right; background:#eee; padding-right: 5px;">Формула</th>
+<td class="" style="">
+<p><img class="mwe-math-fallback-image-inline tex" alt="P_n(z)=\frac{1}{2^n n!}\frac{d^n}{dz^n}(z^2-1)^n" src="24_files/7aaec315f80b0adaeea513fbe9456eb2.png"></p>
+</td>
+</tr>
+<tr>
+<th style="text-align: right; background:#eee; padding-right: 5px;"><a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BA%D0%B0%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" title="Скалярное произведение">Скалярное произведение</a></th>
+<td class="" style="">
+<p><img class="mwe-math-fallback-image-inline tex" alt="(f, g) = \int_{-1}^{1} {f(x) g(x) dx}" src="24_files/9e2c05eee3919c686a3bf791be4ab98d.png"></p>
+</td>
+</tr>
+<tr>
+<th style="text-align: right; background:#eee; padding-right: 5px;">Область определения</th>
+<td class="" style="">
+<p><img class="mwe-math-fallback-image-inline tex" alt="[-1, 1]" src="24_files/d060b17b29e0dae91a1cac23ea62281a.png"></p>
+</td>
+</tr>
+<tr>
+<th colspan="2" style="text-align:center; background-color:#DEDEE2">Дополнительные характеристики</th>
+</tr>
+<tr>
+<th style="text-align: right; background:#eee; padding-right: 5px;"><a href="https://ru.m.wikipedia.org/wiki/%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5" title="Дифференциальное уравнение">Дифференциальное уравнение</a></th>
+<td class="" style="">
+<p><img class="mwe-math-fallback-image-inline tex" alt="(1-z^2) \frac{\mathrm d^2u}{\mathrm dz^2}-2z\frac{\mathrm du}{\mathrm dz} + n(n+1)u = 0" src="24_files/bbb2d13965545fa3cbb8422e4f01df6c.png"></p>
+</td>
+</tr>
+<tr>
+<th style="text-align: right; background:#eee; padding-right: 5px;"><a href="https://ru.m.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0_%28%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0%29" title="Норма (математика)">Норма</a></th>
+<td class="" style="">
+<p><img class="mwe-math-fallback-image-inline tex" alt=" ||P_n(x)|| = \sqrt{\frac{2}{2n+1}} " src="24_files/b54669aa3d750fb9f3cb1afbdfed4996.png"></p>
+</td>
+</tr>
+<tr>
+<th style="text-align: right; background:#eee; padding-right: 5px;">Названы в честь</th>
+<td class="" style="">
+<p><a href="https://ru.m.wikipedia.org/wiki/%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80,_%D0%90%D0%B4%D1%80%D0%B8%D0%B5%D0%BD_%D0%9C%D0%B0%D1%80%D0%B8" title="Лежандр, Адриен Мари">Лежандр, Адриен Мари</a></p>
+</td>
+</tr>
+</tbody></table>
+<p><b>Многочлен Лежа́ндра</b>&nbsp;— <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD" title="Многочлен">многочлен</a>, который в наименьшей степени отклоняется от нуля в <i>смысле среднего квадратического</i>. Образует <a href="https://ru.m.wikipedia.org/wiki/%D0%9E%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0" title="Ортогональная система">ортогональную систему</a> <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD" title="Многочлен">многочленов</a> на <a href="https://ru.m.wikipedia.org/wiki/%D0%9E%D1%82%D1%80%D0%B5%D0%B7%D0%BE%D0%BA#.D0.9E.D1.82.D1.80.D0.B5.D0.B7.D0.BE.D0.BA_.D1.87.D0.B8.D1.81.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BF.D1.80.D1.8F.D0.BC.D0.BE.D0.B9" title="Отрезок">отрезке</a> <img class="mwe-math-fallback-image-inline tex" alt="[-1,\;1]" src="24_files/3da66189fa33d5849f1af59c7c72b62a.png"> по <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%B5%D1%80%D0%B0_%D0%9B%D0%B5%D0%B1%D0%B5%D0%B3%D0%B0" title="Мера Лебега">мере Лебега</a>. Многочлены Лежандра могут быть получены из многочленов <img class="mwe-math-fallback-image-inline tex" alt="\{1,\;x,\;x^2,\;x^3,\;\ldots\}" src="24_files/8c978bd19a4d9bdd2890f4cc66cd27e2.png"> <a href="https://ru.m.wikipedia.org/wiki/%D0%9E%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%93%D1%80%D0%B0%D0%BC%D0%B0_%E2%80%95_%D0%A8%D0%BC%D0%B8%D0%B4%D1%82%D0%B0" title="Ортогонализация Грама ― Шмидта" class="mw-redirect">ортогонализацией Грама ― Шмидта</a>.</p>
+<p>Названы по имени французского математика <a href="https://ru.m.wikipedia.org/wiki/%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80,_%D0%90%D0%B4%D1%80%D0%B8%D0%B5%D0%BD_%D0%9C%D0%B0%D1%80%D0%B8" title="Лежандр, Адриен Мари">Адриен Мари Лежандра</a>.</p>
+<p></p>
+<div class="toc-mobile"><h2 aria-controls="collapsible-block-0" aria-haspopup="true" tabindex="0" class="collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><div class="icon icon-toc  toc-button" title=""></div><span>Содержание</span></h2>
+<div aria-expanded="true" aria-pressed="true" id="collapsible-block-0" class="collapsible-block open-block">
+	<ul>
+	<li>
+		<a href="#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5">Определение</a>
+		<ul>
+			<li>
+			<a href="#.D0.9F.D0.BE.D0.BB.D0.B8.D0.BD.D0.BE.D0.BC.D1.8B_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0_.D0.B8_.D0.BF.D1.80.D0.B8.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D0.B5_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0_.D0.BF.D0.B5.D1.80.D0.B2.D0.BE.D0.B3.D0.BE_.D0.B8_.D0.B2.D1.82.D0.BE.D1.80.D0.BE.D0.B3.D0.BE_.D1.80.D0.BE.D0.B4.D0.B0">Полиномы Лежандра и присоединённые функции Лежандра первого и второго рода</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.92.D1.8B.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_.D1.81.D1.83.D0.BC.D0.BC.D1.8B">Выражение через суммы</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.A0.D0.B5.D0.BA.D1.83.D1.80.D1.80.D0.B5.D0.BD.D1.82.D0.BD.D0.B0.D1.8F_.D1.84.D0.BE.D1.80.D0.BC.D1.83.D0.BB.D0.B0">Рекуррентная формула</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D0.BB.D0.B8.D0.BD.D0.BE.D0.BC.D0.B0_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Производная полинома Лежандра</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.9A.D0.BE.D1.80.D0.BD.D0.B8_.D0.BF.D0.BE.D0.BB.D0.B8.D0.BD.D0.BE.D0.BC.D0.B0_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Корни полинома Лежандра</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.A4.D0.BE.D1.80.D0.BC.D1.83.D0.BB.D1.8B_.D1.81_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8">Формулы с разложениями</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.9F.D1.80.D0.B8.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D1.8B_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Присоединённые многочлены Лежандра</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.A1.D0.B4.D0.B2.D0.B8.D0.BD.D1.83.D1.82.D1.8B.D0.B5_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D1.8B_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Сдвинутые многочлены Лежандра</a>
+			<ul>
+			</ul>
+		</li>
+	</ul>
+	</li>
+	<li>
+		<a href="#.D0.9C.D0.B0.D1.82.D1.80.D0.B8.D1.86.D0.B0_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D0.B0_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Матрица функции многочлена Лежандра</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B">Примеры</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0">Свойства</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.A0.D1.8F.D0.B4.D1.8B_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D0.BE.D0.B2_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Ряды многочленов Лежандра</a>
+		<ul>
+			<li>
+			<a href="#.D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.B8.D0.BF.D1.88.D0.B8.D1.86.D0.B5.D0.B2.D0.BE.D0.B9_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8_.D0.B2_.D1.80.D1.8F.D0.B4_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D0.BE.D0.B2_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Разложение липшицевой функции в ряд многочленов Лежандра</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B3.D0.BE.D0.BB.D0.BE.D0.BC.D0.BE.D1.80.D1.84.D0.BD.D0.BE.D0.B9_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8">Разложение голоморфной функции</a>
+			<ul>
+			</ul>
+		</li>
+		<li>
+			<a href="#.D0.A2.D0.B5.D0.BE.D1.80.D0.B5.D0.BC.D0.B0_.D1.81.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F">Теорема сложения</a>
+			<ul>
+			</ul>
+		</li>
+	</ul>
+	</li>
+	<li>
+		<a href="#.D0.A4.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Функции Лежандра</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F">Примечания</a>
+		<ul>
+		</ul>
+	</li>
+	<li>
+		<a href="#.D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0">Литература</a>
+		<ul>
+		</ul>
+	</li>
+	</ul>
+</div>
+
+
+
+</div></div><h2 aria-controls="collapsible-block-0" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5">Определение</span><a href="#/editor/1" title="Редактировать раздел «Определение»" data-section="1" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-0" class="collapsible-block open-block">
+<h3><span class="mw-headline" id=".D0.9F.D0.BE.D0.BB.D0.B8.D0.BD.D0.BE.D0.BC.D1.8B_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0_.D0.B8_.D0.BF.D1.80.D0.B8.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D0.B5_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0_.D0.BF.D0.B5.D1.80.D0.B2.D0.BE.D0.B3.D0.BE_.D0.B8_.D0.B2.D1.82.D0.BE.D1.80.D0.BE.D0.B3.D0.BE_.D1.80.D0.BE.D0.B4.D0.B0">Полиномы Лежандра и присоединённые функции Лежандра первого и второго рода</span><a href="#/editor/2" title="Редактировать раздел «Полиномы Лежандра и присоединённые функции Лежандра первого и второго рода»" data-section="2" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<p>Рассмотрим <a href="https://ru.m.wikipedia.org/wiki/%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5" title="Дифференциальное уравнение">дифференциальное уравнение</a> вида <span class="citation" id="math_.D0.A3.D1.80.D0.B0.D0.B2.D0.BD.D0.9F.D0.BE.D0.BB.D0.9B.D0.B5.D0.B6"></span></p>
+<table style="border-bottom:none; border-top:none; background-color:#;" width="100%">
+<tbody><tr>
+<td style="vertical-align:middle; text-align:left; padding-left:2em" width="80"><img class="mwe-math-fallback-image-inline tex" alt="(1-z^2) \frac{\mathrm d^2u}{\mathrm dz^2}-2z\frac{\mathrm du}{\mathrm dz} + n(n+1)u = 0," src="24_files/edca3e95b124e1cbd898a9da0ef7951e.png"></td>
+<td style="vertical-align:middle; text-align:right;" width="20">(УравнПолЛеж)</td>
+</tr>
+</tbody></table>
+<p>где <img class="mwe-math-fallback-image-inline tex" alt="~z" src="24_files/d66da6b9deb2ae5213b7c4193238a4a6.png">&nbsp;— <a href="https://ru.m.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D0%BE%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%BE" title="Комплексное число">комплексная переменная</a>. Решения этого уравнения при целых <img class="mwe-math-fallback-image-inline tex" alt="~n" src="24_files/202481cace524e514625905a6bd4c310.png"> имеют вид <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD" title="Многочлен">многочленов</a>, называемых <i>многочленами Лежандра</i>. Полином Лежандра степени <img class="mwe-math-fallback-image-inline tex" alt="~n" src="24_files/202481cace524e514625905a6bd4c310.png"> можно представить через <a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0_%D0%A0%D0%BE%D0%B4%D1%80%D0%B8%D0%B3%D0%B0" title="Формула Родрига">формулу Родрига</a> в виде<sup id="cite_ref-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941039_1-0" class="reference"><a href="#cite_note-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941039-1">[1]</a></sup></p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_n(z)=\frac{1}{2^n n!}\frac{d^n}{dz^n}(z^2-1)^n" src="24_files/7aaec315f80b0adaeea513fbe9456eb2.png"></dd>
+</dl>
+<p>Часто вместо <img class="mwe-math-fallback-image-inline tex" alt="~z" src="24_files/d66da6b9deb2ae5213b7c4193238a4a6.png"> записывают косинус <a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D1%84%D0%B5%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82" title="Сферическая система координат">полярного угла</a>:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_n(\cos\theta)=\frac{1}{2^n n!}\frac{d^n}{d(\cos\theta)^n}(\cos^2\theta-1)^n" src="24_files/83e668f865e8ef640346be7b4ea9beae.png"></dd>
+</dl>
+<p>Уравнение (<a href="#math_.D0.A3.D1.80.D0.B0.D0.B2.D0.BD.D0.9F.D0.BE.D0.BB.D0.9B.D0.B5.D0.B6">УравнПолЛеж</a>) можно получить из частного случая <a href="https://ru.m.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%B3%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Гипергеометрическая функция">гипергеометрического уравнения</a>, называемого уравнением Лежандра <span class="citation" id="math_.D0.A3.D1.80.D0.B0.D0.B2.D0.BD.D0.9B.D0.B5.D0.B6"></span></p>
+<table style="border-bottom:none; border-top:none; background-color:#;" width="100%">
+<tbody><tr>
+<td style="vertical-align:middle; text-align:left; padding-left:2em" width="80"><img class="mwe-math-fallback-image-inline tex" alt="(1-z^2) \frac{\mathrm d^2u}{\mathrm dz^2}-2z\frac{\mathrm du}{\mathrm dz} + \left[ \nu(\nu+1) - \frac{\mu^2}{1-z^2}\right]u = 0," src="24_files/ee3ba096023109b4427d53ffb7b5f468.png"></td>
+<td style="vertical-align:middle; text-align:right;" width="20">(УравнЛеж)</td>
+</tr>
+</tbody></table>
+<p>где <img class="mwe-math-fallback-image-inline tex" alt="~\mu" src="24_files/a94533dc713dc21fdaa0bbd583e48ee1.png">, <img class="mwe-math-fallback-image-inline tex" alt="~\nu" src="24_files/744bfb6d7a412458bf1e97de09c0500e.png">&nbsp;— произвольные комплексные постоянные. Интерес представляют его решения, являющиеся однозначными и регулярными при <img class="mwe-math-fallback-image-inline tex" alt="~|z| &lt; 1" src="24_files/296cc451e8a71a8560856bf2b4a583dc.png"> (в частности, при действительных <img class="mwe-math-fallback-image-inline tex" alt="~z" src="24_files/d66da6b9deb2ae5213b7c4193238a4a6.png">) или когда действительная часть числа <img class="mwe-math-fallback-image-inline tex" alt="~z" src="24_files/d66da6b9deb2ae5213b7c4193238a4a6.png"> больше единицы. Его решения называют <i>присоединёнными функциями Лежандра</i> или <i>шаровыми функциями</i>. Подстановка вида <img class="mwe-math-fallback-image-inline tex" alt="w = (z^2-1)^{\mu/2}" src="24_files/66f6eff05c268e935819b5b5b70e8295.png"> в (<a href="#math_.D0.A3.D1.80.D0.B0.D0.B2.D0.BD.D0.9B.D0.B5.D0.B6">УравнЛеж</a>) даёт <span class="new">уравнение Гаусса</span>, решение которого в области <img class="mwe-math-fallback-image-inline tex" alt="|1 - z| &lt; 2" src="24_files/950575e186aa005b66e42e3f8321f9e8.png"> принимает вид</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="w = P_\nu^\mu(z)=\frac{1}{\Gamma(1-\mu)} \left( \frac{z+1}{z-1} \right)^{\mu/2} F\left(-\nu,\nu+1; 1-\mu; \frac{1}{2} - \frac{z}{2} \right)," src="24_files/345fe8f963c09e833e5858ddeaf9df3b.png"></dd>
+</dl>
+<p>где <i>F</i>&nbsp;— <a href="https://ru.m.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%B3%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Гипергеометрическая функция">гипергеометрическая функция</a>. Подстановка <img class="mwe-math-fallback-image-inline tex" alt="w = z^2" src="24_files/5e4298e487ee411c77c6a4447850c746.png"> в (<a href="#math_.D0.A3.D1.80.D0.B0.D0.B2.D0.BD.D0.9B.D0.B5.D0.B6">УравнЛеж</a>) приводит к решению вида</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="w = Q_\nu^\mu(z)= e^{\mu i \pi} 2^{-\nu-1}\sqrt{\pi} \frac{\Gamma(\nu+\mu+1)}{\Gamma(\nu+3/2)} z^{-\nu-\mu-1}(z^2-1)^{\mu/2} F\left(\frac{\nu}{2}+\frac{\mu}{2}+1,\frac{\nu}{2}+\frac{\mu}{2}+\frac{1}{2}; \nu+\frac{3}{2}; z^{-2} \right)," src="24_files/f1e9ad508489301d24c6537cb5f99433.png"></dd>
+</dl>
+<p>определённым на <img class="mwe-math-fallback-image-inline tex" alt="|z|&gt;1" src="24_files/a430127e961ba6b1699e5827926830de.png">. Функции <img class="mwe-math-fallback-image-inline tex" alt="P_\nu^\mu(z)" src="24_files/39ecb613685533d91c6d50f68f8fe47f.png"> и <img class="mwe-math-fallback-image-inline tex" alt="Q_\nu^\mu(z)" src="24_files/7a167f13037edb73aa125d3b165202ed.png"> называют функциями Лежандра <i>первого</i> и <i>второго рода</i>.<span style="margin-left:-.28em;"><sup id="cite_ref-.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._1.E2.80.941973.E2.80.94.E2.80.94126.E2.80.94127_2-0" class="reference"><a href="#cite_note-.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._1.E2.80.941973.E2.80.94.E2.80.94126.E2.80.94127-2">[2]</a></sup></span></p>
+<p>Справедливы соотношения<sup id="cite_ref-.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._1.E2.80.941973.E2.80.94.E2.80.94140_3-0" class="reference"><a href="#cite_note-.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._1.E2.80.941973.E2.80.94.E2.80.94140-3">[3]</a></sup></p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_\nu^\mu(z) = P_{-\nu-1}^\mu(z)" src="24_files/e57d822d073dc0b1d11bb4e32f79607d.png"></dd>
+</dl>
+<p>и</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="Q_\nu^\mu(z) \sin\pi(\nu+\mu) - Q_{-\nu-1}^\mu(z) \sin\pi(\nu-\mu) = \pi e^{i\mu\pi}\cos(\nu\pi)P_\nu^\mu(z)." src="24_files/dcb35ffd67345d2836fe637a5e3849ea.png"></dd>
+</dl>
+<h3><span class="mw-headline" id=".D0.92.D1.8B.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_.D1.81.D1.83.D0.BC.D0.BC.D1.8B">Выражение через суммы</span><a href="#/editor/3" title="Редактировать раздел «Выражение через суммы»" data-section="3" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<ul>
+<li>Многочлены Лежандра также определяются по следующим формулам:</li>
+</ul>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_n(x)=\frac{1}{2^n}\sum_{k=0}^{E(n/2)}(-1)^k\binom{n}{k}\binom{2n-2k}{n}x^{n-2k};" src="24_files/c72f5e225743df3e91a6128a405f3318.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_n(x)=\frac{1}{2^n}\sum_{k=0}^n\binom{n}{k}^2(x-1)^{n-k}(x+1)^{k};" src="24_files/b99cb0ebfb81d6ac153f217956aeb81d.png"></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_n(x)=\frac{(x+1)^n}{2^n}\sum_{k=0}^n(-1)^k\binom{n}{k}^2\left(\frac{x-1}{x+1}\right)^k" src="24_files/e5244b5ec7c0ac98eef20557f90de429.png">, если <img class="mwe-math-fallback-image-inline tex" alt="x\neq -1" src="24_files/ea010fb48948e2adfc234e121562907e.png">;</dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_n(x)=\frac{(x-1)^n}{2^n}\sum_{k=0}^n(-1)^k\binom{n}{k}^2\left(\frac{x+1}{x-1}\right)^k" src="24_files/f480521acead111a037d26fec543dbe7.png">, если <img class="mwe-math-fallback-image-inline tex" alt="x\neq 1" src="24_files/0dfcfecd43bec0005964b5f47653c306.png">.</dd>
+</dl>
+<h3><span class="mw-headline" id=".D0.A0.D0.B5.D0.BA.D1.83.D1.80.D1.80.D0.B5.D0.BD.D1.82.D0.BD.D0.B0.D1.8F_.D1.84.D0.BE.D1.80.D0.BC.D1.83.D0.BB.D0.B0">Рекуррентная формула</span><a href="#/editor/4" title="Редактировать раздел «Рекуррентная формула»" data-section="4" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<ul>
+<li>Они также могут быть вычислены по <a href="https://ru.m.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BA%D1%83%D1%80%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%B0%D1%8F_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C" title="Рекуррентная последовательность" class="mw-redirect">рекуррентной</a> формуле (при n&gt;1)<sup id="cite_ref-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94196_4-0" class="reference"><a href="#cite_note-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94196-4">[4]</a></sup>:</li>
+</ul>
+<p><span class="citation" id="math_.D0.A0.D0.B5.D0.BA.D1.83.D1.80.D1.80.D0.9B.D0.B5.D0.B6"></span></p>
+<table style="border-bottom:none; border-top:none; background-color:#;" width="100%">
+<tbody><tr>
+<td style="vertical-align:middle; text-align:left; padding-left:2em" width="80"><img class="mwe-math-fallback-image-inline tex" alt="P_{n+1}(x)=\frac{2n+1}{n+1}xP_n(x)-\frac{n}{n+1}P_{n-1}(x)" src="24_files/020b1dd35d24f51b2dd79c92cb1e10ab.png"></td>
+<td style="vertical-align:middle; text-align:right;" width="20">(РекуррЛеж)</td>
+</tr>
+</tbody></table>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_0(x)=1" src="24_files/f5c5b11db321645de87ff6cba8e7b764.png">,</dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_1(x)=x" src="24_files/b8478d02ee7a00baa4664e24b7809845.png">.</dd>
+</dl>
+<h3><span class="mw-headline" id=".D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D0.BB.D0.B8.D0.BD.D0.BE.D0.BC.D0.B0_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Производная полинома Лежандра</span><a href="#/editor/5" title="Редактировать раздел «Производная полинома Лежандра»" data-section="5" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<ul>
+<li>Вычисляется по формуле<sup id="cite_ref-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197_5-0" class="reference"><a href="#cite_note-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197-5">[5]</a></sup>:</li>
+</ul>
+<p><span class="citation" id="math_.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.9B.D0.B5.D0.B6"></span></p>
+<table style="border-bottom:none; border-top:none; background-color:#;" width="100%">
+<tbody><tr>
+<td style="vertical-align:middle; text-align:left; padding-left:2em" width="80"><img class="mwe-math-fallback-image-inline tex" alt="P'_{n}(x)=\frac{n}{1-x^2} [P_{n-1}(x)-xP_n(x)]." src="24_files/5571ca96d6472e6e7a1ce091d0705ad3.png"></td>
+<td style="vertical-align:middle; text-align:right;" width="20">(ПроизвЛеж)</td>
+</tr>
+</tbody></table>
+<h3><span class="mw-headline" id=".D0.9A.D0.BE.D1.80.D0.BD.D0.B8_.D0.BF.D0.BE.D0.BB.D0.B8.D0.BD.D0.BE.D0.BC.D0.B0_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Корни полинома Лежандра</span><a href="#/editor/6" title="Редактировать раздел «Корни полинома Лежандра»" data-section="6" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<ul>
+<li>Вычисляются итеративно по методу Ньютона<sup id="cite_ref-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197_5-1" class="reference"><a href="#cite_note-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197-5">[5]</a></sup>:</li>
+</ul>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="x_i^{(k+1)} = x_i^{(k)} - \frac{P_{n}(x_i^{(k)})}{P'_{n}(x_i^{(k)})}" src="24_files/296cca9477c7b48a43a4fe4c597143be.png">,</dd>
+<dd>причем, начальное приближение для i-го корня (i = 1, 2, …, n) берется по формуле<sup id="cite_ref-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197_5-2" class="reference"><a href="#cite_note-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197-5">[5]</a></sup></dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="x_i^{(0)} = cos[\pi (4i-1)/(4n+2)]." src="24_files/592348acf5f2ca6d00e5f5c25cd0ec75.png"></dd>
+</dl>
+<p>Значение полинома можно вычислять используя <a href="#math_.D0.A0.D0.B5.D0.BA.D1.83.D1.80.D1.80.D0.9B.D0.B5.D0.B6">рекуррентную фомулу</a> для конкретного значения x. Производную также можно вычислять для конкретного значения x, используя <a href="#math_.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.9B.D0.B5.D0.B6">формулу для производной</a>.</p>
+<h3><span class="mw-headline" id=".D0.A4.D0.BE.D1.80.D0.BC.D1.83.D0.BB.D1.8B_.D1.81_.D1.80.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8">Формулы с разложениями</span><a href="#/editor/7" title="Редактировать раздел «Формулы с разложениями»" data-section="7" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<ul>
+<li>Многочлены Лежандра также определяются следующими разложениями:</li>
+</ul>
+<p><br>
+для <img class="mwe-math-fallback-image-inline tex" alt="|t| &lt; \min |x\," src="24_files/0a202a20675c6696f8645ace2bd91b2a.png"> ± <img class="mwe-math-fallback-image-inline tex" alt="\sqrt{x^2-1}|" src="24_files/41b13fb25fbfcb06307d64e240775d2e.png">:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="(1-2tx+t^2)^{- \frac{1}{2}}=\sum_{n=1}^\infty P_n(x)t^n," src="24_files/79839e116b17a75d84481d88dd53d837.png"></dd>
+</dl>
+<p><br>
+и для <img class="mwe-math-fallback-image-inline tex" alt="|t| &gt; \max |x\," src="24_files/cd445c13917bdc6d674068ff2728f824.png"> ± <img class="mwe-math-fallback-image-inline tex" alt="\sqrt{x^2-1}|" src="24_files/41b13fb25fbfcb06307d64e240775d2e.png">:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="(1-2tx+t^2)^{- \frac{1}{2}}=\sum_{n=1}^\infty P_n(x)\frac{1}{t^{n+1}}." src="24_files/4da6545dbdba7b75d8e2b56969954b71.png"></dd>
+</dl>
+<p>Следовательно, <img class="mwe-math-fallback-image-inline tex" alt="P_n(x)=\frac{(2n)!}{2^n(n!)^2} [x^n-\frac{n(n-1)}{2(2n-1)}x^{n-2}+\frac{n(n-1)(n-2)(n-3)}{2\cdot4(2n-1)(2n-3)}x^{n-4}-...]." src="24_files/f0fbb63916ddb1fe2923cf6869b4599b.png"></p>
+<h3><span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D1.8B_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Присоединённые многочлены Лежандра</span><a href="#/editor/8" title="Редактировать раздел «Присоединённые многочлены Лежандра»" data-section="8" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<ul>
+<li><b>Присоединённые многочлены Лежандра</b> определяются по формуле:</li>
+</ul>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P^m_n(x)=(1-x^2)^{m/2}\frac{d^m}{dx^m}P_n(x)," src="24_files/f6fc539b9220f21dbe92513fad62612b.png"></dd>
+</dl>
+<p>которую также можно представить в виде:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P^m_n(\cos\theta)=\sin^m\theta\frac{d^m}{d(\cos\theta)^m} P_n(\cos\theta)." src="24_files/fdec3a059c2f8c973cdf72fa7cf42f4f.png"></dd>
+</dl>
+<p>При <img class="mwe-math-fallback-image-inline tex" alt="m = 0" src="24_files/e6753e61990bc639ae1869683cb421b7.png"> функция <img class="mwe-math-fallback-image-inline tex" alt="P^m_n" src="24_files/9591c4de0bc2494392a0071e51418f4b.png"> совпадает с <img class="mwe-math-fallback-image-inline tex" alt="~P_n" src="24_files/19dfbc5013adb51e216b38418eda44b3.png">.</p>
+<h3><span class="mw-headline" id=".D0.A1.D0.B4.D0.B2.D0.B8.D0.BD.D1.83.D1.82.D1.8B.D0.B5_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D1.8B_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Сдвинутые многочлены Лежандра</span><a href="#/editor/9" title="Редактировать раздел «Сдвинутые многочлены Лежандра»" data-section="9" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<p>Сдвинутые многочлены Лежандра определяются как <img class="mwe-math-fallback-image-inline tex" alt="\tilde{P_n}(x) = P_n(2x-1)" src="24_files/9ff245c6a8dcd88f343fb108e4d5cc49.png">, где сдвигающая функция <img class="mwe-math-fallback-image-inline tex" alt="x\mapsto 2x-1" src="24_files/2becd9ab1c0b284e915bf01f69b91893.png"> (это <a href="https://ru.m.wikipedia.org/wiki/%D0%90%D1%84%D1%84%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" title="Аффинное преобразование">аффинное преобразование</a>) - выбрана так чтобы <a href="https://ru.m.wikipedia.org/wiki/%D0%91%D0%B8%D0%B5%D0%BA%D1%86%D0%B8%D1%8F" title="Биекция">однозначно отображать</a> интервал ортогональности многочленов <img class="mwe-math-fallback-image-inline tex" alt="[-1, 1]" src="24_files/d060b17b29e0dae91a1cac23ea62281a.png"> на интервал <img class="mwe-math-fallback-image-inline tex" alt="[0, 1]" src="24_files/ccfcd347d0bf65dc77afe01a3306a96b.png"> в котором уже ортогональны сдвинутые многочлены <img class="mwe-math-fallback-image-inline tex" alt="\tilde{P_n}(x)" src="24_files/1cfdb0c3abb6b01eb1c46f57625b9288.png">:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\int_{0}^{1} \tilde{P_m}(x) \tilde{P_n}(x)\,dx = {1 \over {2n + 1}} \delta_{mn}." src="24_files/8eec286aa76e6322a3c9f2c46564055c.png"></dd>
+</dl>
+<p>Явное выражение для смещённых многочленов Лежандра задаётся как:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\tilde{P_n}(x) = (-1)^n \sum_{k=0}^n {n \choose k} {n+k \choose k} (-x)^k." src="24_files/f5d85d7d2dc40b1d0756d99f54e9769c.png"></dd>
+</dl>
+<p>Аналогом <a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0_%D0%A0%D0%BE%D0%B4%D1%80%D0%B8%D0%B3%D0%B0" title="Формула Родрига">формулы Родрига</a> для смещенных многочленов Лежандра является:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\tilde{P_n}(x) = \frac{1}{n!} {d^n \over dx^n } \left[ (x^2 -x)^n \right].\, " src="24_files/11e6dcc3907748fbb11f4e34bcc636a0.png"></dd>
+</dl>
+<p>Выражения для некоторых первых сдвинутых многочленов Лежандра:</p>
+<table class="wikitable">
+<tbody><tr>
+<td><i><b>n</b></i></td>
+<td align="center"><img class="mwe-math-fallback-image-inline tex" alt="\tilde{P_n}(x)" src="24_files/1cfdb0c3abb6b01eb1c46f57625b9288.png"></td>
+</tr>
+<tr>
+<td>0</td>
+<td><img class="mwe-math-fallback-image-inline tex" alt="1" src="24_files/c4ca4238a0b923820dcc509a6f75849b.png"></td>
+</tr>
+<tr>
+<td>1</td>
+<td><img class="mwe-math-fallback-image-inline tex" alt="2x-1" src="24_files/5ded752d4b499b87c5db0eb57469505f.png"></td>
+</tr>
+<tr>
+<td>2</td>
+<td><img class="mwe-math-fallback-image-inline tex" alt="6x^2-6x+1" src="24_files/9e61d32e20b2cac7d46f54dc33dcfb68.png"></td>
+</tr>
+<tr>
+<td>3</td>
+<td><img class="mwe-math-fallback-image-inline tex" alt="20x^3-30x^2+12x-1" src="24_files/e53cc01d399ee1732025fbe64e751526.png"></td>
+</tr>
+<tr>
+<td>4</td>
+<td><img class="mwe-math-fallback-image-inline tex" alt="70x^4-140x^3+90x^2-20x+1" src="24_files/83fc0b5af6d78487a9302208697a4616.png"></td>
+</tr>
+</tbody></table>
+</div><h2 aria-controls="collapsible-block-1" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.9C.D0.B0.D1.82.D1.80.D0.B8.D1.86.D0.B0_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D0.B0_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Матрица функции многочлена Лежандра</span><a href="#/editor/10" title="Редактировать раздел «Матрица функции многочлена Лежандра»" data-section="10" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-1" class="collapsible-block open-block">
+<center>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\begin{pmatrix} 
+0 &amp; 0 &amp; -2 &amp; 0 &amp; 0 &amp; \vdots &amp; 0 &amp; \vdots &amp; 0 \\
+0 &amp; 2 &amp; 0 &amp; -6 &amp; 0 &amp; \vdots &amp; 0 &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 6 &amp; 0 &amp; -12 &amp;\vdots &amp; 0 &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; 12 &amp; 0 &amp; \vdots &amp; 0 &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 20 &amp; \vdots &amp; 0 &amp; \vdots &amp; \vdots \\
+\dots &amp; \dots &amp; \dots &amp; \dots &amp; \dots &amp; \ddots &amp; \vdots &amp; \dots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;\dots &amp; k(k+1) &amp;\dots &amp; \vdots \\
+\dots &amp; \dots &amp; \dots &amp; \dots &amp; \dots &amp;\dots &amp; \dots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; n(n+1) \\
+\end{pmatrix}" src="24_files/f1c4bb230544346a581c8a08d07b5a29.png"></dd>
+</dl>
+</center>
+<p>Эта матрица является <a href="https://ru.m.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B5%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D0%B0" title="Верхнетреугольная матрица" class="mw-redirect">верхнетреугольной</a>. Её <a href="https://ru.m.wikipedia.org/wiki/%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B" title="Определитель матрицы" class="mw-redirect">определитель</a> равен нулю, а <a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F" title="Собственные значения" class="mw-redirect">собственные значения</a> равны <img class="mwe-math-fallback-image-inline tex" alt="k(k+1)" src="24_files/9af636a38606344ba1766155670cd40e.png">, где <img class="mwe-math-fallback-image-inline tex" alt="k\in\{0,\;1,\;2,\;3,\;\ldots,\;n\}" src="24_files/32930a280bd17cfdc4bc476d59396099.png">.</p>
+</div><h2 aria-controls="collapsible-block-2" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B">Примеры</span><a href="#/editor/11" title="Редактировать раздел «Примеры»" data-section="11" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-2" class="collapsible-block open-block">
+<div class="thumb tright">
+<div class="thumbinner" style="width:252px;"><a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0.gif" class="image"><img alt="" src="24_files/250px-_.gif" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/ru/thumb/3/30/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0.gif/375px-%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0.gif 1.5x, //upload.wikimedia.org/wikipedia/ru/thumb/3/30/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0.gif/500px-%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0.gif 2x" data-file-width="708" data-file-height="783" height="276" width="250"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0.gif" class="internal" title="Увеличить"></a></div>
+Первые 6 многочленов Лежандра.</div>
+</div>
+</div>
+<p>Первые многочлены Лежандра равны:</p>
+<ul>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_0(x)=1;\," src="24_files/62fd6299dc86b11263d2b842febef73b.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_1(x)=x;\," src="24_files/5ff4985efd428561d6b48b46f2346bfc.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_2(x)=\frac{1}{2}(3x^2-1);" src="24_files/21094fd5235b94bf28de20b8bf1c4d0a.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_3(x)=\frac{1}{2}(5x^3-3x);" src="24_files/ef28429d75eaba018766a9e5dfb1b9ef.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_4(x)=\frac{1}{8}(35x^4-30x^2+3);" src="24_files/224be2a0944410d14d06ef1847a138ac.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_5(x)=\frac{1}{8}(63x^5-70x^3+15x);" src="24_files/455a43342a772e678314cfedf402b77b.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_6(x)=\frac{1}{16}(231x^6-315x^4+105x^2-5);" src="24_files/09d0e464f5abe44161b22016ae5b7868.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_7(x)=\frac{1}{16}(429x^7-693x^5+315x^3-35x);" src="24_files/7f09ada4e9ea13a0fd892da8a7433123.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_8(x)=\frac{1}{128}(6435x^8-12012x^6+6930x^4-1260x^2+35);" src="24_files/86d42d7293c573aea9400b86c4447187.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_9(x)=\frac{1}{128}(12155x^9-25740x^7+18018x^5-4620x^3+315x);" src="24_files/f706206f2292fbc71cc5a968d56615af.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_{10}(x)=\frac{1}{256}(46189x^{10}-109395x^8+90090x^6-30030x^4+3465x^2-63)." src="24_files/de134fb36419da88ea0641afba0ffdea.png"></li>
+</ul>
+<p>Поскольку <img class="mwe-math-fallback-image-inline tex" alt="~P_n(1)=1" src="24_files/904ca8bba63c8f863f6387538cc83c36.png">, то</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_n(x)=\frac{1}{\lambda_0+\lambda_1+\ldots+\lambda_n}(\lambda_0+\lambda_1x+\lambda_2x^2+\ldots+\lambda_nx^n)=\frac{\sum\limits_{i=0}^n \lambda_i x^i}{\sum\limits_{i=0}^n \lambda_i}." src="24_files/e9c95455d756fc15998558b4767e5574.png"></dd>
+</dl>
+</div><h2 aria-controls="collapsible-block-3" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.A1.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0">Свойства</span><a href="#/editor/12" title="Редактировать раздел «Свойства»" data-section="12" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-3" class="collapsible-block open-block">
+<ul>
+<li>Если <img class="mwe-math-fallback-image-inline tex" alt="n\neq 0" src="24_files/71ba488786d90888048f6e368c597ed9.png">, то <img class="mwe-math-fallback-image-inline tex" alt="\forall x\in(-1,\;1),\;|P_n(x)|&lt; 1." src="24_files/b2c6ce4b992e9423fc8cff227bd6bd06.png"></li>
+<li>Для <img class="mwe-math-fallback-image-inline tex" alt="n\neq 0" src="24_files/71ba488786d90888048f6e368c597ed9.png">, степень <img class="mwe-math-fallback-image-inline tex" alt="P_n" src="24_files/9b34c48707062a07e6c080655df4337f.png"> равна n.</li>
+<li>Сумма коэффициентов многочлена Лежандра <img class="mwe-math-fallback-image-inline tex" alt="P_n(x)\," src="24_files/7d5699482005a3104dea7eb117d07fca.png"> равна 1.</li>
+<li>Уравнение <img class="mwe-math-fallback-image-inline tex" alt="P_n(x)=0 \," src="24_files/18d06b253a64fa490bebcdaa7dbc5188.png"> имеет ровно <img class="mwe-math-fallback-image-inline tex" alt="n" src="24_files/7b8b965ad4bca0e41ab51de7b31363a1.png"> различных корней на отрезке <img class="mwe-math-fallback-image-inline tex" alt="[-1,\;1]." src="24_files/b943e6dc7272c86092cd2f37e773ecac.png"></li>
+<li>Пусть <img class="mwe-math-fallback-image-inline tex" alt="\forall n\in\N,\;U_n(x)=(x^2-1)^n" src="24_files/d29e1515073e78f8ad2e205521d40a4a.png">. Тогда:</li>
+</ul>
+<dl>
+<dd>
+<ul>
+<li><img class="mwe-math-fallback-image-inline tex" alt=" U'_{n+1}(x)-2(n+1)xU_n(x)=0;\," src="24_files/f7a32af39413fb257bc58423ea0d48f5.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="(x^2-1)U'_n(x)-2nxU_n(x)=0.\," src="24_files/90f068380d90bebf7e03427d5679c38c.png"></li>
+</ul>
+</dd>
+</dl>
+<ul>
+<li>Присоединённые многочлены Лежандра являются решениями <a href="https://ru.m.wikipedia.org/wiki/%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5" title="Дифференциальное уравнение">дифференциального уравнения</a></li>
+</ul>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\frac{d}{dx}\left[(1-x^2)\frac{d}{dx}P_n(x)\right]-\frac{m^2}{(1-x^2)}P_n(x)+n(n+1)P_n(x)=0." src="24_files/badb70bd24d235ba3ee60117195a8707.png"></dd>
+<dd>При <img class="mwe-math-fallback-image-inline tex" alt="m=0" src="24_files/e6753e61990bc639ae1869683cb421b7.png"> уравнение принимает вид</dd>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P'_{n+1}(x)=xP'_n(x)+(n+1)P_n(x).\," src="24_files/bed19ab59569aa5257cd9b7468dabd0d.png"></dd>
+</dl>
+<ul>
+<li><a href="https://ru.m.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%8F%D1%89%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Производящая функция последовательности">Производящая функция</a> для многочленов Лежандра равна:</li>
+</ul>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\sum_{n=0}^\infty P_n(z)x^n=\frac{1}{\sqrt{1-2xz+x^2}}." src="24_files/e26eff5551857033731b68fdc10f8c64.png"></dd>
+</dl>
+<ul>
+<li>Условие <a href="https://ru.m.wikipedia.org/wiki/%D0%9E%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C" title="Ортогональность">ортогональности</a> этих полиномов на отрезке <img class="mwe-math-fallback-image-inline tex" alt="[-1,\;1]" src="24_files/3da66189fa33d5849f1af59c7c72b62a.png">:</li>
+</ul>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\int\limits_{-1}^1 P_k(x)P_l(x)\,dx=\frac{2}{2k+1}\delta_{kl}," src="24_files/7fdba9b82e9ebe51c6284850a59d4c56.png"></dd>
+</dl>
+<p>где <img class="mwe-math-fallback-image-inline tex" alt="\delta_{kl}" src="24_files/d00eef459822534c5d9cd15d092240b3.png">&nbsp;— <a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0" title="Символ Кронекера">символ Кронекера</a>.</p>
+<ul>
+<li>Для <img class="mwe-math-fallback-image-inline tex" alt="n\in\N" src="24_files/1dccde26c15afc273ca5500e1efbb96e.png">, норма <img class="mwe-math-fallback-image-inline tex" alt="P_n" src="24_files/9b34c48707062a07e6c080655df4337f.png"> равна:</li>
+</ul>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="||P_n||=\sqrt{\int\limits_{-1}^1 P_n^2(x)\,dx}=\sqrt{\frac{2}{2n+1}}." src="24_files/90f1c10c3fed98de028202be3d5a0a17.png"></dd>
+</dl>
+<ul>
+<li>Нормированная функция многочленов Лежандра связана с нормой <img class="mwe-math-fallback-image-inline tex" alt="P_n" src="24_files/9b34c48707062a07e6c080655df4337f.png"> следующим соотношением:</li>
+</ul>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\tilde P_n(x)=\frac{P_n(x)}{||P_n||}=\sqrt{\frac{2n+1}{2}}P_n(x)." src="24_files/dcc363e32eb696a9f3832ae4ef57122b.png"></dd>
+</dl>
+<ul>
+<li>При каждом <img class="mwe-math-fallback-image-inline tex" alt="m&gt;0" src="24_files/0a0596a02eb219bd6336b93543a68c06.png"> система присоединённых функций Лежандра <img class="mwe-math-fallback-image-inline tex" alt="P^m_n(x),\;n=m,\;m+1,\;\ldots" src="24_files/00ffda9735c51e58e5a87f7c97473dbb.png"> <a href="https://ru.m.wikipedia.org/wiki/%D0%91%D0%B0%D0%B7%D0%B8%D1%81_%28%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0%29" title="Базис (математика)" class="mw-redirect">полна</a> в <img class="mwe-math-fallback-image-inline tex" alt="L_2(-1,\;1)" src="24_files/a304bda252838d6f6ad0804da07c9cd3.png">.</li>
+<li>В зависимости от <img class="mwe-math-fallback-image-inline tex" alt="m" src="24_files/6f8f57715090da2632453988d9a1501b.png"> и <img class="mwe-math-fallback-image-inline tex" alt="n" src="24_files/7b8b965ad4bca0e41ab51de7b31363a1.png"> присоединённые многочлены Лежандра могут быть как чётными, так и нечётными функциями:</li>
+</ul>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P^m_n(-x)=(-1)^{m+n}P^m_n(x)." src="24_files/9b7771c1d6be0b041d6818aec0ff38f9.png">
+<ul>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_{2n}\," src="24_files/c454c1b537ffa8e7ba818fe8d19ffe37.png">&nbsp;— четная функция;</li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_{2n+1}\," src="24_files/873bdccf681c826a65d55766475756b1.png">&nbsp;— нечетная функция.</li>
+</ul>
+</dd>
+</dl>
+<ul>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_n(1)=1.\," src="24_files/a127251693f5e9dc2270e12748b061f9.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_n(-1)=(-1)^n.\," src="24_files/c48a819eb59125430cb509c645141921.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="P_{2n}(0)=\frac{1}{2^{2n}}\sum_{k=0}^n(-1)^k\binom{2n}{k}\binom{4n-2k}{2n}0^{2n-2k}=\frac{1}{2^{2n}}(-1)^n\binom{2n}{n}" src="24_files/fe8c2caa7de7d859fe98c9a8ccf60701.png">, поскольку <img class="mwe-math-fallback-image-inline tex" alt="\forall k\neq n" src="24_files/7d5d24186a233a22a6f31eac2fcc802b.png"> <img class="mwe-math-fallback-image-inline tex" alt="0^{2n-2k}=0" src="24_files/f3dfdef3bc46034a00c21c69a06ffa77.png">, а <img class="mwe-math-fallback-image-inline tex" alt="0^{2n-2n}=1" src="24_files/21c57f4a2eb36a74c57133de9dce267e.png">.</li>
+<li>Для <img class="mwe-math-fallback-image-inline tex" alt="n\neq 0" src="24_files/71ba488786d90888048f6e368c597ed9.png">, <img class="mwe-math-fallback-image-inline tex" alt="P_{2n}(0)\leqslant\frac{1}{\sqrt{\pi n}}" src="24_files/74f032828a3758833948a79dd79d081a.png">.</li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="\forall x\in[-1,\;1],\;\forall n\in\N^*,\;|P_n(x)|\leqslant\sqrt{\frac{2}{\pi n(1-x^2)}}." src="24_files/949f42eac65742fc505678f50ca355cb.png"></li>
+</ul>
+</div><h2 aria-controls="collapsible-block-4" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.A0.D1.8F.D0.B4.D1.8B_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D0.BE.D0.B2_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Ряды многочленов Лежандра</span><a href="#/editor/13" title="Редактировать раздел «Ряды многочленов Лежандра»" data-section="13" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-4" class="collapsible-block open-block">
+<div class="dablink">См. также: <a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D1%83%D0%BC%D0%BC%D0%B0_%D1%80%D1%8F%D0%B4%D0%B0" title="Сумма ряда">Сумма ряда</a></div>
+<h3><span class="mw-headline" id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.B8.D0.BF.D1.88.D0.B8.D1.86.D0.B5.D0.B2.D0.BE.D0.B9_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8_.D0.B2_.D1.80.D1.8F.D0.B4_.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE.D1.87.D0.BB.D0.B5.D0.BD.D0.BE.D0.B2_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Разложение липшицевой функции в ряд многочленов Лежандра</span><a href="#/editor/14" title="Редактировать раздел «Разложение липшицевой функции в ряд многочленов Лежандра»" data-section="14" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<p><a href="https://ru.m.wikipedia.org/wiki/%D0%9B%D0%B8%D0%BF%D1%88%D0%B8%D1%86%D0%B5%D0%B2%D0%BE_%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" title="Липшицево отображение">Липшицевая функция</a> <img class="mwe-math-fallback-image-inline tex" alt="f" src="24_files/8fa14cdd754f91cc6554c9e71929cce7.png"> является функцией со свойством:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="|f(x)-f(y)|\leqslant L|x-y|" src="24_files/11103e4688a3c454800a99c0e6b2ff15.png">, где <img class="mwe-math-fallback-image-inline tex" alt="L&gt;0" src="24_files/1f060825ab4836bc9fcf50cf260d201a.png">.</dd>
+</dl>
+<p>Эта функция разлагается в ряд многочленов Лежандра.</p>
+<p>Пусть <img class="mwe-math-fallback-image-inline tex" alt="\varepsilon(I)" src="24_files/07ee6dbc7ae0ac8cea0279f304ff54b3.png">&nbsp;— пространство непрерывных отображений на отрезке <img class="mwe-math-fallback-image-inline tex" alt="I=[-1,\;1]" src="24_files/0fda610e02c5e5b819053b3e2129857b.png">, <img class="mwe-math-fallback-image-inline tex" alt="f\in\varepsilon(I)" src="24_files/6aa104edf4ee28d5a9817cfd03513bf1.png"> и <img class="mwe-math-fallback-image-inline tex" alt="n\in\N" src="24_files/1dccde26c15afc273ca5500e1efbb96e.png">.</p>
+<p>Пусть</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="c_n(f)=\int\limits_{-1}^1 f(x)\tilde P_n(x)\,dx," src="24_files/2464ec4f7255114be46807f36e23195a.png"></dd>
+</dl>
+<p>тогда <img class="mwe-math-fallback-image-inline tex" alt="c_n(f)\," src="24_files/b38a3b79213da63400f468e47075cb67.png"> удовлетворяет следующему условию:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\lim_{n\to\infty} c_n(f)=0." src="24_files/28523c7145a82f93cd3bc98a0d7bc72d.png"></dd>
+</dl>
+<p>Пусть <img class="mwe-math-fallback-image-inline tex" alt="S_nf=\sum_{k=0}^n c_k(f)\tilde P_k" src="24_files/046ba32d3204794711bc7877ba7059b3.png"> и <img class="mwe-math-fallback-image-inline tex" alt="S_nf\," src="24_files/1c7043bde0986296bdea5e06c0f84058.png"> удовлетворяет следующим условиям:</p>
+<ol>
+<li><img class="mwe-math-fallback-image-inline tex" alt="\forall x\in I,\;S_nf(x)=\int\limits_{-1}^1 K_n(x,\;y)f(y)\,dy" src="24_files/15b23ed54352b5788ac73290ab4441d1.png">, где <img class="mwe-math-fallback-image-inline tex" alt="K_n(x,\;y)=\frac{n+1}{2}\frac{P_{n+1}(x)P_n(y)-P_{n+1}(y)P_n(x)}{x-y} ;" src="24_files/96a619695aad361c914499f51dc01108.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="S_nf(x)-f(x)=\int\limits_{-1}^1 K_n(x,\;y)(f(y)-f(x))\,dy ;" src="24_files/9dd38ee8242cf5b51d3f0142adb01e09.png"></li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="\forall x\in[-1,1],\;\lim_{n\to\infty}S_nf(x)=f(x)." src="24_files/21e5f5608b7e0edf216801bf7f3bdb79.png"></li>
+</ol>
+<p>Липшецевую функцию <img class="mwe-math-fallback-image-inline tex" alt="f" src="24_files/8fa14cdd754f91cc6554c9e71929cce7.png"> можно записать следующим образом:</p>
+<center><img class="mwe-math-fallback-image-inline tex" alt="f=\sum_{n=0}^\infty c_n(f)\tilde P_n." src="24_files/343873495e03ab7a69241daeb3936060.png"></center>
+<h3><span class="mw-headline" id=".D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B3.D0.BE.D0.BB.D0.BE.D0.BC.D0.BE.D1.80.D1.84.D0.BD.D0.BE.D0.B9_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8">Разложение голоморфной функции</span><a href="#/editor/15" title="Редактировать раздел «Разложение голоморфной функции»" data-section="15" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<p>Всякая функция f, <a href="https://ru.m.wikipedia.org/wiki/%D0%93%D0%BE%D0%BB%D0%BE%D0%BC%D0%BE%D1%80%D1%84%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Голоморфная функция">голоморфная</a> внутри <a href="https://ru.m.wikipedia.org/wiki/%D0%AD%D0%BB%D0%BB%D0%B8%D0%BF%D1%81" title="Эллипс">эллипса</a> с фокусами −1 и +1, может быть представлена в виде ряда:</p>
+<center><img class="mwe-math-fallback-image-inline tex" alt="f(x)=\sum_{n=0}^\infty \lambda_n P_n(x)" src="24_files/9641bb69c07164013593ddbabd93383f.png"></center>
+<h3><span class="mw-headline" id=".D0.A2.D0.B5.D0.BE.D1.80.D0.B5.D0.BC.D0.B0_.D1.81.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F">Теорема сложения</span><a href="#/editor/16" title="Редактировать раздел «Теорема сложения»" data-section="16" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h3>
+<p>Для величин, удовлетворяющих условиям <img class="mwe-math-fallback-image-inline tex" alt="0\le \psi_1 &lt; \pi" src="24_files/2a243f65a191355f1668a973ccb98b40.png">, <img class="mwe-math-fallback-image-inline tex" alt="0\le \psi_2 &lt; \pi" src="24_files/d32bd0f49e442b9ca074e9ca4df30897.png">, <img class="mwe-math-fallback-image-inline tex" alt="\psi_1 + \psi_2 &lt; \pi" src="24_files/833362f2ab64fec98eabacd8acd03c1a.png">, <img class="mwe-math-fallback-image-inline tex" alt="\phi" src="24_files/7f20aa0b3691b496aec21cf356f63e04.png">&nbsp;— <a href="https://ru.m.wikipedia.org/wiki/%D0%92%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%BE" title="Вещественное число">действительное число</a>, можно записать теорему сложения для полиномов Лежандра первого рода:<sup id="cite_ref-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941027_6-0" class="reference"><a href="#cite_note-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941027-6">[6]</a></sup></p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_k (\cos\psi_1\cos\psi_2 + \sin\psi_1\sin\psi_2\cos\phi) = P_k(\cos\psi_1)P_k(\cos\psi_2) + 2\sum\limits_{m=1}^\infty (-1)^m P_k^{-m}(\cos\psi_1)P_k^m(\cos\psi_2)\cos m\phi," src="24_files/4518d2628a65b592e16b056b52639fd8.png"></dd>
+</dl>
+<p>или, в альтернативной форме через <a href="https://ru.m.wikipedia.org/wiki/%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Гамма-функция">гамма-функцию</a>:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_k (\cos\psi_1\cos\psi_2 + \sin\psi_1\sin\psi_2\cos\phi) = P_k(\cos\psi_1)P_k(\cos\psi_2) + 2\sum\limits_{m=1}^\infty \frac{\Gamma(k-m+1)}{\Gamma(k+m+1)} P_k^m(\cos\psi_1)P_k^m(\cos\psi_2)\cos m\phi." src="24_files/bad2d8a4fbee214ded3e5655400f3b46.png"></dd>
+</dl>
+<p>Для полиномов Лежандра второго рода теорема сложения выглядит как<sup id="cite_ref-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941028_7-0" class="reference"><a href="#cite_note-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941028-7">[7]</a></sup></p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="Q_k (\cos\psi_1\cos\psi_2 + \sin\psi_1\sin\psi_2\cos\phi) = P_k(\cos\psi_1)Q_k(\cos\psi_2) + 2\sum\limits_{m=1}^\infty (-1)^m P_k^{-m}(\cos\psi_1)Q_k^m(\cos\psi_2)\cos m\phi" src="24_files/1e78c33c3156ca6b80d3275e5268b263.png"></dd>
+</dl>
+<p>при условиях <img class="mwe-math-fallback-image-inline tex" alt="0\le \psi_1 &lt; \pi/2" src="24_files/4b8cd942ec7d8a9773964aea9a813a79.png">, <img class="mwe-math-fallback-image-inline tex" alt="0\le \psi_2 &lt; \pi" src="24_files/d32bd0f49e442b9ca074e9ca4df30897.png">, <img class="mwe-math-fallback-image-inline tex" alt="\psi_1 + \psi_2 &lt; \pi" src="24_files/833362f2ab64fec98eabacd8acd03c1a.png">, <img class="mwe-math-fallback-image-inline tex" alt="\phi" src="24_files/7f20aa0b3691b496aec21cf356f63e04.png"></p>
+</div><h2 aria-controls="collapsible-block-5" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.A4.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8_.D0.9B.D0.B5.D0.B6.D0.B0.D0.BD.D0.B4.D1.80.D0.B0">Функции Лежандра</span><a href="#/editor/17" title="Редактировать раздел «Функции Лежандра»" data-section="17" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-5" class="collapsible-block open-block">
+<div class="dablink noprint">Основная статья: <b><a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D1%84%D0%B5%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8" title="Сферические функции">Сферические функции</a></b></div>
+<p>Многочлены Лежандра (вместе с присоединёнными функциями Лежандра <img class="mwe-math-fallback-image-inline tex" alt="P_{n,\;m}(x)" src="24_files/dae255c402a379c3c6fc4456dce0d12e.png">) естественно возникают в теории <a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BA%D0%B0%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D1%82%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB" title="Скалярный потенциал">потенциала</a>.</p>
+<p>Шаровые функции&nbsp;— это функции (в <a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D1%84%D0%B5%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82" title="Сферическая система координат">сферических координатах</a> <img class="mwe-math-fallback-image-inline tex" alt="r,\;\theta,\;\varphi" src="24_files/df2c6c5c6642aeb48ed7fef463ced0f1.png">) вида (с точностью до константы)</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="r^nP^m_n(\cos\theta)\cos m\varphi" src="24_files/c795c1d3c8d5babf832a2769ffa2379a.png"> и <img class="mwe-math-fallback-image-inline tex" alt="r^nP^m_n(\cos\theta)\sin m\varphi," src="24_files/8a61eab63ae7a205686de198d11b2759.png"></dd>
+</dl>
+<p>где <img class="mwe-math-fallback-image-inline tex" alt="P^m_n" src="24_files/9591c4de0bc2494392a0071e51418f4b.png">&nbsp;— присоединённые многочлены Лежандра;</p>
+<p>а точнее вида <img class="mwe-math-fallback-image-inline tex" alt="r^nY_{n m}" src="24_files/32c689f0722aeaa403813dde464ddf60.png"> , где <img class="mwe-math-fallback-image-inline tex" alt="Y_{n m}" src="24_files/eeebe7f3fe87f5180fce9da2b23214d8.png">&nbsp;— <a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D1%84%D0%B5%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8" title="Сферические функции">сферические функции</a>.</p>
+<p>Шаровые функции удовлетворяют уравнению Лапласа всюду в <img class="mwe-math-fallback-image-inline tex" alt="\R^3" src="24_files/4490067ac24a32e7d029c279d71164b2.png"> .</p>
+</div><h2 aria-controls="collapsible-block-6" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F">Примечания</span><a href="#/editor/18" title="Редактировать раздел «Примечания»" data-section="18" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-6" class="collapsible-block open-block">
+<div class="references-small" style="">
+<ol class="references">
+<li id="cite_note-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941039-1"><b><a href="#cite_ref-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941039_1-0">↑</a></b> <span class="reference-text"><a href="#CITEREF.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA1963">Градштейн, Рыжик, 1963</a>, с. 1039</span></li>
+<li id="cite_note-.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._1.E2.80.941973.E2.80.94.E2.80.94126.E2.80.94127-2"><b><a href="#cite_ref-.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._1.E2.80.941973.E2.80.94.E2.80.94126.E2.80.94127_2-0">↑</a></b> <span class="reference-text"><a href="#CITEREF.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._11973">Бейтмен, Эрдейи, Т. 1, 1973</a>, с. 126—127</span></li>
+<li id="cite_note-.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._1.E2.80.941973.E2.80.94.E2.80.94140-3"><b><a href="#cite_ref-.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._1.E2.80.941973.E2.80.94.E2.80.94140_3-0">↑</a></b> <span class="reference-text"><a href="#CITEREF.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._11973">Бейтмен, Эрдейи, Т. 1, 1973</a>, с. 140</span></li>
+<li id="cite_note-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94196-4"><b><a href="#cite_ref-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94196_4-0">↑</a></b> <span class="reference-text"><a href="#CITEREF.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B31988">Цимринг, 1988</a>, с. 196</span></li>
+<li id="cite_note-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197-5"><span class="mw-cite-backlink">↑ <a href="#cite_ref-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197_5-0"><sup><i><b>1</b></i></sup></a> <a href="#cite_ref-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197_5-1"><sup><i><b>2</b></i></sup></a> <a href="#cite_ref-.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B3.E2.80.941988.E2.80.94.E2.80.94197_5-2"><sup><i><b>3</b></i></sup></a></span> <span class="reference-text"><a href="#CITEREF.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B31988">Цимринг, 1988</a>, с. 197</span></li>
+<li id="cite_note-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941027-6"><b><a href="#cite_ref-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941027_6-0">↑</a></b> <span class="reference-text"><a href="#CITEREF.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA1963">Градштейн, Рыжик, 1963</a>, с. 1027</span></li>
+<li id="cite_note-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941028-7"><b><a href="#cite_ref-.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA.E2.80.941963.E2.80.94.E2.80.941028_7-0">↑</a></b> <span class="reference-text"><a href="#CITEREF.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA1963">Градштейн, Рыжик, 1963</a>, с. 1028</span></li>
+</ol>
+</div>
+</div><h2 aria-controls="collapsible-block-7" aria-haspopup="true" tabindex="0" class="section-heading collapsible-heading open-block"><div class="icon icon-arrow-up  icon-15px indicator" title=""></div><span class="mw-headline" id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0">Литература</span><a href="#/editor/19" title="Редактировать раздел «Литература»" data-section="19" class="icon icon-edit-enabled edit-page icon-32px">Править</a></h2><div aria-expanded="true" aria-pressed="true" id="collapsible-block-7" class="collapsible-block open-block">
+<ul>
+<li><span class="citation" id="CITEREF.D0.91.D0.B5.D0.B9.D1.82.D0.BC.D0.B5.D0.BD.2C_.D0.AD.D1.80.D0.B4.D0.B5.D0.B9.D0.B8.2C_.D0.A2._11973"><i>Бейтмен Г., Эрдейи А.</i> Высшие трансцендентные функции = Higher Transcendental Functions / Пер. Н. Я. Виленкина.&nbsp;— Изд. 2-е,.&nbsp;— <span style="border-bottom:1px dotted gray; cursor:default" title="Москва">М</span>.: Наука, 1973.&nbsp;— Т.&nbsp;1.&nbsp;— 296&nbsp;с.&nbsp;— <span style="white-space: nowrap;">14&nbsp;000 экз.</span></span></li>
+<li><span class="citation"><i>Владимиров В. С., Жаринов В. В.</i> Уравнения математической физики.&nbsp;— <span style="border-bottom:1px dotted gray; cursor:default" title="Москва">М</span>.: Физматлит, 2004.&nbsp;— <a href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/5922103105" class="internal mw-magiclink-isbn">ISBN 5-9221-0310-5</a>.</span></li>
+<li><span class="citation" id="CITEREF.D0.93.D1.80.D0.B0.D0.B4.D1.88.D1.82.D0.B5.D0.B9.D0.BD.2C_.D0.A0.D1.8B.D0.B6.D0.B8.D0.BA1963"><i>Градштейн И. С., Рыжик И. М.</i> Таблицы интегралов, сумм, рядов и произведений.&nbsp;— Изд. 4-е, перераб.&nbsp;— <span style="border-bottom:1px dotted gray; cursor:default" title="Москва">М</span>.: Государственное издательство физико-математической литературы, 1963.&nbsp;— <span style="white-space: nowrap;">19&nbsp;000 экз.</span></span></li>
+<li><span class="citation"><i>Кампе де Ферье Ж., Кемпбелл Р., Петьо Г., Фогель Т.</i> Функции математической физики.&nbsp;— <span style="border-bottom:1px dotted gray; cursor:default" title="Москва">М</span>.: Физматлит, 1963.</span></li>
+<li><span class="citation"><i>Никольский С. М.</i> Квадратурные формулы.&nbsp;— <span style="border-bottom:1px dotted gray; cursor:default" title="Москва">М</span>.: Наука, 1988.</span></li>
+<li><span class="citation" id="CITEREF.D0.A6.D0.B8.D0.BC.D1.80.D0.B8.D0.BD.D0.B31988"><i>Цимринг Ш.Е.</i> Специальные функции и определенные интегралы. Алгоритмы. Программы для микрокалькуляторов: Справочник.&nbsp;— <span style="border-bottom:1px dotted gray; cursor:default" title="Москва">М</span>.: Радио и связь, 1988.</span></li>
+</ul>
+<table class="navbox collapsible autocollapse nowraplinks" style="margin:auto;;width:100%;">
+<tbody><tr>
+<th colspan="2" style="text-align:center;width:100%;background:#ccccff;"><span class="noprint plainlinksneverexpand" style="white-space:nowrap;font-size:xx-small;float:left;text-align:left;width:3.8em">&nbsp;<a href="https://ru.m.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:%D0%9E%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B" title="Просмотр этого шаблона"><img alt="Просмотр этого шаблона" src="24_files/14px-Searchtool.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/61/Searchtool.svg/21px-Searchtool.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/61/Searchtool.svg/28px-Searchtool.svg.png 2x" data-file-width="512" data-file-height="512" height="14" width="14"></a>&nbsp;</span><span style="font-size:110%"><a href="https://ru.m.wikipedia.org/wiki/%D0%9E%D1%80%D1%82%D0%BE%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B" title="Ортогональные многочлены">Ортогональные многочлены</a></span></th>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;text-align:center;"><span class="new">Многочлены Бернштейна — Сеге</span> • <span class="new">Многочлены Бесселя</span> • <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%93%D0%B5%D0%B3%D0%B5%D0%BD%D0%B1%D0%B0%D1%83%D1%8D%D1%80%D0%B0" title="Многочлены Гегенбауэра">Многочлены Гегенбауэра</a> • <span class="new">Многочлены Гейне — Ахиезера</span> • <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9A%D1%80%D0%B0%D0%B2%D1%87%D1%83%D0%BA%D0%B0" title="Многочлены Кравчука">Многочлены Кравчука</a> • <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B0%D0%B3%D0%B5%D1%80%D1%80%D0%B0" title="Многочлены Лагерра">Многочлены Лагерра</a> • <strong class="selflink">Многочлены Лежандра</strong> • <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9F%D0%BE%D0%BB%D0%B0%D1%87%D0%B5%D0%BA%D0%B0" title="Многочлены Полачека">Многочлены Полачека</a> • <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%A7%D0%B5%D0%B1%D1%8B%D1%88%D1%91%D0%B2%D0%B0" title="Многочлены Чебышёва">Многочлены Чебышёва</a> • <span class="new">Многочлены Шарле</span> • <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%AD%D1%80%D0%BC%D0%B8%D1%82%D0%B0" title="Многочлены Эрмита">Многочлены Эрмита</a> • <a href="https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%AF%D0%BA%D0%BE%D0%B1%D0%B8" title="Многочлены Якоби">Многочлены Якоби</a></td>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+
+<noscript><img src="//ru.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div><div id="page-secondary-actions"><a class="mw-ui-button button languageSelector" href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:MobileLanguages/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0">Читать на другом языке</a></div>			</div>
+							</div><div class="transparent-shield cloaked-element"></div>
+						<div id="footer">
+							<ul class="footer-info">
+					<li id="footer-info-mobile-switcher"><h2>Википедия ™</h2>
+<ul>
+	<li>Мобильный‌</li><li><a id="mw-mf-display-toggle" href="http://ru.wikipedia.org/w/index.php?title=%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0&amp;mobileaction=toggle_view_desktop">Стационарный</a></li>
+</ul></li><li id="footer-info-mobile-license">Содержимое доступно в соответствии с <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, если не указано иное.</li>				</ul>
+							<ul class="footer-places">
+					<li id="footer-places-terms-use"><a href="https://m.wikimediafoundation.org/wiki/Special:MyLanguage/Terms_of_Use/ru">Условия использования</a></li><li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="wikimedia:Политика конфиденциальности">Конфиденциальность</a></li>				</ul>
+					</div>
+					</div>
+		<div id="notifications"><div class="toast position-fixed"></div><div class="drawer position-fixed text references"><div class="icon icon-cancel  cancel" title="">Закрыть</div>
+<h3></h3>
+
+</div><div class="drawer position-fixed"><div class="icon icon-arrow-down  cancel" title=""></div>
+<p>Помогите улучшить эту страницу!</p>
+<div class="mw-ui-button-group">
+	<a class="mw-ui-button mw-ui-block mw-ui-progressive" href="https://ru.m.wikipedia.org/wiki/Special:UserLogin?returnto=%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0&amp;campaign=mobile_editPageActionCta">Представиться</a>
+	<a class="mw-ui-progressive mw-ui-anchor mw-ui-block" href="https://ru.m.wikipedia.org/wiki/Special:UserLogin?returnto=%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0&amp;campaign=mobile_editPageActionCta&amp;type=signup&amp;returntoquery=article_action%3Dsignup-edit">Зарегистрироваться</a>
+</div>
+</div><div class="drawer position-fixed"><div class="icon icon-arrow-down  cancel" title=""></div>
+<p>Следить за этой страницей, и всеми изменениями на ней.</p>
+<div class="mw-ui-button-group">
+	<a class="mw-ui-button mw-ui-block mw-ui-progressive" href="https://ru.m.wikipedia.org/wiki/Special:UserLogin?returnto=%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0&amp;campaign=mobile_watchPageActionCta&amp;returntoquery=article_action%3Dwatch">Представиться</a>
+	<a class="mw-ui-progressive mw-ui-anchor mw-ui-block" href="https://ru.m.wikipedia.org/wiki/Special:UserLogin?returnto=%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%87%D0%BB%D0%B5%D0%BD%D1%8B_%D0%9B%D0%B5%D0%B6%D0%B0%D0%BD%D0%B4%D1%80%D0%B0&amp;campaign=mobile_watchPageActionCta&amp;returntoquery=article_action%3Dwatch&amp;type=signup">Зарегистрироваться</a>
+</div>
+</div></div></div>
+		<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":223,"wgHostname":"mw1168"});
+}</script><script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.user","mediawiki.hidpi","mobile.stable","mobile.editor","mobile.toggling","mobile.loggingSchemas","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector"],null,true);
+}</script>
+		
+		
+		</body></html>

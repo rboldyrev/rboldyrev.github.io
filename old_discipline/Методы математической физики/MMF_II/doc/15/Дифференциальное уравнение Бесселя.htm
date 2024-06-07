@@ -1,0 +1,785 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--  Дифференциальное уравнение Бесселя -->
+<html><head>
+<title>Дифференциальное уравнение Бесселя</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="description" content="Дифференциальное уравнение Бесселя">
+<meta name="keywords" content="уравнение Бесселя, дифференциальное уравнение Бесселя, Бессель, функция Бесселя, цилиндрические функции, первый род, второй род, Фридрих Бессель, гамма функция, функции Неймана, функции Вебера">
+<link rel="STYLESHEET" href="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/style-diffeq1.css" type="text/css">
+
+
+<script async="" src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/cbgapi.loaded_1"></script><script async="" src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/cbgapi.loaded_0"></script><script src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/analytics.js" async=""></script><script type="text/javascript">
+window.google_analytics_uacct = "UA-245032-5";
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-245032-5', 'math24.ru');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+
+<body bgcolor="#E8E8E8">
+
+<table align="center" bgcolor="white" border="0" cellpadding="0" cellspacing="0" width="1000">
+<tbody><tr><td height="15"></td></tr>
+
+<tr>
+<td bgcolor="white" width="15"></td>
+<td border="0" class="top_right_image" align="left" height="160" valign="top" width="970">
+
+			
+<div style="margin: 1.0em 0em 0em 1.4em;
+			float: left;
+			border: 0px solid red;
+			text-align: left;
+			color: #0B3861;	
+			font: 38px arial;">
+Math24.ru
+</div>
+
+<div style="margin: 3.0em 2.2em 0.0em 0em;
+			float: right;">
+<!-- Search Box -->
+</div>
+
+
+<div style="margin: 3.2em 0em 0em 1.93em;
+			text-align: left;
+			border: 0px solid red;
+			color: #0B3861;
+			font: 28px arial;">
+Дифференциальные Уравнения
+</div>
+
+
+</td>
+<td bgcolor="white" width="15"></td>
+</tr>
+
+</tbody></table>
+
+
+
+
+
+
+
+<table align="center" bgcolor="white" border="0" cellpadding="0" cellspacing="0" width="1000">
+<tbody><tr><td colspan="1" bgcolor="white" height="11"></td></tr>
+
+<tr>
+
+<td bgcolor="white" width="15"></td>
+<!-- LEFT MENU -->
+<td border="0" align="center" valign="top" width="200">
+
+
+
+<table bgcolor="white" border="0" cellpadding="0" cellspacing="0" width="200">
+<tbody><tr><td bgcolor="white" height="3"></td></tr>
+
+<tr>
+<td align="center" bgcolor="#EBEBEB" height="18"><a href="http://www.math24.ru/index.html"><font class="main_menu2" color="black">Главная</font></a></td>
+</tr>
+
+<tr><td height="15"></td></tr>
+
+<tr>
+<td align="center" bgcolor="#0B3861"><a href="http://www.math24.ru/calculus-list.html"><font class="main_menu3">Математический анализ</font></a></td>
+</tr>
+<tr><td bgcolor="#EBEBEB" height="5"></td></tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-limits.html"><font class="left_menu">Пределы и непрерывность</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-differentiation.html"><font class="left_menu">Дифференцирование</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-applications-of-derivative.html"><font class="left_menu">Приложения производной</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-integration.html"><font class="left_menu">Интегрирование</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-series.html"><font class="left_menu">Последовательности и ряды</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-double-integrals.html"><font class="left_menu">Двойные интегралы</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-triple-integrals.html"><font class="left_menu">Тройные интегралы</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-line-integrals.html"><font class="left_menu">Криволинейные интегралы</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-surface-integrals.html"><font class="left_menu">Поверхностные интегралы</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-fourier-series.html"><font class="left_menu">Ряды Фурье</font></a></td>
+</tr>
+
+<tr><td bgcolor="#EBEBEB" height="5"></td></tr>
+<tr>
+<td align="center" bgcolor="#0B3861"><a href="http://www.math24.ru/differential-equations-list.html"><font class="main_menu3">Дифференциальные уравнения</font></a></td>
+</tr>
+<tr><td bgcolor="#EBEBEB" height="5"></td></tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-1st-order-equations.html"><font class="left_menu">Уравнения 1-го порядка</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-2nd-order-equations.html"><font class="left_menu">Уравнения 2-го порядка</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-nth-order-equations.html"><font class="left_menu">Уравнения <i>N</i>-го порядка</font></a></td>
+</tr>
+<tr>
+<td align="left" bgcolor="#EBEBEB"><a href="http://www.math24.ru/list-systems-of-equations.html"><font class="left_menu">Системы уравнений</font></a></td>
+</tr>
+
+<tr><td bgcolor="#EBEBEB" height="5"></td></tr>
+<tr>
+<td align="center" bgcolor="#0B3861"><a href="http://www.math24.ru/formulas-list.html"><font class="main_menu3">Формулы и таблицы</font></a></td>
+</tr>
+
+
+
+
+
+<tr><td bgcolor="#EBEBEB" height="15"></td></tr>
+<tr>
+<td align="center" bgcolor="#EBEBEB">
+<div style="margin: 0.1em 0em 0em 1.3em;
+			text-align: left;">
+<!-- Image Wide Skyscraper RU -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8374750561002862" data-ad-slot="6774966743"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+<div style="margin: 1.3em 0em 0em 1.3em;
+			text-align: left;">
+<!-- Text Wide Skyscraper RU -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8374750561002862" data-ad-slot="9728433142"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</td>
+</tr>
+
+
+
+
+<tr><td bgcolor="#EBEBEB" height="50"></td></tr>
+
+</tbody></table>
+
+
+
+
+
+</td>
+<td bgcolor="white" width="12"></td>
+
+
+<!-- BODY -->
+<td border="0" align="left" valign="top" width="761">
+
+<div style="margin: 0.24em 0.0em 0.65em 1.05em;">
+<!-- Top Ad 728x90 -->
+<script async="" src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/adsbygoogle.js"></script>
+<!-- 728x90, created 4/15/13 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8374750561002862" data-ad-slot="2856757943"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div><table border="0" width="761">
+
+
+
+
+<tbody><tr>
+<td border="0" valign="top">
+<div style="background-color: #E8E8E8;
+			height: 18px;
+			font: bold 14px arial;
+			text-align: left;">
+&nbsp;&nbsp;
+Дифференциальное уравнение Бесселя
+</div>
+</td>
+</tr>
+
+<tr><td height="6"></td></tr>
+
+
+<!-- Text1 -->
+<tr>
+<td border="0" valign="top">
+<div style="font: 16px times new roman;
+			line-height: 130%;
+			text-align: left;">
+
+<span style="color:#336699;"><i>Линейное обыкновенное дифференциальное уравнение второго порядка</i></span> вида
+
+<div style="margin: 1.2em 0em 0.8em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi1.gif" alt="Дифференциальное уравнение Бесселя">
+</div>
+
+называется <span style="color:#336699;"><i>уравнением Бесселя</i></span>. Число <i>v</i> называется
+<span style="color:#336699;"><i>порядком уравнения Бесселя</i></span>.
+
+<br><br>
+
+Данное дифференциальное уравнение было названо в честь немецкого математика и астронома 
+<span style="color:#336699;"><i>Фридриха Вильгельма Бесселя</i></span>, который подробно исследовал его и показал (в 1824 году), что
+решения уравнения выражаются через специальный класс функций, получивших название  
+<span style="color:#336699;"><i>цилиндрических функций</i></span> или 
+<span style="color:#336699;"><i>функций Бесселя</i></span>.
+
+<br><br>
+Конкретное представление общего решения зависит от числа <i>v</i>. Далее мы отдельно рассмотрим два случая:
+
+<ul>
+<li>Порядок <i>v</i> является нецелым числом;</li>
+<li>Порядок <i>v</i> является целым числом.</li>
+</ul>
+
+<div style="font: italic bold 13px arial;
+			margin: 2.3em 0em 0.2em 0em;">
+Случай 1. Порядок v является нецелым числом
+</div>
+
+Полагая, что число <i>v</i> является нецелым и положительным, общее решение уравнения Бесселя можно записать в виде
+
+<div style="margin: 1.2em 0em 0.8em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi2.gif" alt="Общее решение уравнения Бесселя нецелого порядка">
+</div>
+
+где <i>C</i><sub>1</sub>, <i>C</i><sub>2</sub> &#8722; произвольные постоянные, а  
+<span><nobr><i>J<sub>v</sub></i>(<i>x</i>)</nobr></span>, <span><nobr><i>J<sub>&#8722;v</sub></i>(<i>x</i>)</nobr></span>
+&#8722; <span style="color:#336699;"><i>функции Бесселя первого рода</i></span>.
+
+<br><br>
+Функцию Бесселя первого рода можно представить в виде ряда, члены которого выражаются через так называемую  
+<span style="color:#336699;"><i>гамма-функцию</i></span>:
+
+<div style="margin: 0.5em 0em 0.9em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi3.gif" alt="Решение уравнения Бесселя в виде ряда">
+</div>
+
+Гамма-функция является расширением <span style="color:#336699;"><i>факториальной функции</i></span> с множества 
+целых на множество действительных чисел. В частности, она обладает следующими свойствами:
+
+<div style="margin: 1.1em 0em 0.9em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi4.gif" alt="свойства гамма-функции">
+</div>
+
+Аналогичным образом записываются функции Бесселя первого рода отрицательного порядка (с индексом &#8722;<i>v</i>). Здесь мы предполагаем, что 
+<span><nobr><i>v</i> &gt; 0</nobr></span>. 
+
+<div style="margin: 1.1em 0em 1.0em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi5.gif" alt="Решение уравнения Бесселя в виде ряда в случае отрицательного нецелого порядка">
+</div>
+
+Функции Бесселя вычисляются в большинстве математических пакетов. Для примера вид функций Бесселя первого рода порядка от 
+<span><nobr><i>v</i> = 0</nobr></span> до <span><nobr><i>v</i> = 4</nobr></span> показан на рисунке 1. 
+Эти функции можно вычислить также и в MS Excel. 
+
+
+<div style="margin: 1.3em 1em 2.2em 0em;
+			text-align: center;">
+<table valign="middle" align="center" border="0" width="630">
+<tbody><tr><td width="300"><div style="margin: 1.4em 2em 0em 0.5em;"><img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/diffint101r.jpg" alt="Функции Бесселя первого рода порядка 0-4" width="300"></div></td>
+<td width="30"></td><td width="300"><div style="margin: 1.4em 0em 0em 0em;"><img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/diffint102r.jpg" alt="Функции Бесселя второго рода порядка 0-4" width="300"></div></td></tr>
+<tr align="center"><td width="300"><div style="margin: 1.0em 1.5em 0em 0em;"><font size="2" face="arial"><b>Рис.1</b></font></div></td>
+<td width="30"></td><td width="300"><div style="margin: 1.0em 1.7em 0em 2.5em;"><font size="2" face="arial"><b>Рис.2</b></font></div></td></tr>
+</tbody></table>
+</div>
+
+
+
+
+<div style="font: italic bold 13px arial;
+			margin: 2.0em 0em 0.2em 0em;">
+Случай 2. Порядок v является целым
+</div>
+
+Если порядок <i>v</i> дифференциального уравнения Бесселя является целым, то функции Бесселя первого рода
+<span><nobr><i>J<sub>v</sub></i>(<i>x</i>)</nobr></span> и <span><nobr><i>J<sub>&#8722;v</sub></i>(<i>x</i>)</nobr></span>
+становятся зависимыми друг от друга. В этом случае общее решение уравнения будет описываться другой формулой:
+
+<div style="margin: 1.2em 0em 0.9em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi6.gif" alt="Общее решение уравнения Бесселя для любого действительного порядка">
+</div>
+
+где <span><nobr><i>Y<sub>v</sub></i>(<i>x</i>)</nobr></span> &#8722; 
+<span style="color:#336699;"><i>функция Бесселя второго рода</i></span>. Иногда это семейство функций называют также
+<span style="color:#336699;"><i>функциями Неймана</i></span> или <span style="color:#336699;"><i>функциями Вебера</i></span>.
+
+<br><br>
+<span style="color:#336699;"><i>Функцию Бесселя второго рода</i></span> <span><nobr><i>Y<sub>v</sub></i>(<i>x</i>)</nobr></span>
+можно выразить через функции Бесселя первого рода 
+<span><nobr><i>J<sub>v</sub></i>(<i>x</i>)</nobr></span> и <span><nobr><i>J<sub>&#8722;v</sub></i>(<i>x</i>)</nobr></span>:
+
+<div style="margin: 0.6em 0em 1.1em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi7.gif" alt="Представление функций Бесселя второго рода через функции Бесселя первого рода">
+</div>
+
+Графики функций <span><nobr><i>Y<sub>v</sub></i>(<i>x</i>)</nobr></span> для нескольких первых порядков <i>v</i> представлены выше на рисунке 2. 
+
+<br><br>
+<span style="color:#336699;"><i>Примечание</i></span>:
+В действительности общее решение дифференциального уравнения Бесселя 
+можно выразить через функции Бесселя первого и второго рода также и для 
+случая нецелого
+порядка <i>v</i>. 
+
+
+<div style="font: italic bold 13px arial;
+			margin: 2.3em 0em 0.2em 0em;">
+Некоторые дифференциальные уравнения, приводимые к уравнению Бесселя
+</div>
+
+
+<font size="4"><b>1.</b></font>
+Еще одним хорошо известным уравнением данного класса является 
+<span style="color:#336699;"><i>модифицированное уравнение Бесселя</i></span>, которое получается из регулярного уравнения Бесселя заменой <i>x</i> на &#8722;<i>ix</i>. 
+Это уравнение имеет вид:
+
+<div style="margin: 1.2em 0em 0.8em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi8.gif" alt="Модифицированное уравнение Бесселя">
+</div>
+
+Решение данного уравнения выражается через так называемые
+<span style="color:#336699;"><i>модифицированые функции Бесселя первого и второго рода</i></span>:
+
+<div style="margin: 1.3em 0em 0.9em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi9.gif" alt="Решение модифицированного уравнения Бесселя">
+</div>
+
+где <span><nobr><i>I<sub>v</sub></i>(<i>x</i>)</nobr></span> и <span><nobr><i>K<sub>v</sub></i>(<i>x</i>)</nobr></span> обозначают 
+модифицированные функции Бесселя, соответственно, первого и второго рода. 
+
+
+<br><br>
+<font size="4"><b>2.</b></font> <span style="color:#336699;"><i>Дифференциальное уравнение Эйри</i></span>, известное в астрономии и физике, записывается в виде:
+
+<div style="margin: 1.2em 0em 0.8em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi10.gif" alt="Дифференциальное уравнение Эйри">
+</div>
+
+Его также можно свести к уравнению Бесселя. Решение уравнения Эйри выражается через функции Бесселя дробного порядка
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi11.gif" align="middle">:
+
+<div style="margin: 0.6em 0em 0.8em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi12.gif" alt="Решение дифференциального уравнения Эйри">
+</div>
+
+
+<br>
+<font size="4"><b>3.</b></font> Дифференциальное уравнение вида
+
+<div style="margin: 0.5em 0em 0.8em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi13.gif">
+</div>
+
+отличается от уравнения Бесселя лишь множителем <i>a</i><sup>2</sup> перед <i>x</i><sup>2</sup> и имеет общее решение в следующем виде:
+
+<div style="margin: 1.2em 0em 0.8em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi14.gif">
+</div>
+
+
+<br>
+<font size="4"><b>4.</b></font> Похожее дифференциальное уравнение 
+
+<div style="margin: 0.5em 0em 0.7em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi15.gif">
+</div>
+
+также сводится к уравнению Бесселя
+
+<div style="margin: 0.8em 0em 0.6em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi16.gif">
+</div>
+
+с помощью подстановки
+
+<div style="margin: 0.5em 0em 0.6em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi17.gif">
+</div>
+
+Здесь параметр <i>n</i><sup>2</sup> обозначает
+
+<div style="margin: 0.5em 0em 0.9em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi18.gif">
+</div>
+
+В результате, общее решение данного дифференциального уравнения определяется формулой
+
+<div style="margin: 1.2em 0em 1.2em 0em;
+			text-align: center;">
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi19.gif">
+</div>
+
+
+<br>
+Специальные функции Бесселя широко используются в решении задач математической физики, например, при исследовании
+
+<ul>
+<li>распространения волн;</li>
+<li>теплопроводности;</li>
+<li>колебаний мембран</li>
+</ul>
+
+в случаях, когда объекты имеют цилиндрическую или сферическую симметрию.
+
+<br><br>
+
+
+</div>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<!-- Example 1 -->
+<tr>
+<td border="0" valign="top">
+<div style="background-color: #E8E8E8;
+			height: 18px;
+			font: bold 13px arial;
+			text-align: left;">
+&nbsp;&nbsp;
+Пример 1
+</div>
+</td>
+</tr>
+<tr><td height="11"></td></tr>
+
+<tr>
+<td border="0" valign="top">
+<div style="font: 16px times new roman;
+			line-height: 130%;
+			text-align: left;">
+
+Решить дифференциальное уравнение
+&nbsp;<span><nobr><i>x<sup>2</sup>y'' + xy' + </i>(3<i>x</i><sup>2</sup> &#8722; 2)<i>y</i> = 0</nobr></span>.
+
+<div style="font: italic 14px arial;">
+<br>
+Решение.
+</div>
+
+Данное уравнение имеет порядок
+&#8730;<span style="text-decoration:overline;">2</span>
+и отличается от стандартного уравнения Бесселя лишь множителем 3 перед 
+<i>x</i><sup>2</sup>. Поэтому общее решение уравнения описывается формулой
+
+<div style="margin: 1.3em 0em 0.6em 0em;
+			text-align: left;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi21.gif">
+</div>
+
+где <i>C</i><sub>1</sub>, <i>C</i><sub>2</sub> &#8722; постоянные, а
+
+<span><nobr><i>J</i><sub>&#8730;<span style="text-decoration:overline;">2</span></sub>(&#8730;<span style="text-decoration:overline;">3</span><i>x</i>)</nobr></span>
+и <span><nobr><i>Y</i><sub>&#8730;<span style="text-decoration:overline;">2</span></sub>(&#8730;<span style="text-decoration:overline;">3</span><i>x</i>)</nobr></span>
+&#8722; функции Бесселя, соответственно, 1 и 2 рода. 
+<br><br>
+
+
+
+</div>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<!-- Example 2 -->
+<tr>
+<td border="0" valign="top">
+<div style="background-color: #E8E8E8;
+			height: 18px;
+			font: bold 13px arial;
+			text-align: left;">
+&nbsp;&nbsp;
+Пример 2
+</div>
+</td>
+</tr>
+<tr><td height="0"></td></tr>
+
+<tr>
+<td border="0" valign="top">
+<div style="font: 16px times new roman;
+			margin: 0.5em 0em 0em 0em;
+			line-height: 130%;
+			text-align: left;">
+
+Решить уравнение <img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi24.gif" align="middle">. 
+
+
+<div style="font: italic 14px arial;">
+<br>
+Решение.
+</div>
+
+Это уравнение отличается от модифицированного уравнения Бесселя множителем 4 перед <i>x</i><sup>2</sup>. Порядок уравнения равен
+<span style="white-space: nowrap;"><i>v</i> = 1/&#8730;<span style="text-decoration:overline;">2</span></span>.
+Общее решение выражается через модифицированные функции Бесселя следующим образом:
+
+<div style="margin: 1.4em 0em 0.5em 0em;
+			text-align: left;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi26.gif">
+</div>
+
+где <i>C</i><sub>1</sub> и <i>C</i><sub>2</sub> &#8722; произвольные постоянные. 
+
+<br><br>
+
+
+</div>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+<!-- Example 3 -->
+<tr>
+<td border="0" valign="top">
+<div style="background-color: #E8E8E8;
+			height: 18px;
+			font: bold 13px arial;
+			text-align: left;">
+&nbsp;&nbsp;
+Пример 3
+</div>
+</td>
+</tr>
+<tr><td height="4"></td></tr>
+
+<tr>
+<td border="0" valign="top">
+<div style="font: 16px times new roman;
+			margin: 0.5em 0em 0.0em 0em;
+			line-height: 130%;
+			text-align: left;">
+
+Найти общее решение дифференциального уравнения 
+&nbsp;<span><nobr><i>x<sup>2</sup>y'' + </i>2<i>xy' + </i>(<i>x</i><sup>2</sup> &#8722; 1)<i>y</i> = 0</nobr></span>.
+
+
+<div style="font: italic 14px arial;">
+<br>
+Решение.
+</div>
+
+Применим следующую подстановку:
+
+<div style="margin: 0.9em 0em 0.5em 0em;
+			text-align: left;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi27.gif">
+</div>
+
+Подставим эти выражения в исходное уравнение:
+
+<div style="margin: 1.2em 0em 0.5em 0em;
+			text-align: left;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi28.gif">
+</div>
+
+Видно, что
+
+<div style="margin: 1.2em 0em 0.7em 0em;
+			text-align: left;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi29.gif">
+</div>
+
+Таким образом, общее решение для функции <span><nobr><i>z</i>(<i>x</i>)</nobr></span> можно записать в виде
+
+
+<div style="margin: 1.5em 0em 0.4em 0em;
+			text-align: left;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi30.gif">
+</div>
+
+Тогда общее решение для исходной функции <span><nobr><i>y</i>(<i>x</i>)</nobr></span> определяется выражением
+
+<div style="margin: 1.0em 0em 0.4em 0em;
+			text-align: left;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/1sodi31.gif">
+</div>
+
+где <i>C</i><sub>1</sub> и <i>C</i><sub>2</sub> &#8722; произвольные постоянные. 
+
+
+<div style="margin: 1.0em 0em 0em 0em;
+			text-align: left;">
+<!-- Place this tag where you want the +1 button to render -->
+<span style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="plusone-span"><iframe title="+1" data-gapiattached="true" src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/fastbutton.htm" name="I0_1420205912846" id="I0_1420205912846" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></span>
+
+<iframe src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/like.htm" scrolling="no" style="border:none; overflow:hidden; width:150px; height:20px;" allowtransparency="true" frameborder="0"></iframe>
+</div>
+
+<br>
+
+
+</div>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr><td height="20"></td></tr>
+</tbody></table>
+
+<div style="margin: 1.5em 0em 0em 8.5em;
+			text-align: left;">
+</div>
+
+
+</td>
+<td bgcolor="white" width="12"></td>
+</tr>
+</tbody></table>
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="1000">
+<tbody><tr>
+<td border="0" align="center" width="1000">
+<font color="#666666" size="1" face="Verdana, Arial, Sans-Serif">
+Все права защищены © www.math24.ru, 2009-2014 &nbsp;
+<a href="mailto:info@math24.ru"><font color="#666666" size="1">info@math24.ru</font></a>
+<br>
+Сайт оптимизирован для Chrome, Firefox, Safari и Internet Explorer.
+</font>
+</td>
+</tr>
+
+
+
+<tr>
+<td border="0" align="left" width="1000">
+<div style="margin: 0.4em 0em 0em 2.55em;
+			text-align: left;">
+<!--Rating@Mail.ru counter-->
+<script language="javascript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer);js=10;//--></script>
+<script language="javascript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled();js=11;//--></script>
+<script language="javascript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height;
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;//--></script>
+<script language="javascript1.3" type="text/javascript"><!--
+js=13;//--></script><script language="javascript" type="text/javascript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=1769455" target="_top">'+
+'<img src="http://df.cf.ba.a1.top.mail.ru/counter?id=1769455;t=211;js='+js+
+a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru" border="0" '+
+'height="31" width="88"><\/a>');if(11<js)d.write('<'+'!-- ');//--></script><a href="http://top.mail.ru/jump?from=1769455" target="_top"><img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/counter.gif" alt="Рейтинг@Mail.ru" border="0" height="31" width="88"></a><!-- 
+<noscript><a target="_top" href="http://top.mail.ru/jump?from=1769455">
+<img src="http://df.cf.ba.a1.top.mail.ru/counter?js=na;id=1769455;t=211" 
+height="31" width="88" border="0" alt="Рейтинг@Mail.ru"></a></noscript>
+<script language="javascript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>');//-->
+<!--// Rating@Mail.ru counter-->
+
+<!--LiveInternet counter-->
+<script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='http://counter.yadro.ru/hit?t16.10;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,80))+";"+Math.random()+
+"' alt='' title='LiveInternet: number of pageviews for 24 hours,"+
+" of visitors for 24 hours and for today is shown' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/hit.gif" alt="" title="LiveInternet: number of pageviews for 24 hours, of visitors for 24 hours and for today is shown" border="0" height="31" width="88"></a>
+<!--/LiveInternet-->
+
+</div>
+</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+<!-- Place this tag in your head or just before your close body tag -->
+<script gapi_processed="true" type="text/javascript" src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/plusone.js">{parsetags: 'explicit'}</script>
+<script type="text/javascript">gapi.plusone.render("plusone-span", {"size": "medium"});</script>
+
+
+
+
+
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%91%D0%B5%D1%81%D1%81%D0%B5%D0%BB%D1%8F_files/postmessageRelay.htm" id="oauth2relay653790592" name="oauth2relay653790592"></iframe></body></html>

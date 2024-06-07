@@ -1,0 +1,569 @@
+@charset "windows-1251";
+body{ background-color:#ffffff; margin:0 0 0 0}
+.artnamepage{font-family:  Arial, Verdana, Helvetica, sans-serif;  font-size: 21px; margin-top: 0px; margin-bottom:5px; color:#000000; text-align:left; font-weight:bold; letter-spacing:1}
+.artzag{font-family: Arial; font-size: 18px; margin-bottom: 0px; margin-top:20px; color:#000000; font-weight:normal;}
+
+.artblockpage{font-family: Arial, Helvetica, sans-serif; font-size: 17px;
+ 	padding-left: 20px; margin-bottom: 25px; margin-top: 30px; border-bottom-color:#5f8018; border-bottom-style:solid; border-bottom-width:1px;}
+
+.artnamelisting{font-family: Arial, Helvetica, sans-serif; font-size: 12px;
+	background-color: #EDEDED; border-style: dotted; border-width: 1px; border-color: #818181;
+	padding: 5px; padding-left: 30px; margin-top: 30px; color:#0094dc}
+.artnametable{font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style: italic; font-weight:normal; padding-left: 30px; margin-bottom: 10px; text-decoration: underline; color:#646464}
+.artnamenote{font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #171F80;
+ padding-left: 30px; margin-top: 30px; margin-bottom: 10px; font-style: italic;  color:#d9251c;}
+
+.arttext{font-size: 12px; text-align: justify; line-height: 18px; margin-top: 5px; padding-left: 0px; padding-right:0px;
+	margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif;}
+.artlitext{text-indent: 0px; margin-bottom: 10px; margin-left:15px}
+.arttextnull{font-size: 12px; margin-top: 0px; text-indent: 0px;
+	margin-bottom: 0px; font-family: Arial, Helvetica, sans-serif;}
+
+.arttextindent{font-size: 12px; text-align: justify; line-height: 150%; margin-top: 0px;
+	margin-bottom: 0px; font-family: Arial, Helvetica, sans-serif; padding-left: 40px; text-indent: 0px}
+.artnote{font-size: 12px; text-align: justify; line-height: 150%; margin-top: 0px;
+	border-style: dashed; border-width: 1px; border-color: #C4C4C4; padding: 15px;
+	text-indent: 0px; color: #1C366D;  background-color: #F9F9F9}
+
+.artcode{text-indent: 0px; background-color: #EEEEEE; padding: 20px; color: #112BA5; margin-top: 5px;
+	font-size: 12px; line-height: 18px;}
+
+.artlink_r{	font-size: 12px;text-align: right; padding: 0px; margin: 0px; margin-right: 0px; padding-right: 0px; text-indent: 0px; margin-bottom: 5px; font-style:italic;}
+
+.artlink_l{font-size: 12px;  padding: 0px; margin: 0px; text-align: left; margin-left: 0px;
+	padding-left: 0px; text-indent: 0px; margin-bottom: 5px; font-style:italic;}
+
+.arttexttable{font-family: Arial, Helvetica, sans-serif; font-size: 11px; padding-left: 5px; padding-right: 5px;}
+.artzagfieldtable{font-family: Arial, Helvetica, sans-serif; font-size: 11px; padding-left: 5px; padding-right: 5px; text-align: center; font-weight: bold}
+.articletable{background-color: #F2F2F2; padding: 2px}
+
+.artdivright{float: right; padding-bottom: 10px; padding-left: 10; padding-right: 0; }
+.artdivcenter{float: center;  padding-bottom: 10px; padding-left: 0; padding-right: 0; }
+.artdivleft{float: left ;  padding-bottom: 10px; padding-left: 0; padding-right: 20; }
+
+h1{font-family: Arial, Helvetica, sans-serif; color:#FF0000;}
+h2{font-family: Arial, Helvetica, sans-serif;color:#0000FF;}
+h3{font-family: Arial, Helvetica, sans-serif;color:#0000FF;}
+h3.poll{font-family: Arial, Helvetica, sans-serif;color:#0000FF; margin-left:15;}
+h4{font-family: Arial, Helvetica, sans-serif;color:#0000FF;}
+h5{font-family: Arial, Helvetica, sans-serif;color:#0000FF;}
+h6{font-family: Arial, Helvetica, sans-serif;color:#0000FF;}
+
+p{font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+p.buttons{font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight:bold}
+p.poll{font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+p.phraze{font-family: Arial, Helvetica, sans-serif; font-size: 12px;color:#000; padding-left:5; padding-right:5; padding-top:3; text-align:justify; font-weight:bold}
+p.fresh{font-family: Arial, Helvetica, sans-serif; font-size: 10px;color:#000; padding-left:5; padding-right:5; padding-top:3; text-align: justify;}
+p.clear{clear:both; padding: 0 0 0 0; margin:0 0 0 0}
+
+p.dayof{font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style:italic;color:#660066;}
+p.leftmenu{font-family: Arial, Verdana, Helvetica, sans-serif;margin-left:10; margin-bottom:2;font-style:italic;}
+
+
+a.menutop{font-family: Arial, Verdana, Helvetica, sans-serif; font-size:18px; font-weight:bold; color:#000000;}
+a.menutop:hover{color:#ffde8f;}
+
+a{font-size: 12px; color: #646464; font-family: Arial, Helvetica, sans-serif;text-decoration: none; font-weight:bold;}
+a:hover{color:#d56205;}
+a:focus {
+outline:none;
+}
+
+.help{color: #fff; }
+.input{background-color: #FFFEE3; border-width: 2px}
+.button{border-width: 3px; color: #000000;}
+.table{background-color: #F9F9F9; font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+.zagtrtable{font-weight: bold; background-color: #C5CED2;}
+
+table.tableNW{border:none}
+tr.trtopNW{color:#00adef; font-family:Tahoma, Verdana, Arial, "Times New Roman"; font-size:12px}
+tr.trcenterNW{ font-family: Tahoma, Arial, "Times New Roman"; font-size:12px; text-align:justify;}
+p.nameNW{color:#ffde8f;}
+p.adminNW{color:#af3926; font-weight:bold; margin-top:10}
+p.link{font-family: Arial, Helvetica, sans-serif;font-size: 12px; }
+p.linkr{ text-align: right; font-family: Arial, Helvetica, sans-serif;font-size: 12px; padding-right: 15px; margin-right: 40px; }
+.datanews{color: #8B8B8B; margin:0px; margin-top: 20px; font-size: 12px; font-weight: normal}
+.zagnews{font-family: Arial, Helvetica, sans-serif; padding-top: 5px; margin-bottom: 5px; margin-top: 0px; font-size: 12px; color:#a06405; text-transform: uppercase; font-weight: bold}
+.textnews{margin-top: 10px; text-indent: 0px; text-align: justify}
+.newsblock{font-family: Arial, Helvetica, sans-serif; text-align: left;  padding-left: 0px; font-size: 12px; padding-right: 0px; color: #000000; }
+a.anewsblock{color:#778fd3; font-style:italic; font-weight:normal;}
+a.anewsblock:hover{color:#d56205;  text-decoration:underline}
+.img{margin-left: 20px}
+.namepage{font-size: 16px; color: #0E3E7F; text-transform: uppercase; font-family: Arial, Helvetica, sans-serif;}
+.zagblock{color:#a06405; text-align:right; padding-left: 10px; margin-top: 0px;
+text-transform: uppercase; font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 18px; font-weight: bold; margin-bottom: 0px}
+
+
+.color1{color:#ff0000}
+.color2{color:#634c0d}
+.color3{color:#00ff00}
+.color4{color:#0000ff}
+
+hr{color:#a06405; height:1}
+hr{ border:none; height:1; background: url(/images/hr.gif) no-repeat center}
+
+
+p.link{font-family: Arial, Helvetica, sans-serif;font-size: 12px; padding-left: 15px; }
+p.linkr{ text-align: right; font-family: Arial, Helvetica, sans-serif;font-size: 12px; padding-right: 15px; margin-right: 40px; }
+.datanews{color: #8B8B8B; margin:0px; margin-top: 20px; font-size: 12px; font-weight: normal}
+.zagnews{font-family: Tahoma, Verdana, Arial, "Times New Roman"; padding-top: 5px; margin-bottom: 5px; margin-top: 0px; font-size: 12px; color:#646464; text-transform: uppercase; font-weight: bold}
+.textnews{margin-top: 10px; text-indent: 0px; text-align: justify}
+.newsblockzag{font-family: Arial, Helvetica, sans-serif; padding-left: 0px; font-size: 13px; padding-right: 20px; color:#ffde8f; margin-top: 5px; margin-bottom: 5px}
+.newsblock{font-family: Arial, Helvetica, sans-serif; text-align: left;  padding-left: 0px; font-size: 12px; padding-right: 0px; color: #000000; margin-top: 0px; margin-bottom: 5px}
+.anewsblock{color:#af3926; font-style:italic}
+.namepage{font-size: 16px; color: #0E3E7F; text-transform: uppercase; font-family: Arial, Helvetica, sans-serif;}
+.zagblock{color:#a06405;text-align:right; padding-left: 10px; margin-top: 0px;
+text-transform: uppercase; font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 18px; font-weight: bold; margin-bottom: 0px}
+
+img.vramke{border:1px solid #cccccc;margin:0;padding:6px;background:#F8FAFC;}
+
+
+.img{margin-left: 0px; margin-top:5; margin-bottom:5; margin-right:10;border:1px solid #cccccc;padding:6px;background:#F8FAFC;}
+.img_r{margin-left: 10px; margin-top:5; margin-bottom:5; margin-right:0;border:1px solid #cccccc;padding:6px;background:#F8FAFC;}
+.img_c{margin-left: 10px; margin-top:5; margin-bottom:5; margin-right:10;border:1px solid #cccccc;padding:6px;background:#F8FAFC;}
+
+div.menu{position:relative; left:0; bottom:1;  color:#FFFFFF; font-size:12px; font-family:garamond; text-transform:uppercase; letter-spacing:2;}
+div.menu a{font-family:Tahoma, Verdana, Arial, "Times New Roman"; font-size:14px; text-transform:lowercase}
+div.copy {font-family:Tahoma, Verdana, Arial, "Times New Roman"; font-size:12px; color:#FFFFFF; position:relative; bottom:15  }
+
+
+
+
+/*главное меню слева*/
+table.mainmenu {
+margin:0 20 10 20;
+background-image:url(/images/box1_bg.gif);
+background-repeat:repeat-y;
+}
+
+table.mainmenu td{
+/*background-image:url(/images/li_bg.gif);*/
+/*background-image:url(/images/li.gif);
+background-repeat:no-repeat;*/
+height:26px;
+width:250px;
+/*padding-left:60;*/
+padding-left:10;
+}
+table.mainmenu th{
+background-image:url(/images/box1_h3.gif);
+background-repeat:no-repeat;
+height:62px;
+width:250px;
+font-size:22px;
+color:#FFFFFF;
+}
+
+table.mainmenu a{
+/*color:#000000;
+font-weight:bold;
+text-decoration:none;
+*/
+color:#000000;
+font-weight:bold;
+text-decoration:none;
+background-image:url(/images/bullet4.gif);
+background-repeat:no-repeat;
+background-position:left;
+padding-left:20;
+}
+table.mainmenu a:hover{
+color:#000000;
+font-weight:bold;
+text-decoration:underline;
+}
+/*--КОНЕЦ------главное меню слева--*/
+
+
+/*второе меню слева*/
+table.secondmenu {
+margin:0 20 10 20;
+background-image:url(/images/box2_bg.gif);
+background-repeat:repeat-y;
+}
+
+table.secondmenu td{
+padding:5 25 5 10;
+}
+table.secondmenu th{
+background-image:url(/images/box2_h3.gif);
+background-repeat:no-repeat;
+height:44px;
+width:250px;
+font-size:18px;
+color:#2f4522;
+}
+
+table.secondmenu a{
+color:#000000;
+font-weight:bold;
+text-decoration:none;
+}
+table.secondmenu a:hover{
+color:#000000;
+font-weight:bold;
+text-decoration:underline;
+}
+/*--КОНЕЦ------второе меню слева--*/
+
+/*третее меню слева*/
+table.thirdmenu {
+margin:0 20 10 20;
+background-image:url(/images/box3_bg.gif);
+background-repeat:repeat-y;
+}
+
+table.thirdmenu td{
+padding:5 25 5 10;
+}
+table.thirdmenu th{
+background-image:url(/images/box3_h3.gif);
+background-repeat:no-repeat;
+height:44px;
+width:250px;
+font-size:18px;
+color:#2f4522;
+}
+
+table.thirdmenu a{
+color:#000000;
+font-weight:bold;
+text-decoration:none;
+background-image:url(/images/bullet_blue.gif);
+background-repeat:no-repeat;
+background-position:left;
+padding-left:20
+}
+
+table.thirdmenu a.prodaj{
+color:#000000;
+font-weight:bold;
+text-decoration:none;
+background-image:none;
+padding-left:0;
+}
+
+table.thirdmenu a:hover{
+color:#000000;
+font-weight:bold;
+text-decoration:underline;
+}
+/*--КОНЕЦ------третее меню слева--*/
+
+td.siderleft {
+background-image:url(/images/leftside_bg.gif);
+background-repeat:repeat-y;
+background-position:right;
+}
+td.siderright {
+background-image:url(/images/rightside_bg.gif);
+background-repeat:repeat-y;
+background-position:left;
+}
+
+td.bottomside{
+background-color:#241d18;
+}
+
+
+/*новости на главной*/
+
+table.newstable th p{
+text-align:left;
+color:#d56205;
+font-size:21px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:normal;
+text-indent:30;
+border-bottom-style:solid;
+border-bottom-width:1px;
+border-bottom-color:#5f8018;
+padding-bottom:20px;
+}
+
+ul.news{
+list-style-image:url(/images/bullet2.gif);
+padding-left:30
+}
+
+ul.news li{
+padding-left:20
+}
+
+p.news_header{
+font-size:12px;
+margin-top:0;
+margin-bottom:5;
+font-weight:bold;
+}
+
+p.news_anonse{
+font-size:11px;
+margin-top:0;
+}
+
+/*--КОНЕЦ------новости на главной--*/
+
+/*--разноцветная таблица--*/
+.colortable {
+	background-color:#588221;
+}
+.color_th {
+	background-color:#a4c669;
+	height:25px;
+	color:#ffffff;
+}
+.color_tr1 {
+	background-color:#dfe3e8;
+	height:25px;
+}
+.color_tr2 {
+	background-color:#eff0f1;
+	height:25px;
+}
+/*------КОНЕЦ------разноцветная таблица---------------*/
+
+.logotext {
+color:#cccccc;
+font-size:12px;
+text-align:justify;
+}
+
+a.readon				{color:#000; font-size:12px; font-weight:bold; margin:0px 0px 0px 0px; padding:2px 0px 5px 0px; display:block; text-decoration:none; background:url(/images/button_blue.gif) no-repeat 0 0;  width:100px; text-align:center;}
+a.readon:hover			{color:#fff; text-decoration:underline;}
+
+
+
+
+
+/*________________________________________TOPMENU_____________________________________*/
+
+#topmenu				{height:38px; margin:0px 0px 0px 0px;}
+#topmenu .dt			{}
+#topmenu dl				{}
+ul.menu-nav 			{padding:0px 0px 0px 20px; margin:0px 0px 0px 0px}
+* html ul.menu-nav 		{margin:0}
+ul.menu-nav li			{display:block; float:left; padding:0px 0px 0px 0px;}
+ul.menu-nav li a  		{color:#fff !important; font-weight:bold; font-size:14px; text-decoration:none; display:block; text-transform:none; text-align:center; padding:0px 0px 0px 0px; width:auto; float:left; background:url(/images/topmenu_left.gif) no-repeat 0 0; margin:0px 1px 0px 0px;}
+* html ul.menu-nav li a	{}
+ul.menu-nav li a span	{display:block; padding:9px 25px 13px 25px; background:url(/images/topmenu_right.gif) no-repeat right 0}
+ul.menu-nav li a span em {font-style:normal;}
+
+ul.menu-nav li a:hover  {color:#2d2c2a !important; font-weight:bold; font-size:14px; text-decoration:none; display:block; background:url(/images/topmenu_left_act.gif) no-repeat 0 0;}
+ul.menu-nav li a:hover span {padding:9px 25px 13px 25px; display:block; background:url(/images/topmenu_right_act.gif) no-repeat right 0}
+
+ul.menu-nav li.active a {color:#2d2c2a !important; font-weight:bold; font-size:14px; text-decoration:none; display:block; background:url(/images/topmenu_left_act.gif) no-repeat 0 0; }
+ul.menu-nav li.active a span {padding:9px 25px 13px 25px; display:block; background:url(/images/topmenu_right_act.gif) no-repeat right 0}
+
+a.menu-nav:visited		{color:#2d2c2a}
+
+/*________________________________________LOGINFORM_____________________________________*/
+
+a.prodaj{color:#000;  background-image:none; padding-left:0}
+font.prodajfont{color:#000;}
+
+
+/*навигационная строка*/
+p.nav_str{font-size:10px; padding:2 2 2 2; color:#d56205; border-color:#cccccc; border-style:solid; border-width:1px;}
+a.nav_str{color:#778fd3; font-size:10px;}
+a.nav_str:hover{color:#d56205; text-decoration:underline}
+
+
+/*--------кнопка для старта тестирования----------------*/
+a.test_pusk {color:#f6f6f6; background-color:#aa0000;   font-size:18px; font-weight:bold;padding:10px 10px 10px 10px;
+text-decoration:none; text-align:center; width:300px; border-style:solid; border-width:2px; border-color:#cccccc;}
+a.test_pusk:hover {color:#aa0000; background-color:#d3d9e0; border-color:#aa0000;}
+
+/*--------ссылка букв в энциклопедии и ученых----------------*/
+a.scient_link{
+	color:#778fd3;
+}
+a.scient_link:hover{
+	color:#646464;
+}
+
+
+
+
+
+
+
+span.author{
+	color:#af2713;
+	font-size:12px;
+	font-style:italic;
+}
+
+span.date_time{
+	color:#bbb;
+	font-size:12px;
+	font-style:italic;
+}
+
+
+span.name_zada4a{
+	color:#555555;
+	text-transform: uppercase;
+	font-weight:bold;
+	font-family:Verdana, Verdana, Arial, Helvetica, sans-serif;
+}
+
+a.readon2				{color:#555555; font-size:12px; font-weight:bold; margin:0 0 0 0; padding:3 7 3 7; text-decoration:none;
+						 background:#eff0f1; border:solid 1px #c2c9d5; text-align:center; height:23}
+a.readon2:hover			{color:#af2713;}
+
+a.pusk {color:#f6f6f6; background-color:#aa0000;   font-size:11px; font-weight:bold;padding:5px 5px 5px 5px;
+text-decoration:none; text-align:center; width:140px; border-style:solid; border-width:1px; border-color:#cccccc;}
+a.pusk:hover {color:#aa0000; background-color:#d3d9e0; border-color:#aa0000;}
+
+span.body_zada4a{
+	font-size:13px;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color:#454545;
+	text-align:justify
+}
+span.body_zada4a p{
+	font-size:13px;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color:#454545;
+	text-align:justify
+}
+
+
+
+
+
+
+#accordion div{
+	border:none;
+	background:#f0eee7;
+	font-size:12px;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	padding:0 0 0 0;
+}
+
+#accordion h3 a{
+	color:#000;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size:14px;
+	list-style:none;
+	letter-spacing:2
+}
+
+#accordion h3 {
+	height:30px;
+	width:184px;
+ 	font-weight:bold;
+ 	color:#000;
+	/*background: url(/images/othermenu_bg2.jpg) no-repeat center top;  */
+	border:none;
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+}
+
+#accordion div ul {
+	margin:0 0 0 0;
+	list-style:inside;
+	padding:0 0 0 0;
+}
+#accordion div ul li{
+	padding:4 0 4 20;
+	vertical-align:center;
+	list-style:none;
+	background-color:#eff0f1;
+}
+
+#accordion div ul li a{
+  	color:#646464;
+  	font-weight:bold;
+  	margin:0 0 0 5;
+}
+#accordion div ul li a:hover{
+  	color:#d56205;
+}
+
+/*?????? ???? ?????*/
+table.zada4admenu {
+margin:0 20 0 20;
+background-image:url(/images/box6_bg.gif);
+background-repeat:repeat-y;
+}
+
+table.zada4admenu td{
+padding:5 5 5 5;
+}
+table.zada4admenu th{
+background-image:url(/images/box6_h3.gif);
+background-repeat:no-repeat;
+height:44px;
+width:200;
+font-size:18px;
+color:#2f4522;
+}
+
+/*--?????------?????? ???? ?????--*/
+
+
+
+
+
+
+
+
+form.loginform {
+	margin:0;
+	padding:5 5 5 5;}
+form.loginform fieldset{
+	margin:0;
+	padding:0;
+	border:none;}
+
+	form.loginform label {
+		float:left;
+		color:#333;
+		text-align:right;
+		margin-right:7px;}
+		form.loginform #mod_login_remembermetext label {
+			width:120px;
+			text-align:left;
+			line-height:normal}
+
+	 form.loginform .mod_login img{  margin-bottom:-3px}
+
+	form.loginform p {
+		margin:0 0 10px;}
+
+	form.loginform p.inline {
+		display:inline}
+	form.loginform label {
+		overflow:hidden;
+		display:none;
+		height:0;
+		width:0}
+	form.loginform .inputbox {width:180px;margin:0; padding:4px 5px 5px 22px; color:#555; border:1px solid #F5E2BA; background-color:#fff; border-color:#ccc; height:25px }
+		form.loginform #mod_login_username { background-image: url(/images/login_username.png); background-position: 3px 50%; background-repeat: no-repeat;}
+		form.loginform #mod_login_password	{ background-image: url(/images/login_password.png); background-position: 3px 50%; background-repeat: no-repeat;}
+	}
+
+
+
+
+form.loginform img.mod_login {
+	padding:5px;
+	background:#FDF8EE;
+	border:1px solid #EEC961;
+	margin:0 10px 0 0}
+form.loginform p.usernametext {
+	margin:30px 0 0 20px;
+	padding-left:65px;
+	font-weight:bold}
+
+
+
+
+
+
+
+
+
+

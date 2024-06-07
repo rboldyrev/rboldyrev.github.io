@@ -1,0 +1,761 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Лекция 4.  Сферические функции</title>
+
+
+
+</head>
+
+<body>
+<b> &lt;&lt; </b> <a name="tex2html116" href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node4.html">Лекция 3.  Теория потенциала</a>
+<b>|</b> <a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node1.html">Оглавление</a> <b>|</b>
+ <a name="tex2html126" href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node6.html">Лекция 5.  Аналитическое представление ...</a> <b> &gt;&gt; </b>
+<br> <p>
+
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<a name="CHILD_LINKS"><strong>Разделы</strong></a>
+
+</p><ul>
+<li><a name="tex2html127" href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#SECTION00510000000000000000">4.1 Полиномы Лежандра и их свойства</a>
+</li><li><a name="tex2html128" href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#SECTION00520000000000000000">4.2 Нормированные сферические функции</a>
+</li><li><a name="tex2html129" href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#SECTION00530000000000000000">4.3 Аналитическое представление функции, заданной на поверхности сферы, 
+               рядом Лапласа</a>
+</li></ul>
+<!--End of Table of Child-Links-->
+<hr>
+
+<h2><a name="SECTION00500000000000000000">
+Лекция 4.  Сферические функции</a>
+</h2>
+
+<p>
+<i>Полиномы Лежандра и сферические функции.
+        Ортогональность сферических функций. Нормирование. 
+        Ряд Лапласа. Аналитическое представление функций, 
+        заданных на сфере. Функции Лапласа.</i> 
+
+</p><p>
+
+</p><h2><a name="SECTION00510000000000000000">
+4.1 Полиномы Лежандра и их свойства</a>
+</h2>
+
+<p>
+Как мы видели, для вычисления сферических функций необходимо пользоваться 
+полиномами и функциями Лежандра, которые входят в аналитический вид 
+сферической функции. Для вычислений значений полиномов, и выполнения ряда 
+аналитических выкладок весьма полезными являются некоторые свойства 
+полиномов, на которых мы здесь остановимся.
+
+</p><p>
+<i>Рекуррентная формула</i> позволяет вычислить полином <img src="27_files/img252.gif" alt="" align="MIDDLE" border="0" height="30" width="45"> 
+степени, если известны значения полиномов <img src="27_files/img123.gif" alt="" align="BOTTOM" border="0" height="16" width="15"> и <img src="27_files/img253.gif" alt="" align="MIDDLE" border="0" height="30" width="45"> степеней
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.1"></a><!-- MATH
+ \begin{equation}
+(n + 1)P_{n + 1} (t) = (2n + 1)tP_{n} (t) -nP_{n -1} (t)\,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img254.gif" alt="" align="MIDDLE" border="0" height="34" width="345"></td>
+<td align="RIGHT" width="1%">(4.1)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+<i>Производящая функция полиномов Лежандра</i> 
+используется в представлении потенциала притяжения рядом по сферическим 
+функциям. Она имеет вид
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.2"></a><!-- MATH
+ \begin{equation}
+{\frac{{1}}{{\sqrt {1 -2\alpha t + t^{2}}}} } = {\sum\limits_{n =
+0}^{\infty}  {\alpha ^{n}P_{n} (t)}} \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img255.gif" alt="" align="MIDDLE" border="0" height="66" width="234"></td>
+<td align="RIGHT" width="1%">(4.2)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+
+</p><h2><a name="SECTION00511000000000000000">
+4.1.1 Ортогональность сферический функций</a>
+</h2>
+
+<p>
+Ортогональность полиномов Лежандра определяется формулой
+</p><p></p>
+<div align="CENTER"><a name="eq4.3"></a><!-- MATH
+ \begin{equation}
+{\int\limits_{-1}^{1} {P_{k} (t)P_{l} (t)dt}}  = {\frac{{2}}{{2n +
+1}}}\delta _{kl}\,,
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img256.gif" alt="" align="MIDDLE" border="0" height="82" width="219"></td>
+<td align="RIGHT" width="1%">(4.3)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+
+где <!-- MATH
+ $\delta _{kl}$
+ -->
+<img src="27_files/img257.gif" alt="" align="MIDDLE" border="0" height="32" width="25"> -- символ Кронекера. Присоединенные функции Лежандра 
+также обладают свойством ортогональности. Из теории специальных функций 
+известно, что
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.4"></a><!-- MATH
+ \begin{equation}
+{\int\limits_{-1}^{1} {P_{nm} (t)P_{kl} (t)dt = {\frac{{(n + m)!}}{{(n-
+m)!}}}{\frac{{\delta _{nk} \delta _{ml}}} {{2n + 1}}},}} 
+\qquad \textrm{при~} 
+m \ne 0\,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img258.gif" alt="" align="MIDDLE" border="0" height="82" width="410"></td>
+<td align="RIGHT" width="1%">(4.4)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Сферические функции также образуют класс ортогональных функций. Докажем 
+свойство <i>ортогональности сферических функций.</i> 
+Возьмем две шаровые функции первого рода <!-- MATH
+ $U_{m} = \rho ^{m}Y_{m}
+(\theta,\lambda )$
+ -->
+<img src="27_files/img259.gif" alt="" align="MIDDLE" border="0" height="34" width="137"> и <!-- MATH
+ $V_{l} = \rho ^{l}Y_{l} (\theta,\lambda )$
+ -->
+<img src="27_files/img260.gif" alt="" align="MIDDLE" border="0" height="38" width="112">. 
+
+</p><p>
+Применим к ним вторую формулу Грина для сферы. Учитывая, что <!-- MATH
+ $\Delta U_{m} =
+0  {\rm ?} \Delta {\rm V}_{{\rm l}} = 0$
+ -->
+<img src="27_files/img261.gif" alt="" align="MIDDLE" border="0" height="32" width="148">, формула Грина 
+принимает вид
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.5"></a><!-- MATH
+ \begin{equation}
+{\int\limits_{\Sigma}  {(U_{m} {\frac{{\partial V_{l}}} {{\partial n}}}-
+V_{l} {\frac{{\partial U_{m}}} {{\partial n}}})d\Sigma = 0}} \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img262.gif" alt="" align="MIDDLE" border="0" height="64" width="229"></td>
+<td align="RIGHT" width="1%">(4.5)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Для сферы производная по нормали совпадает с производной по радиус-вектору 
+<img src="27_files/img92.gif" alt="" align="MIDDLE" border="0" height="30" width="13">, поэтому
+
+</p><p>
+<!-- MATH
+ \begin{displaymath}
+{\frac{{\partial U_{m}}} {{\partial n}}} = m\rho ^{m -1}Y_{m} (\theta,\lambda ),  {\frac{{\partial {\rm V}_{{\rm l}}}} {{\partial {\rm n}}}} = l\rho ^{l -1}Y_{l} (\theta,\lambda )\,.
+\end{displaymath}
+ -->
+</p><p></p>
+<div align="CENTER">
+<img src="27_files/img263.gif" alt="" align="MIDDLE" border="0" height="56" width="346">
+</div><p></p>
+
+<p>
+Подставляя полученные выражения в формулу (<a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#eq4.5">4.5</a>), будем иметь
+
+</p><p>
+<!-- MATH
+ \begin{displaymath}
+{\int\limits_{\Sigma}  {(\rho ^{m + l -1}l -\rho ^{l + m -1}m)Y_{m}
+(\theta,\lambda )Y_{l} (\theta,\lambda )d\Sigma}}   = 0\,.
+\end{displaymath}
+ -->
+</p><p></p>
+<div align="CENTER">
+<img src="27_files/img264.gif" alt="" align="MIDDLE" border="0" height="64" width="367">
+</div><p></p>
+
+<p>
+Поскольку радиус-вектор -- постоянная величина, полученное выражение можно 
+переписать в следующем виде
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.6"></a><!-- MATH
+ \begin{equation}
+(l- m){\int\limits_{\Sigma}  {Y_{l} (\theta,\lambda )Y_{m} (\theta,\lambda )d\Sigma = 0}} \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img265.gif" alt="" align="MIDDLE" border="0" height="64" width="260"></td>
+<td align="RIGHT" width="1%">(4.6)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+При <img src="27_files/img266.gif" alt="" align="MIDDLE" border="0" height="32" width="49"> приведенный интеграл равен нулю, что указывает на 
+ортогональность сферических функций.
+
+</p><p>
+Вернемся теперь к сферическим функциям степени <img src="27_files/img123.gif" alt="" align="BOTTOM" border="0" height="16" width="15">, заданной в общем виде 
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.7"></a><!-- MATH
+ \begin{equation}
+Y_{n} (\theta,\lambda ) = {\sum\limits_{m = 0}^{n} {(A_{nm} \cos m\lambda +
+B_{nm} \sin m\lambda )P_{nm} (\cos \theta )}} \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img267.gif" alt="" align="MIDDLE" border="0" height="66" width="418"></td>
+<td align="RIGHT" width="1%">(4.7)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Функции вида 
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.8"></a><!-- MATH
+ \begin{equation}
+\begin{array}{l}
+R_{nm} (\theta,\lambda ) = P_{nm} (\cos \theta )\cos m\lambda\,, \\
+ S_{nm} (\theta,\lambda ) = P_{nm} (\cos \theta )\sin m\lambda\,, \\
+ \end{array}
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img268.gif" alt="" border="0" height="50" width="239"></td>
+<td align="RIGHT" width="1%">(4.8)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+
+называются <i> сферическими гармониками</i>. Очевидно, что 
+<!-- MATH
+ $R_{no} (\theta,\lambda ) = P_{n} (\cos \theta )$
+ -->
+<img src="27_files/img269.gif" alt="" align="MIDDLE" border="0" height="34" width="165">,   
+<!-- MATH
+ $S_{no} (\theta,\lambda ) = 0$
+ -->
+<img src="27_files/img270.gif" alt="" align="MIDDLE" border="0" height="34" width="103">. Можно показать, что
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.9"></a><!-- MATH
+ \begin{equation}
+\begin{array}{ll}
+{\frac{{1}}{{4\pi}} }{\int\limits_{\Sigma}  {R_{nm}^{2}}}  (\theta,\lambda
+)d\Sigma = {\frac{{1}}{{4\pi}} }{\int\limits_{\Sigma}  {S_{nm}^{2} (\theta,\lambda )d\Sigma = {\frac{{1}}{{2}}}{\frac{{1}}{{2n + 1}}}{\frac{{(n + 
+m)!}}{{(n -m)!}}}}}\,, &\quad    n \ne m \\
+ {\frac{{1}}{{4\pi}} }{\int\limits_{\Sigma}  {P_{n}^{2} (\cos \theta 
+)d\Sigma = {\frac{{1}}{{2n + 1}}}}}\,.  \\
+ \end{array}
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img271.gif" alt="" border="0" height="77" width="485"></td>
+<td align="RIGHT" width="1%">(4.9)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Все основные выкладки можно найти в учебниках по специальным функциям.
+
+</p><p>
+
+</p><h2><a name="SECTION00520000000000000000">
+4.2 Нормированные сферические функции</a>
+</h2>
+
+<p>
+Как мы видели, средние значения квадратов сферических гармоник достаточно 
+сложно выражаются через постоянные <img src="27_files/img244.gif" alt="" align="BOTTOM" border="0" height="16" width="20"> и <img src="27_files/img123.gif" alt="" align="BOTTOM" border="0" height="16" width="15">. Однако, каждую из гармоник можно 
+умножить на постоянные так, чтобы интегралы в формулах (<a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#eq4.9">4.9</a>) были равны 
+единице. Эта операция называется <i>нормировкой.</i> Обозначая чертой сверху нормированные функции, 
+можно записать
+
+</p><p>
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{l}
+ \bar {R}_{nm} (\theta,\lambda ) = \kappa _{nm} R_{nm} (\theta,\lambda ),
+\\
+ \bar {S}_{nm} (\theta,\lambda ) = \kappa _{nm} R_{nm} (\theta,\lambda ), 
+\\
+ \end{array}
+\end{displaymath}
+ -->
+</p><p></p>
+<div align="CENTER">
+<img src="27_files/img272.gif" alt="" border="0" height="50" width="207">
+</div><p></p>
+
+<p>
+
+где <!-- MATH
+ $\kappa _{nm}$
+ -->
+<img src="27_files/img273.gif" alt="" align="MIDDLE" border="0" height="30" width="35"> -- нормировочный множитель. Выберем его так, чтобы 
+выполнялись равенства
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.10"></a><!-- MATH
+ \begin{equation}
+{\frac{{1}}{{4\pi}} }{\int\limits_{\Sigma}  {\bar {R}_{nm}^{2} (\theta,\lambda )d\Sigma = 1\,,    {\rm }{\frac{{1}}{{4\pi}} }{\int\limits_{\Sigma}  {\bar {S}_{nm}^{2} (\theta,\lambda )d\Sigma = 1\,.}}  } }
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img274.gif" alt="" align="MIDDLE" border="0" height="64" width="363"></td>
+<td align="RIGHT" width="1%">(4.10)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Обращаясь к формулам (<a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#eq4.9">4.9</a>) легко устанавливаем, что
+
+</p><p>
+<!-- MATH
+ \begin{displaymath}
+\kappa _{nm}^{2} =
+\left\{ 
+ \begin{array}{ll}
+ 	2n + 1\,,         &\qquad  m = 0\,, \\
+ 	(2n + 1)\frac{2(n -m)!}{(n + m)!}\,, & \qquad m \ne 0\,.\\
+ \end{array}
+\right.
+\end{displaymath}
+ -->
+</p><p></p>
+<div align="CENTER">
+<img src="27_files/img275.gif" alt="" align="MIDDLE" border="0" height="69" width="322">
+</div><p></p>
+
+<p>
+Полученную формулу можно переписать следующим образом 
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.11"></a><!-- MATH
+ \begin{equation}
+\kappa ^{2}_{nm} = (2n + 1)\delta _{m} \frac{(n-m)!}{(n + m)!}\,,
+\quad \textrm{где~}
+\delta _{m} =
+\left\{ 
+\begin{array}{ll}
+ 		1\,, & \quad   m = 0\,, \\
+		2\,, & \quad   m \ne 0\,. \\
+	\end{array}
+\right.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img276.gif" alt="" align="MIDDLE" border="0" height="60" width="449"></td>
+<td align="RIGHT" width="1%">(4.11)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Операции нормировки подвергают не только сферические гармоники, но и 
+полиномы и функции Лежандра. В частности, если нормированная сферическая 
+функция имеет вид 
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.12"></a><!-- MATH
+ \begin{equation}
+\bar {Y}_{n} (\theta,\lambda ) = {\sum\limits_{m = 0}^{n} {(A_{nm} \cos
+m\lambda + B_{nm} \sin m\lambda )\bar {P}_{nm} (\cos \theta )}  
+}\,,
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img277.gif" alt="" align="MIDDLE" border="0" height="66" width="418"></td>
+<td align="RIGHT" width="1%">(4.12)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+то
+<!-- MATH
+ \begin{displaymath}
+\bar {P}_{nm} (\cos \theta ) = \sqrt {\delta _{m} (2n + 1){\frac{{(n-
+m)!}}{{(n + m)!}}}} \sin ^{m}\theta {\frac{{d^{m}P_{n} (\cos \theta 
+)}}{{d(\cos \theta )^{m}}}}      
+\end{displaymath}
+ -->
+<p></p>
+<div align="CENTER">
+<img src="27_files/img278.gif" alt="" align="MIDDLE" border="0" height="73" width="421">
+</div><p></p>
+
+<p>
+
+</p><h2><a name="SECTION00530000000000000000">
+4.3 Аналитическое представление функции, заданной на поверхности сферы, 
+               рядом Лапласа</a>
+</h2>
+
+<p>
+Свойство ортогональности сферических функций делает их незаменимыми для 
+аналитического представления физического поля, рельефа или других величин, 
+заданных в виде карты на сферической поверхности. Сферические функции играют 
+ту же роль, что и тригонометрические для приближенного представления 
+произвольной функции, заданной на отрезке рядом Фурье. Ряд, заданный в виде 
+суммы сферических гармоник, иногда называют рядом Лапласа.
+
+</p><p>
+Пусть <!-- MATH
+ $f(\theta,\lambda )$
+ -->
+<img src="27_files/img279.gif" alt="" align="MIDDLE" border="0" height="34" width="55"> -- известная, кусочно-непрерывная функция, 
+заданная в сферических координатах. Аппроксимацию этой функции зададим в 
+виде конечного ряда, содержащего <img src="27_files/img280.gif" alt="" align="BOTTOM" border="0" height="15" width="20"> сферических гармоник
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.13"></a><!-- MATH
+ \begin{equation}
+\tilde {f}(\theta,\lambda ) = {\sum\limits_{n = 0}^{N} {{\sum\limits_{m =
+0}^{n} {{\left[ {A_{nm} \bar {R}_{nm} (\theta,\lambda ) + B_{nm} \bar 
+{S}_{nm} (\theta,\lambda )} \right]}}}} } \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img281.gif" alt="" align="MIDDLE" border="0" height="72" width="397"></td>
+<td align="RIGHT" width="1%">(4.13)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Определим коэффициенты этого разложения так, чтобы функция <!-- MATH
+ $\tilde
+{f}(\theta,\lambda )$
+ -->
+<img src="27_files/img282.gif" alt="" align="MIDDLE" border="0" height="40" width="55"> аппроксимировала функцию <!-- MATH
+ $f(\theta,\lambda )$
+ -->
+<img src="27_files/img279.gif" alt="" align="MIDDLE" border="0" height="34" width="55"> с 
+наименьшим среднеквадратическим отклонением
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.14"></a><!-- MATH
+ \begin{equation}
+E = {\frac{{1}}{{4\pi}} }{\int\limits_{\Sigma}  {\left( {f(\theta,\lambda )
+-\tilde {f}(\theta,\lambda )} \right)^{2}d\Sigma = \min}}  \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img283.gif" alt="" align="MIDDLE" border="0" height="64" width="320"></td>
+<td align="RIGHT" width="1%">(4.14)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Для определения коэффициентов <img src="27_files/img284.gif" alt="" align="MIDDLE" border="0" height="32" width="39"> и <img src="27_files/img285.gif" alt="" align="MIDDLE" border="0" height="32" width="39"> воспользуемся условиями
+<!-- MATH
+ \begin{displaymath}
+{\frac{{\partial E}}{{\partial A_{nm}}} } = 0\,,
+\qquad
+{\frac{{\partial E}}{{\partial B_{nm}}} } = 0\,.
+\end{displaymath}
+ -->
+</p><p></p>
+<div align="CENTER">
+<img src="27_files/img286.gif" alt="" align="MIDDLE" border="0" height="56" width="218">
+</div><p></p>
+где
+<img src="27_files/img244.gif" alt="" align="BOTTOM" border="0" height="16" width="20"> и <img src="27_files/img123.gif" alt="" align="BOTTOM" border="0" height="16" width="15">, заданные числа. Выполняя дифференцирование, 
+с учетом (<a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#eq4.13">4.13</a>), получим
+
+<p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.15"></a><!-- MATH
+ \begin{equation}
+\begin{array}{l}
+{\frac{{\partial E}}{{\partial A_{nm}}} } =- {\frac{{1}}{{2\pi
+}}}{\int\limits_{\Sigma}  {\bar {R}_{nm} (\theta,\lambda ){\left[ {f(\theta,\lambda ) -\tilde {f}(\theta,\lambda )} \right]}d\Sigma}}   = 0 \\
+ {\frac{{\partial E}}{{\partial B_{nm}}} } =- {\frac{{1}}{{2\pi 
+}}}{\int\limits_{\Sigma}  {S_{nm} (\theta,\lambda )}} {\left[ {f(\theta,\lambda ) -\tilde {f}(\theta,\lambda )} \right]}d\Sigma = 0 \\
+ \end{array}
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img287.gif" alt="" border="0" height="84" width="374"></td>
+<td align="RIGHT" width="1%">(4.15)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+В полученные выражения нужно подставить вместо <!-- MATH
+ $\tilde {f}(\theta,\lambda
+)$
+ -->
+<img src="27_files/img282.gif" alt="" align="MIDDLE" border="0" height="40" width="55"> правую часть формулы (<a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#eq4.13">4.13</a>), заменив в ней индексы суммирования <img src="27_files/img244.gif" alt="" align="BOTTOM" border="0" height="16" width="20"> и <img src="27_files/img123.gif" alt="" align="BOTTOM" border="0" height="16" width="15">на <img src="27_files/img288.gif" alt="" align="BOTTOM" border="0" height="16" width="14">и 
+<img src="27_files/img289.gif" alt="" align="BOTTOM" border="0" height="16" width="10">. Мы получим интегралы вида 
+
+</p><p>
+<!-- MATH
+ \begin{displaymath}
+\int\limits_\Sigma  \bar {R}_{nm} (\theta,\lambda) \bar {R}_{kl}
+	(\theta,\lambda )\,d\Sigma    
+\quad  \textrm{и} \quad  
+\int\limits_\Sigma  \bar {S}_{nm} (\theta,\lambda )\bar {R}_{kl} 
+	(\theta,\lambda )\,d\Sigma    
+\quad \ldots
+\end{displaymath}
+ -->
+</p><p></p>
+<div align="CENTER">
+<img src="27_files/img290.gif" alt="" align="MIDDLE" border="0" height="64" width="462">
+</div><p></p>
+
+<p>
+Вследствие ортогональности сферических гармоник только те из интегралов 
+отличны от нуля, которые содержат произведения одноименных гармоник с 
+одинаковыми индексами. Выполнив операции, получим
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.16"></a><!-- MATH
+ \begin{equation}
+\begin{array}{l}
+A_{nm} = {\frac{{1}}{{4\pi}} }{\int\limits_{\Sigma}  {f\theta,\lambda
+)\bar {R}_{nm} (\theta,\lambda )d\Sigma}}\,,   \\
+ B_{nm} = {\frac{{1}}{{4\pi}} }{\int\limits_{\Sigma}  {f(\theta,\lambda 
+)\bar {S}_{nm} (\theta,\lambda )d\Sigma}}\,.   \\
+ \end{array}
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img291.gif" alt="" border="0" height="74" width="242"></td>
+<td align="RIGHT" width="1%">(4.16)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Итак, наилучшая средняя квадратическая аппроксимация функции <!-- MATH
+ $f(\theta,\lambda )$
+ -->
+<img src="27_files/img279.gif" alt="" align="MIDDLE" border="0" height="34" width="55">заданной на сфере, многочленом, составленным из нормированных 
+сферических гармоник степени и порядка <img src="27_files/img280.gif" alt="" align="BOTTOM" border="0" height="15" width="20">, имеет вид
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.17"></a><!-- MATH
+ \begin{equation}
+\tilde {f}(\theta,\lambda ) = {\sum\limits_{n = 0}^{N} {{\sum\limits_{m =
+0}^{n} {\left( {A_{nm} \cos m\lambda + B_{nm} \sin m\lambda}  \right)\bar 
+{P}_{nm} (\cos \theta )}}} } \,,
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img292.gif" alt="" align="MIDDLE" border="0" height="72" width="440"></td>
+<td align="RIGHT" width="1%">(4.17)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+
+где <!-- MATH
+ $\bar {P}_{nm} (\cos \theta )$
+ -->
+<img src="27_files/img293.gif" alt="" align="MIDDLE" border="0" height="36" width="85"> -- нормированная присоединенная функция 
+Лежандра.
+
+</p><p>
+Специальное исследование показало, что наш ряд при неограниченном увеличении 
+числа членов при некоторых дополнительных условиях, накладываемых на функцию 
+<!-- MATH
+ $f(\theta,\lambda )$
+ -->
+<img src="27_files/img279.gif" alt="" align="MIDDLE" border="0" height="34" width="55">, сходится. Однако, исследование скорости этой 
+сходимости лежит за пределами нашего курса.
+
+</p><p>
+
+</p><h2><a name="SECTION00531000000000000000">
+4.3.1 Интегральная форма ряда Лапласа</a>
+</h2>
+
+<p>
+Мы уже говорили, что разложения вида (<a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#eq4.17">4.17</a>) есть аналог ряда Фурье, в 
+котором роль тригонометрических функций выполняют сферические функции. 
+Существует также и аналог интеграла Фурье -- интегральная форма ряда 
+Лапласа. Для того, чтобы ее получить, подставим в (<a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#eq4.17">4.17</a>) постоянные 
+<img src="27_files/img284.gif" alt="" align="MIDDLE" border="0" height="32" width="39"> и <img src="27_files/img285.gif" alt="" align="MIDDLE" border="0" height="32" width="39">, 
+которые определятся с помощью интегралов (<a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#eq4.16">4.16</a>).
+Переменные, 
+по которым производится интегрирование мы будем помечать штрихом. Таким 
+образом
+
+</p><p>
+<!-- MATH
+ \begin{displaymath}
+\tilde {f}(\theta,\lambda ) = {\frac{{1}}{{4\pi}} }{\sum\limits_{n = 0}^{N}
+{{\sum\limits_{m = 0}^{n} {{\int\limits_{\Sigma}  {f({\theta} ',{\lambda 
+}'){\left[ {\bar {R}_{nm} ({\theta} ',{\lambda} ')\cos m\lambda + \bar 
+{S}_{nm} ({\theta} ',{\lambda} ')\sin m\lambda}  \right]}\bar {P}_{nm} (\cos 
+\theta )d\Sigma}} } }} }\,.
+\end{displaymath}
+ -->
+</p><p></p>
+<div align="CENTER">
+<img src="27_files/img294.gif" alt="" align="MIDDLE" border="0" height="72" width="659">
+</div><p></p>
+
+<p>
+Принимая во внимание, что
+
+</p><p>
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{l}
+ \bar {R}_{nm} ({\theta} ',{\lambda} ') = \cos m{\lambda} '\bar {P}_{nm}
+(\cos {\theta} ')\,, \\
+ \bar {S}_{nm} ({\theta} ',{\lambda} ') = \sin m{\lambda} '\bar {P}_{nm} 
+(\cos {\theta} ')\,, \\
+ \end{array}
+\end{displaymath}
+ -->
+</p><p></p>
+<div align="CENTER">
+<img src="27_files/img295.gif" alt="" border="0" height="50" width="254">
+</div><p></p>
+
+<p>
+
+получим
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.18"></a><!-- MATH
+ \begin{equation}
+\tilde {f}(\theta,\lambda ) = {\frac{{1}}{{4\pi}} }{\sum\limits_{n = 0}^{N}
+{{\sum\limits_{m = 0}^{n} {{\int\limits_{\Sigma}  {f({\theta} ',{\lambda 
+}')\cos m(\lambda -{\lambda} ')\bar {P}_{nm} (\cos {\theta} ')\bar {P}_{nm} 
+(\cos \theta )d\Sigma}} } }} } \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img296.gif" alt="" align="MIDDLE" border="0" height="72" width="541"></td>
+<td align="RIGHT" width="1%">(4.18)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Для дальнейшего упрощения полученной интегральной формулы воспользуемся так 
+называемой <i>теоремой сложения сферических функций.</i>
+
+</p><p>
+Пусть точка <img src="27_files/img2.gif" alt="" align="BOTTOM" border="0" height="15" width="18"> имеет постоянные координаты, а точка <img src="27_files/img47.gif" alt="" align="MIDDLE" border="0" height="32" width="18"> принадлежит элементу 
+поверхности и имеет штрихованные координаты. Обозначим центральное 
+расстояние между этими двумя точками греческой буквой <img src="27_files/img297.gif" alt="" align="MIDDLE" border="0" height="32" width="16">. Тогда теорема 
+сложения для нормированных сферических функций выглядит так 
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.19"></a><!-- MATH
+ \begin{equation}
+P_{n} (\cos \psi ) = {\frac{{1}}{{2n + 1}}}{\sum\limits_{m = 0}^{n} {\bar
+{P}_{nm} (\cos \theta )\bar {P}_{nm} (\cos {\theta} ')\cos m(\lambda- 
+{\lambda} ')}} \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img298.gif" alt="" align="MIDDLE" border="0" height="66" width="462"></td>
+<td align="RIGHT" width="1%">(4.19)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Теперь формулу (<a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node5.html#eq4.18">4.18</a>) можно переписать следующим образом
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.20"></a><!-- MATH
+ \begin{equation}
+\tilde {f}(\theta,\lambda ) = {\int\limits_{\Sigma}  {{\sum\limits_{n =
+0}^{N} {{\frac{{2n + 1}}{{4\pi}} }f({\theta} ',{\lambda} ')P_{n} (\cos \psi 
+)d\Sigma}} } } \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img299.gif" alt="" align="MIDDLE" border="0" height="72" width="341"></td>
+<td align="RIGHT" width="1%">(4.20)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Каждое слагаемое в полученной формуле часто называют <i>функциями Лапласа</i>
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq4.21"></a><!-- MATH
+ \begin{equation}
+f_{n} (\theta,\lambda ) = {\frac{{2n + 1}}{{4\pi}} }{\int\limits_{\Sigma}
+{f({\theta} ',{\lambda} ')P_{n} (\cos \psi )d\Sigma}}  \,.
+\end{equation}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE">
+<td align="CENTER" nowrap="nowrap"><img src="27_files/img300.gif" alt="" align="MIDDLE" border="0" height="64" width="320"></td>
+<td align="RIGHT" width="1%">(4.21)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+<br></p><hr>
+<b> &lt;&lt; </b> <a name="tex2html116" href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node4.html">Лекция 3.  Теория потенциала</a>
+<b>|</b> <a href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node1.html">Оглавление</a> <b>|</b>
+ <a name="tex2html126" href="http://lnfm1.sai.msu.ru/grav/russian/lecture/tfe/node6.html">Лекция 5.  Аналитическое представление ...</a> <b> &gt;&gt; </b>
+<br> <p>
+
+<!--End of Navigation Panel-->
+
+
+
+</p></body></html>
