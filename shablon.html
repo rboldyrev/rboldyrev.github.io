@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задач по физике</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .task-container {
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .task-header {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .task-body {
+            display: flex;
+        }
+        .task-info {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            padding-right: 20px;
+            border-right: 1px solid #999;
+        }
+        .task-info div {
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .given {
+            background-color: #e0f7fa;
+            color: #00695c;
+        }
+        .to-find {
+            background-color: #e0f7fa;
+            color: #00695c;
+        }
+        .solution {
+            flex: 1;
+            padding-left: 20px;
+        }
+        .solution h3 {
+            color: #00695c;
+        }
+        .solution p {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Решение задач по физике</h1>
+
+    <!-- Задача 2 -->
+    <div class="task-container">
+        <div class="task-header">
+            <strong>Задача 2:</strong> Шарик радиусом \(2 \times 10^{-2}\) м заряжен с поверхностной плотностью \(7 \times 10^6\) Кл/м². На расстоянии 18 см от поверхности шара в точке B находится точечный заряд \(7 \times 10^8\) Кл. Найти напряженность электрического поля шарика в точке B и силу, действующую со стороны поля на точечный заряд.
+        </div>
+        <div class="task-body">
+            <div class="task-info">
+                <div class="given">
+                    <h3>Дано:</h3>
+                    <p>
+                        Радиус \( R = 2 \times 10^{-2} \, \text{м} \)<br>
+                        Плотность заряда \( \sigma = 7 \times 10^6 \, \text{Кл/м}^2 \)<br>
+                        Расстояние \( r = 0.18 + 0.02 = 0.20 \, \text{м} \)<br>
+                        Заряд в точке \( Q = 7 \times 10^8 \, \text{Кл} \)
+                    </p>
+                </div>
+                <div class="to-find">
+                    <h3>Найти:</h3>
+                    <p>Напряженность \( E \) и силу \( F \)</p>
+                </div>
+            </div>
+            <div class="solution">
+                <h3>Решение:</h3>
+                <p>Для нахождения напряженности используем теорему Гаусса. Выберем сферическую поверхность радиусом \( r = 0.20 \, \text{м} \) с центром в центре шара:</p>
+                <p>\[
+                    \oint E \, dS = \frac{Q_{\text{внутр}}}{\varepsilon_0}
+                \]</p>
+                <p>Площадь сферы радиуса \( r \) равна \( S = 4 \pi r^2 \), поэтому</p>
+                <p>\[
+                    E \cdot 4 \pi r^2 = \frac{Q_{\text{внутр}}}{\varepsilon_0}
+                \]</p>
+                <p>Заряд \( Q_{\text{внутр}} = \sigma \cdot 4 \pi R^2 \):</p>
+                <p>\[
+                    E = \frac{\sigma \cdot R^2}{\varepsilon_0 \cdot r^2}
+                \]</p>
+                <p>Подставляя значения, получаем:</p>
+                <p>\[
+                    E = \frac{7 \times 10^6 \cdot (2 \times 10^{-2})^2}{8.85 \times 10^{-12} \cdot 0.2^2} \approx 3.96 \times 10^{6} \, \text{В/м}
+                \]</p>
+                <p>Сила на заряд \( Q \) в точке B равна \( F = Q \cdot E \):</p>
+                <p>\[
+                    F = 7 \times 10^8 \cdot 3.96 \times 10^{6} \approx 2.77 \times 10^{15} \, \text{Н}
+                \]</p>
+                <p><strong>Ответ:</strong> \( E \approx 3.96 \times 10^{6} \, \text{В/м} \), \( F \approx 2.77 \times 10^{15} \, \text{Н} \).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Задача 5 -->
+    <div class="task-container">
+        <div class="task-header">
+            <strong>Задача 5:</strong> К шару радиусом 3 см с поверхностной плотностью заряда \(9 \times 10^{-12} \, \text{Кл/м}^2\) приближается из бесконечности точечный заряд \(3 \times 10^{-7} \, \text{Кл}\). Определить работу по перемещению его в точку, отстоящую от поверхности шара на 2 см.
+        </div>
+        <div class="task-body">
+            <div class="task-info">
+                <div class="given">
+                    <h3>Дано:</h3>
+                    <p>
+                        Радиус \( R = 3 \, \text{см} = 0.03 \, \text{м} \)<br>
+                        Плотность заряда \( \sigma = 9 \times 10^{-12} \, \text{Кл/м}^2 \)<br>
+                        Заряд \( q = 3 \times 10^{-7} \, \text{Кл} \)<br>
+                        Расстояние от поверхности \( r_1 = 2 \, \text{см} = 0.02 \, \text{м} \)
+                    </p>
+                </div>
+                <div class="to-find">
+                    <h3>Найти:</h3>
+                    <p>Работу \( W \)</p>
+                </div>
+            </div>
+            <div class="solution">
+                <h3>Решение:</h3>
+                <p>Для нахождения работы, нужно сначала найти потенциал шара в точке, отстоящей от поверхности на 2 см, и затем использовать формулу для работы при перемещении заряда в электрическом поле:</p>
+
+                <p>Напряженность электрического поля на поверхности шара можно найти через теорему Гаусса:</p>
+                <p>\[
+                    E = \frac{\sigma}{\varepsilon_0}
+                \]</p>
+                <p>Для нахождения работы, используем следующее выражение для работы при перемещении заряда в электрическом поле:</p>
+                <p>\[
+                    W = q \cdot (\varphi_1 - \varphi_0)
+                \]</p>
+                <p>Где \( \varphi_1 \) — потенциал на расстоянии \( r_1 \) от поверхности шара, а \( \varphi_0 \) — потенциал в бесконечности, равный 0.</p>
+                <p>Потенциал шара можно выразить через интеграл напряженности:</p>
+                \[
+                    \varphi_1 = \int_{\infty}^{r_1} E \, dr
+                \]
+                Подставляем выражение для напряженности \( E = \frac{\sigma}{\varepsilon_0} \) и решаем интеграл:
+                \[
+                    \varphi_1 = \int_{\infty}^{r_1} \frac{\sigma}{\varepsilon_0} \, dr = \frac{\sigma}{\varepsilon_0} \cdot r_1
+                \]
+                Подставляем известные значения:
+                \[
+                    \varphi_1 = \frac{9 \times 10^{-12}}{8.85 \times 10^{-12}} \cdot 0.02 = 2.04 \, \text{В}
+                \]
+                Теперь, используя формулу для работы:
+                \[
+                    W = q \cdot \varphi_1 = 3 \times 10^{-7} \cdot 2.04 = 6.12 \times 10^{-7} \, \text{Дж}
+                \]
+
+                <p><strong>Ответ:</strong> \( W \approx 6.12 \times 10^{-7} \, \text{Дж} \)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Задача 8 -->
+    <div class="task-container">
+        <div class="task-header">
+            <strong>Задача 8:</strong> Во сколько раз изменится потребляемая мощность, если две лампочки сопротивлениями 20 и 40 Ом включённые последовательно, соединить параллельно? Напряжение сети постоянно.
+        </div>
+        <div class="task-body">
+            <div class="task-info">
+                <div class="given">
+                    <h3>Дано:</h3>
+                    <p>Сопротивления: \( R_1 = 20 \, \Omega \), \( R_2 = 40 \, \Omega \)</p>
+                </div>
+                <div class="to-find">
+                    <h3>Найти:</h3>
+                    <p>Отношение мощностей \( \frac{P_{\text{нов}}}{P_{\text{стар}}} \)</p>
+                </div>
+            </div>
+            <div class="solution">
+                <h3>Решение:</h3>
+                <p>Последовательное сопротивление:</p>
+                <p>\[
+                    R_{\text{посл}} = R_1 + R_2 = 60 \, \Omega
+                \]</p>
+                <p>Параллельное сопротивление:</p>
+                <p>\[
+                    R_{\text{пар}} = \frac{R_1 R_2}{R_1 + R_2} = \frac{20 \cdot 40}{20 + 40} = 13.33 \, \Omega
+                \]</p>
+                <p>Формула мощности: \( P = \frac{U^2}{R} \)</p>
+                <p>\[
+                    \frac{P_{\text{нов}}}{P_{\text{стар}}} = \frac{60}{13.33} \approx 4.5
+                \]</p>
+                <p><strong>Ответ:</strong> Мощность увеличится в 4.5 раза.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Задача 10 -->
+    <div class="task-container">
+        <div class="task-header">
+            <strong>Задача 10:</strong> Два источника тока с ЭДС 120 В и 300 В и внутренними сопротивлениями 140 Ом и 200 Ом соединены одноимёнными полюсами параллельно друг другу и сопротивлению 84 Ом. Какова сила тока, текущего по участку с первым источником?
+        </div>
+        <div class="task-body">
+            <div class="task-info">
+                <div class="given">
+                    <h3>Дано:</h3>
+                    <p>
+                        ЭДС первого источника: \( \mathcal{E}_1 = 120 \, \text{В} \)<br>
+                        ЭДС второго источника: \( \mathcal{E}_2 = 300 \, \text{В} \)<br>
+                        Внутреннее сопротивление первого источника: \( R_1 = 140 \, \text{Ом} \)<br>
+                        Внутреннее сопротивление второго источника: \( R_2 = 200 \, \text{Ом} \)<br>
+                        Внешнее сопротивление: \( R = 84 \, \text{Ом} \)
+                    </p>
+                </div>
+                <div class="to-find">
+                    <h3>Найти:</h3>
+                    <p>Сила тока \( I_1 \), текущего по участку с первым источником.</p>
+                </div>
+            </div>
+            <div class="solution">
+                <h3>Решение:</h3>
+                <p>Для решения задачи необходимо сначала найти эквивалентную ЭДС и сопротивление двух источников, а затем вычислить ток через первый источник.</p>
+                <p>1. <strong>Найдем эквивалентную ЭДС:</strong> Для двух источников, соединённых параллельно, эквивалентная ЭДС будет вычисляться по формуле:</p>
+                \[
+                    \mathcal{E}_{\text{экв}} = \frac{\mathcal{E}_1 R_2 + \mathcal{E}_2 R_1}{R_1 + R_2}
+                \]
+                Подставляем известные значения:
+                \[
+                    \mathcal{E}_{\text{экв}} = \frac{120 \cdot 200 + 300 \cdot 140}{140 + 200} = \frac{24000 + 42000}{340} = \frac{66000}{340} \approx 194.12 \, \text{В}
+                \]
+
+                <p>2. <strong>Найдем эквивалентное сопротивление:</strong> Оно будет вычисляться по формуле для параллельных сопротивлений:</p>
+                \[
+                    R_{\text{экв}} = \frac{R_1 R_2}{R_1 + R_2}
+                \]
+                Подставляем известные значения:
+                \[
+                    R_{\text{экв}} = \frac{140 \cdot 200}{140 + 200} = \frac{28000}{340} \approx 82.35 \, \text{Ом}
+                \]
+
+                <p>3. <strong>Найдем общий ток в цепи:</strong> С помощью закона Ома находим общий ток:</p>
+                \[
+                    I_{\text{общ}} = \frac{\mathcal{E}_{\text{экв}}}{R_{\text{экв}} + R}
+                \]
+                Подставляем известные значения:
+                \[
+                    I_{\text{общ}} = \frac{194.12}{82.35 + 84} = \frac{194.12}{166.35} \approx 1.17 \, \text{А}
+                \]
+
+                <p>4. <strong>Найдем ток через первый источник:</strong> Для нахождения тока через первый источник, используем пропорцию, так как источники соединены параллельно:</p>
+                \[
+                    I_1 = I_{\text{общ}} \cdot \frac{R_2}{R_1 + R_2}
+                \]
+                Подставляем известные значения:
+                \[
+                    I_1 = 1.17 \cdot \frac{200}{140 + 200} = 1.17 \cdot \frac{200}{340} \approx 0.69 \, \text{А}
+                \]
+
+                <p><strong>Ответ:</strong> \( I_1 \approx 0.69 \, \text{А} \)</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
