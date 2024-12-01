@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика: Энтропия и Температура</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]},
+        });
+    </script>
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1 {
+            margin-top: 40px; /* Верхний отступ */
+            margin-bottom: 20px; /* Нижний отступ */
+            border-bottom: 2px solid #0026ff; /* Линия под заголовком */
+            padding-bottom: 10px; /* Отступ текста от линии */
+            color: #333;
+        }
+        .highlight {
+            color: #0026ff; /* Красный для выделения важных пунктов */
+            font-weight: bold;
+        }
+        .formula {
+            color: #4800ff; /* Голубой для формул */
+        }
+        .definition-block {
+            border-left: 4px solid #0026ff;
+            background-color: #b4c2dc3f;
+            padding: 10px 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>1. Тепловое равновесие. Температура как параметр теплового равновесия.</h1>
+    <div class="definition-block">
+        <p>В <span class="highlight">состоянии равновесия</span> энтропия \( S \) всей системы должна иметь <span class="highlight">наибольшее возможное значение</span> при заданной энергии системы \( E \). Под энергией системы понимается <span class="highlight">внутренняя энергия</span>, под внутренней энергией подразумевается разность между полной энергией системы и кинетической энергией её поступательного движения. Так как <span class="highlight">статистический вес</span> не зависит от того, система в покое или в движении (принцип относительности).</p>
+    </div>
+
+    <p>Внутренняя энергия является <span class="highlight">аддитивной величиной</span>, то есть:</p>
+    <p class="formula">
+        \[
+         E = E_1 + E_2 
+         \]
+    </p>
+    <p>С энтропией аналогично:</p>
+    <p class="formula">
+        \[
+         S = S_1(E_1) + S_2(E_2) = S_1(E_1) + S_2(E - E_2)
+         \]
+        </p>
+    <p><span class="highlight">Условие максимума энтропии:</span></p>
+    <p class="formula">
+        \[
+        \frac{dS}{dE_1} = \frac{dS_1}{dE_1} + \frac{dS_2}{dE_2} \cdot \frac{dE_2}{dE_1} = \frac{dS_1}{dE_1} - \frac{dS_2}{dE_2}
+        \]
+        \[
+        \Rightarrow \frac{dS_1}{dE_1} = \frac{dS_2}{dE_2}
+        \]
+    </p>
+
+    <div class="definition-block">
+        <p>Величину, обратную производной энтропии тела по энергии, называют <span class="highlight">абсолютной температурой тела \( T \)</span>:</p>
+        <p class="formula">
+            \[
+            \frac{dS}{dE} = \frac{1}{T}
+            \]
+        </p>
+    </div>
+    
+    <p>Отсюда следует, что <span class="highlight">температура тел в тепловом равновесии равна</span>.</p>
+    
+    <h2>Температурное равновесие</h2>
+    <p>Если у систем <span class="highlight">разные температуры \( T_1 \) и \( T_2 \)</span>, то с течением времени будет устанавливаться температурное равновесие:</p>
+    <p class="formula">
+        \[
+        \frac{dS}{dt} = \frac{dS_1}{dt} + \frac{dS_2}{dt} = \frac{dS_1}{dE_1} \cdot \frac{dE_1}{dt} + \frac{dS_2}{dE_2} \cdot \frac{dE_2}{dt} > 0
+        \]
+    </p>
+    <p>Так как:</p>
+    <p class="formula">
+        \[
+        \frac{dE_1}{dt} + \frac{dE_2}{dt} = 0
+        \]
+    </p>
+    <p>То:</p>
+    <p class="formula">
+        \[
+        \frac{dS}{dt} = \left(\frac{dS_1}{dE_1} - \frac{dS_2}{dE_2}\right) \cdot \frac{dE_1}{dt} = \left(\frac{1}{T_1} - \frac{1}{T_2}\right) \cdot \frac{dE_1}{dt} > 0
+        \]
+    </p>
+    <p>Если \( T_2 > T_1 \), то:</p>
+    <p class="formula">
+        \[
+        \frac{dE_1}{dt} > 0, \quad \frac{dE_2}{dt} < 0
+        \]
+    </p>
+
+    <h1>2. Энергия как функция энтропии и объема. Основное термодинамическое тождество</h1>
+    <p>Энтропия \( S \) зависит не только от энергии, но и от других термодинамических параметров. Например, энергия \( E \) и объем \( V \) являются <span class="highlight">аддитивными параметрами</span>, поэтому можно рассматривать энтропию как функцию энергии и объема:</p>
+    <div class="formula">
+        \[ S = S(E, V) \]
+    </div>
+    <p>Через \( E \) и \( V \) можно выразить другие параметры системы. Уравнением состояния называется <span class="highlight">функциональная зависимость</span> термодинамических параметров.</p>
+
+    <div class="definition-block">
+            <p>Аналогично можно рассматривать энергию как функции энтропии и объема \( E(S, V) \). В этом случае:</p>
+    <div class="formula">
+        \[ dE = \left( \frac{\partial E}{\partial S} \right)_V dS + \left( \frac{\partial E}{\partial V} \right)_S dV \]
+    </div>
+    </div>
+    <p>Система удовлетворяет уравнению:</p>
+    <div class="formula">
+        \[ E - E(S, V) = 0 \]
+    </div>
+    <p>Из этого следует:</p>
+    <div class="formula">
+        \[
+        1 = \left( \frac{\partial E}{\partial S} \right)_V \cdot \left( \frac{\partial S}{\partial E} \right)_V\Rightarrow \left( \frac{\partial S}{\partial E} \right)_V = \frac{1}{\left( \frac{\partial E}{\partial S} \right)_V }
+        \]
+    </div>
+
+    <p>\( T \) — абсолютная температура:</p>
+    <div class="formula">
+        \[ \left( \frac{\partial S}{\partial E} \right)_V = \frac{1}{T} \] \[ \left( \frac{\partial E}{\partial S} \right)_V = T \]
+    </div>
+    <p>Давление \( P \) определяется как:</p>
+    <div class="formula">
+        \[ \left( \frac{\partial E}{\partial V} \right)_S = -P \]
+    </div>
+    <p>Таким образом, дифференциал энергии принимает вид:</p>
+
+    <div class="definition-block">
+        <div class="formula">
+        <span class="highlight">
+            <p>Основное термодинамическое тождество</p> 
+        </span>
+        \[ dE = T dS - P dV \]
+        </div>
+    </div>
+
+    <h1>3. Адиабатический процесс</h1>
+    <div class="definition-block">
+        <p>Адиабатическим называется процесс, при котором система является <span class="highlight">теплоизолированной</span>, то есть система <span class="highlight">не обменивается теплом</span> с окружающей средой, а внешние условия меняются достаточно медленно. В таком процессе система проходит через последовательность равновесных состояний, и при обратном изменении внешних условий система пройдет ту же последовательность состояний в обратном порядке.</p>
+    </div>
+
+    <p>Так как адиабатический процесс является <span class="highlight">обратимым</span>, то <span class="highlight">энтропия остаётся постоянной</span>, иначе это противоречило бы второму началу термодинамики.</p>
+    
+    <p>Изменение внешних условий можно описывать параметром \( \gamma \), который зависит от времени. Производная энтропии по времени \( \frac{dS}{dt} \) зависит от скорости изменения этого параметра \( \frac{d\gamma}{dt} \). Разложение в ряд по степеням \( \frac{d\gamma}{dt} \):</p>
+    <p class="formula">
+        \[
+        \frac{dS}{dt} = A + B \cdot \frac{d\gamma}{dt} + C \cdot \left(\frac{d\gamma}{dt}\right)^2 + \dots
+        \]
+    </p>
+
+    <p>При \( \frac{d\gamma}{dt} = 0 \):</p>
+    <p class="formula">
+        \[
+        \frac{dS}{dt} = 0 \quad \Rightarrow \quad A = 0
+        \]
+    </p>
+
+    <p>Второй член меняет знак, а производная энтропии должна оставаться положительной, поэтому:</p>
+    <p class="formula">
+        \[
+        B = 0
+        \]
+    </p>
+
+    <p>Таким образом:</p>
+    <p class="formula">
+        \[
+        \frac{dS}{dt} = C \cdot \left(\frac{d\gamma}{dt}\right)^2 + \dots
+        \]
+    </p>
+
+    <p>При \( \frac{d\gamma}{dt} \to 0 \):</p>
+    <p class="formula">
+        \[
+        \frac{dS}{dt} \to 0
+        \]
+    </p>
+    <p>Это означает, что при достаточно медленном изменении параметра \( \gamma \) энтропия <span class="highlight">остаётся постоянной</span>.</p>
+    <h1>4. Работа, производимая над системой. Давление</h1>
+
+    <p><span class="highlight">Первое начало термодинамики:</span> внутренняя энергия системы может изменяться за счет теплообмена с окружающей средой либо за счет совершаемой над системой работы:</p>
+    <p class="formula">\[ dE = dQ + dA \]
+    </p>
+
+    <p>В термодинамике принято считать <span class="highlight">положительной работу</span>, которая совершается над системой внешними силами.</p>
+    <p class="formula">\[ dA = \mathbf{F} \cdot d\mathbf{r} \]
+
+    </p>
+
+    <div class="definition-block">
+        <p>Сила, действующая на единицу площади поверхности, называется <span class="highlight">давлением</span>:</p>
+        <p class="formula">\[ \mathbf{F} = P \cdot dS \]
+
+        </p>
+    </div>
+
+    <p>Малое изменение объема выражается через перемещение элемента поверхности:</p>
+    <p class="formula">
+        \[
+        dV = dS \cdot d\mathbf{r} 
+        \]
+    </p>
+    <div class="definition-block">
+    <p>Тогда работа, совершаемая внешними силами:</p>
+    <p class="formula">
+        \[ 
+        dA = -P \cdot dV \]
+    </p>
+    </div>
+    <p>И изменение внутренней энергии записывается как:</p>
+    <p class="formula">
+        \[
+             dE = \left(\frac{\partial E}{\partial V}\right)_S \cdot dV 
+             \]
+            </p>
+
+    <p>Таким образом, с учетом работы:</p>
+    <p class="formula">
+        \[
+         dE = dA = -P \cdot dV 
+         \]</p>
+
+    <h1>5. Термодинамическое определение энтропии. Основное термодинамическое неравенство</h1>
+    <p>Первое начало термодинамики утверждает, что внутренняя энергия системы может изменяться за счет <span class="highlight">теплообмена</span> с окружающей средой либо за счет <span class="highlight">совершаемой над системой работы</span>:</p>
+    <p class="formula">
+        \[ dE = dQ + dA \]
+    </p>
+    <p class="formula">
+        \[
+         dE = T dS - P dV 
+         \]
+        </p>
+    </div>
+    <p>Из этих формул следует, что:</p>
+    <div class="definition-block">
+    <p class="formula">
+        <p><span class="highlight">Термодинамическое определение энтропии</span>:</p>
+        <p class ="formula">
+        \[
+        dQ = T dS
+        \]
+        </p>
+    </div>
+    </p>
+
+    <p>Таким образом, энтропия \( S \) определяется как:</p>
+    <p class="formula">
+        \[
+        S = \int_1^2 \frac{dQ}{T}
+        \]
+    </p>
+    <p>где интеграл берется по процессу, в течение которого система переходит из состояния 1 в состояние 2, получая (или отдавая) малые количества теплоты \( dQ \) при соответствующих значениях абсолютной температуры \( T \).</p>
+
+    <div class="definition-block">
+        <p>Увеличение энтропии в системе может происходить не только вследствие получения системой количества тепла, но и за счет других процессов, например, <span class="highlight">необратимой химической реакции</span>. В таком случае справедливо <span class="highlight">основное термодинамическое неравенство</span>:</p>
+        <p class="formula">
+            \[
+            dS \geq \frac{dQ}{T} \quad \Rightarrow \quad dE \leq T dS - P dV
+            \]
+        </p>
+    </div>
+
+    <h1>6. Механическое равновесие. Давление как параметр механического равновесия</h1>
+    <div class="definition-block">
+    <p><span class="highlight">Механическое равновесие</span> предполагает, что силы, с которыми различные части системы действуют друг на друга, скомпенсированы. Нас интересуют силы, действующие на границе между подсистемами. Сила, действующая на единицу площади поверхности, представляет собой <span class="highlight">давление</span>. Поэтому в состоянии <span class="highlight">механического равновесия</span> <span class="highlight">давление</span> равны друг другу. При нарушении механического равновесия объемы подсистем меняются, но общий объем остается постоянным:</p>
+    </div>
+    <p class="formula">
+        \[
+        V = V_1 + V_2
+        \]
+    </p>
+
+    <p>В состоянии <span class="highlight">механического равновесия</span> энтропия имеет максимум по отношению к изменению объемов подсистем:</p>
+    
+    <p class="formula">
+        \[
+        \frac{dS}{dV_1} = \frac{dS_1}{dV_1} + \frac{dS_2}{dV_2} \cdot \frac{dV_2}{dV_1} = \frac{dS_1}{dV_1} - \frac{dS_2}{dV_2} = 0
+        \]
+    </p>
+    
+    <p>Получаем, что:</p>
+    
+    <p class="formula">
+        \[
+        \frac{dS_1}{dV_1} = \frac{dS_2}{dV_2}
+        \]
+    </p>
+    
+    <p>Тогда имеем:</p>
+    
+    <p class="formula">
+        \[
+        dS = \frac{1}{T} \cdot dE + \frac{P}{T} \cdot dV \quad \Rightarrow \quad \left( \frac{\partial S}{\partial V} \right)_E = \frac{P}{T}
+        \]
+    </p>
+    <div class="definition-block">
+    <p>При условии теплового равновесия (равенства температур подсистем) из \( \frac{\partial S_1}{\partial V_1} = \frac{\partial S_2}{\partial V_2} \) получается, что при <span class="highlight">механическом равновесии</span> имеет место также равенство <span class="highlight">давлений</span>.</p>
+    </div>
+    <p>Так как \( P > 0 \), то:</p>
+    
+    <p class="formula">
+        \[
+        \left( \frac{\partial S}{\partial V} \right)_E < 0
+        \]
+    </p>
+    
+    <p>Таким образом, было бы допустимо самопроизвольное сжатие тел, сопровождаемое возрастанием энтропии.</p>
+    
+    <h1>7. Теплоемкость при постоянном объеме и постоянном давлении. Изотермическая и адиабатическая сжимаемость. Коэффициент объемного расширения.</h1>
+    <div class="definition-block">
+    <p><span class="highlight">Теплоемкость</span> называется количество тепла, при получении которого температура системы возрастает на 1 градус. Теплоемкость зависит от условий протекания процесс получения тепла.</p>
+    </div>
+    <p> Соответственно, <span class="highlight">отличают теплоемкость при постоянном объеме</span>:</p>
+    <p class="formula">
+        \[
+        C_V = T \left( \frac{\partial S}{\partial T} \right)_V = \left( \frac{\partial E}{\partial T} \right)_V
+        \]
+    </p>
+    <p>и <span class="highlight">теплоемкость при постоянном давлении</span>:</p>
+    <p class="formula">
+        \[
+        C_P = T \left( \frac{\partial S}{\partial T} \right)_P = \left( \frac{\partial E}{\partial T} \right)_P
+        \]
+    </p>
+    <div class="definition-block">
+    <p><span class="highlight">Сжимаемость</span>, или коэффициент объемного сжатия, характеризует свойства вещества изменять свой объем при изменении внешнего давления.</p>
+    </div>
+    <p>Отличают <span class="highlight">изотермическую сжимаемость</span>:</p>
+    <p class="formula">
+        \[
+        \beta_T = -\frac{1}{V} \left( \frac{\partial V}{\partial P} \right)_T
+        \]
+    </p>
+    <p>и <span class="highlight">адиабатическую сжимаемость</span>:</p>
+    <p class="formula">
+        \[
+        \beta_S = -\frac{1}{V} \left( \frac{\partial V}{\partial P} \right)_S
+        \]
+    </p>
+    <div class="definition-block">
+    <p><span class="highlight">Коэффициент теплового расширения</span> характеризует относительную величину изменения объема тела с увеличением температуры на 1 градус при постоянном давлении:</p>
+    </div>
+    <p class="formula">
+        \[
+        \alpha = \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P
+        \]
+    </p>
+    <h1>8. Термодинамические функции и их свойства</h1>
+
+    <p><span class="highlight">Свойства термодинамических функций</span>:</p>
+    <ul>
+        <li>Функции состояния.</li>
+        <li>Аддитивность.</li>
+        <li>При определенных условиях достигают экстремума в состоянии равновесия.</li>
+        <li>Зная одну из термодинамических функций, можно восстановить все остальные.</li>
+    </ul>
+
+    <h2>Энтальпия (тепловая функция)</h2>
+    <div class="definition-block">
+        <p>В изохорном-изобарическом процессе:</p>
+        <p class="formula">
+            \[
+            dQ = dE = d(E + PV) = dW
+            \]
+        </p>
+        <p>Энтальпия определяется как:</p>
+        <p class="formula">
+            \[
+            W = E + PV
+            \]
+        </p>
+        <p>Дифференциал энтальпии:</p>
+        <p class="formula">
+            \[
+            dW = dE + PdV + VdP = TdS + VdP
+            \]
+        </p>
+        <p class="highlight">Энтальпия \(W = W(S, P)\)</p>
+        <p>Частные производные:</p>
+        <p class="formula">
+            \[
+            \left( \frac{\partial W}{\partial S} \right)_P = T, \quad \left( \frac{\partial W}{\partial P} \right)_S = V
+            \]
+        </p>
+        <p>Энтальпия достигает максимума в состоянии равновесия.</p>
+    </div>
+
+    <h2>Свободная энергия</h2>
+    <div class="definition-block">
+        <p>В изотермическом процессе:</p>
+        <p class="formula">
+            \[
+            dA = dE - dQ = dE - TdS = d(E - TS) = dF
+            \]
+        </p>
+        <p>Свободная энергия:</p>
+        <p class="formula">
+            \[
+            F = E - TS
+            \]
+        </p>
+        <p>Дифференциал свободной энергии:</p>
+        <p class="formula">
+            \[
+            dF = -SdT - PdV
+            \]
+        </p>
+        <p class="highlight">Свободная энергия \(F = F(T, V)\)</p>
+        <p>Частные производные:</p>
+        <p class="formula">
+            \[
+            \left( \frac{\partial F}{\partial T} \right)_V = -S, \quad \left( \frac{\partial F}{\partial V} \right)_T = -P
+            \]
+        </p>
+        <p>Свободная энергия достигает минимума в состоянии равновесия.</p>
+    </div>
+
+    <h2>Термодинамический потенциал (свободная энергия Гиббса)</h2>
+    <div class="definition-block">
+        <p>Определение:</p>
+        <p class="formula">
+            \[
+            \Phi = F + PV = E - TS + PV
+            \]
+        </p>
+        <p>Дифференциал термодинамического потенциала:</p>
+        <p class="formula">
+            \[
+            d\Phi = -SdT + VdP
+            \]
+        </p>
+        <p class="highlight">Термодинамический потенциал \(\Phi = \Phi(T, P)\)</p>
+        <p>Частные производные:</p>
+        <p class="formula">
+            \[
+            \left( \frac{\partial \Phi}{\partial T} \right)_P = -S, \quad \left( \frac{\partial \Phi}{\partial P} \right)_T = V
+            \]
+        </p>
+        <p>Термодинамический потенциал достигает минимума в состоянии равновесия.</p>
+    </div>
+    <h1>9. Термодинамически сопряженные параметры. Связь между различными термодинамическими функциями. Теорема о малых добавках.</h1>
+    <p><span class="highlight">Термодинамически сопряженные параметры </span>— это такие параметры, где один выражается через производные термодинамических функций по другому. Например, \( S \) и \( T \), \( P \) и \( V \).</p>
+    <p>В равновесном состоянии системы обычно используются пары <span class="highlight">несопряженных параметров</span>.</p>
+
+    <h2>Связь между термодинамическими функциями</h2>
+    <p>Основные зависимости между функциями:</p>
+    <p class="formula">
+        \[
+        W = E + PV, \quad F = E - TS, \quad \Phi = F + PV = W - TS = E - TS + PV
+        \]
+    </p>
+    <p class="formula">
+        \[
+        E = F - T\left(\frac{\partial F}{\partial T}\right)_V, \quad W = \Phi - T\left(\frac{\partial \Phi}{\partial T}\right)_P
+        \]
+    </p>
+
+    <h2>Взаимодействия с учетом тензоров напряжений</h2>
+    <p>При учете тензора напряжений \( \sigma_{ij} \) и тензора деформации \( \varepsilon_{ij} \), работа выражается как:</p>
+    <p class="formula">
+        \[
+        dA = \sum_{i,j} \sigma_{ij} \cdot d\varepsilon_{ij}
+        \]
+    </p>
+    <p>Основное термодинамическое тождество принимает вид:</p>
+    <p class="formula">
+        \[
+        dE = TdS + \sum_{i,j} \sigma_{ij} \cdot d\varepsilon_{ij}
+        \]
+    </p>
+    <p>Тогда:</p>
+    <p class="formula">
+        \[
+        \left(\frac{\partial E}{\partial S}\right)_{\varepsilon_{ij}} = T, \quad \left(\frac{\partial E}{\partial \varepsilon_{ij}}\right)_S = \sigma_{ij}
+        \]
+    </p>
+
+    <h2>Дополнительные взаимодействия</h2>
+    <p>Если учитывать другие взаимодействия(например магнитное или электрическое), то к дифференциалу энергии добавляется добавка:</p>
+    <p class="formula">
+        \[
+        dE = TdS - PdV + \sum_i \Lambda_i \cdot d\lambda_i
+        \]
+    </p>
+    <p>Где \( \lambda_i \) — параметры системы, \( \Lambda_i \) — сопряженные параметры к \( \lambda_i \).</p>
+    <p>Основное тождество принимает вид:</p>
+    <p class="formula">
+        \[
+        dW = TdS + VdP + \sum_i \Lambda_i \cdot d\lambda_i
+        \]
+    </p>
+    <div class = "definition-block">
+    <h2><span class="highlight">Теорема о малых добавках</span></h2>
+    <p>Если значения параметров \( \lambda_i \) изменяются на небольшую величину, это вызывает соответствующие изменения термодинамических функций. При постоянстве остальных параметров изменения функций равны друг другу:</p>
+    <p class="formula">
+        \[
+        \left(dE\right)_{S,V} = \left(dF\right)_{T,V} = \left(d\Phi\right)_{T,P} = \left(dW\right)_{S,P} = \sum_i \Lambda_i \cdot d\lambda_i
+        \]
+    </p>
+    </div>
+    <h1>10. Получение соотношений между производными термодинамических величин. Метод якобианов.</h1>
+
+    <h2>Получение соотношений между производными термодинамических величин</h2>
+    <p>Метод Якобианов применяется для перехода от одних термодинамических параметров к другим, используя соотношения между их производными.</p>
+    
+    <h3>Пример 1</h3>
+    <p>Соотношение для изобарной теплоемкости:</p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial C_V}{\partial V} \right)_T = \left( \frac{\partial}{\partial V} \left[ T \left( \frac{\partial S}{\partial T} \right)_V \right] \right)_T = T \frac{\partial^2 S}{\partial V \partial T} = - T \frac{\partial^3 F}{\partial V \partial T^2} \left( \frac{\partial F}{\partial V} \right)_T = T \left( \frac{\partial^2 P}{\partial T^2} \right)
+        \]
+    </p>
+
+    <h3>Пример 2</h3>
+    <p>Соотношение для изобарной теплоемкости:</p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial C_P}{\partial P} \right)_T = \left( \frac{\partial}{\partial P} \left[ T \left( \frac{\partial S}{\partial T} \right)_P \right] \right)_T = T \frac{\partial^2 S}{\partial P \partial T} = - T \frac{\partial^3 \Phi}{\partial P \partial T^2} = -T \frac{\partial^2}{\partial T^2} \left( \frac{\partial \Phi}{\partial P} \right)_T = -T \left( \frac{\partial^2 V}{\partial T^2} \right)_P
+        \]
+    </p>
+
+    <h2>Метод преобразования производных</h2>
+    <p>Метод преобразования производных термодинамических величин получил название метод якобианов. Он применяется при необходимости перехода от одних термодинамических параметров к другим.</p>
+    
+    <h3>Определение Якобиана</h3>
+    <p>Якобиан для двух переменных \( u \) и \( v \) относительно \( x \) и \( y \) выражается через детерминант:</p>
+    <p class="formula">
+        \[
+        \frac{\partial(u, v)}{\partial(x, y)} = \left| \begin{matrix} \frac{\partial u}{\partial x} & \frac{\partial v}{\partial y} \\ \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y} \end{matrix} \right|
+        \]
+    </p>
+    <div class = "definition-block">
+    <h3>Свойства Якобианов</h3>
+    <ul class ='formula'>
+        \[\frac{\partial(v, u)}{\partial(x, y)} = - \frac{\partial(u, v)}{\partial(x, y)} = - \frac{\partial(v, u)}{\partial(y, x)}\]
+        \[\frac{\partial(u, y)}{\partial(x, y)} = \left( \frac{\partial x}{\partial x} \right)_y\]
+        \[\frac{\partial(u, v)}{\partial(x, y)} = \frac{\partial(u, v)}{\partial(s, t)} \cdot \frac{\partial(s, t)}{\partial(x, y)}\]
+        \[\left( \frac{\partial u}{\partial y} \right)_x = \frac{1}{\left( \frac{\partial y}{\partial u} \right)_x}\]
+    </ul>
+    </div>
+    <h1>11. Представление о стабильных и метастабильных состояниях.</h1>
+    <div class = "definition-block">
+    <ul>
+    <li><span class="highlight">Стабильное состояние</span> — состояние, соответствующее глобальному максимуму энтропии.</li>
+    <li><span class="highlight">Метастабильное состояние</span> — состояние, соответствующее локальному максимуму энтропии.</li>
+    </ul>
+    </div>
+
+    <h2>Условия устойчивости</h2>
+    <p>Для того чтобы система находилась в устойчивом состоянии, должны выполняться следующие условия:</p>
+    <ul>
+    <div class="formula">
+        \[
+        C_V > 0
+        \]
+    </div>
+    <div class="formula">
+        \[
+        \left( \frac{\partial P}{\partial V} \right)_T < 0
+        \]
+    </div>
+    <div class="formula">
+        \[
+        C_P > C_V
+        \]
+    </div>
+    <div class="formula">
+        \[
+        C_P > 0
+        \]
+    </div>
+    <div class="formula">
+        \[
+        |\beta_S| < |\beta_T|
+        \]
+    </div>
+    </ul>
+
+    <p>Если хотя бы одно из этих условий нарушается, система переходит в состояние <span class="highlight">неустойчивости</span>.</p>
+
+
+    <h1>12. Термодинамические неравенства. Принцип Ле Шателье. Примеры.</h1>
+
+    <h2>Термодинамические неравенства</h2>
+    <ul>
+        <div class="formula">
+            \[
+            C_V > 0
+            \]
+        </div>
+        <div class="formula">
+            \[
+            \left( \frac{\partial P}{\partial V} \right)_T < 0
+            \]
+        </div>
+        <div class="formula">
+            \[
+            C_P > C_V
+            \]
+        </div>
+        <div class="formula">
+            \[
+            C_P > 0
+            \]
+        </div>
+        <div class="formula">
+            \[
+            |\beta_S| < |\beta_T|
+            \]
+        </div>
+    </ul>
+
+    <p>На основе этих неравенств иллюстрируется <span class="highlight">принцип Ле Шателье</span>, согласно которому внешнее воздействие, выводящее систему из равновесия, стимулирует в ней процессы, стремящиеся ослабить результаты этого воздействия.</p>
+
+    <h2>Примеры</h2>
+
+    <h3>Пример 1</h3>
+    <p>Рассмотрим процесс, в котором вещество заключено в теплопроводящем цилиндре. Поршень уравновешен давлением \( P \). Веществу сообщается теплота \( \Delta Q \), и равновесие нарушается. В результате температура \( T \) растет, что вызывает увеличение давления \( P \), смещая объем:</p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial T}{\partial S} \right)_V > \left( \frac{\partial T}{\partial S} \right)_P \quad \Rightarrow \quad \Delta T = \left( \frac{\partial T}{\partial S} \right) \cdot \Delta S, \quad (\Delta T)_V > (\Delta T)_P
+        \]
+    </p>
+    <p>Полученное неравенство показывает, что изменение температуры будет больше в случае фиксированного объема (положение поршня неизменно), чем в случае, когда изменение объема возможно. При подвижном поршне система будет реагировать таким образом, чтобы уменьшить эффект внешнего воздействия.</p>
+    <p>Параметры:</p>
+    <ul>
+        <li>\( S \) — параметр, характеризующий равновесие системы со средой;</li>
+        <li>\( V \) — параметр, характеризующий внутреннее равновесие системы;</li>
+        <li>\( \Delta S \) — мера внешнего воздействия на систему;</li>
+        <li>\( \Delta T \) — мера изменения свойств системы под влиянием воздействия.</li>
+    </ul>
+    <p>Восстановление равновесия сопровождается ослаблением результатов внешнего воздействия.</p>
+
+    <h3>Пример 2</h3>
+    <p>Уменьшение объема \( V \) может выступать в роли параметра, характеризующего равновесие системы со средой. Если \( T = \text{const} \), то \( P \) возрастет на \( (\Delta P)_T \). Поддержание \( T = \text{const} \) исключает реакцию системы на внешнее воздействие. Если система теплоизолирована, уменьшение \( V \) приводит также к увеличению \( T \), при этом сохраняется постоянная энтропия \( S \):</p>
+    <p class="formula">
+        \[
+        -\left( \frac{\partial P}{\partial V} \right)_S > -\left( \frac{\partial P}{\partial V} \right)_T \quad \Rightarrow \quad (\Delta P)_T > (\Delta P)_S
+        \]
+    </p>
+    <p>Это показывает, что уменьшение \( V \) стимулирует процессы, которые стремятся уменьшить \( P \), чтобы ослабить внешнее воздействие.</p>
+
+
+    <h1>13.Теорема Нернста (третье начало термодинамики). Поведение термодинамических величин при T -> 0</span></h1>
+
+    <h2>Поведение термодинамических величин при \( T \to 0 \)</h2>
+    
+    <p><span class="highlight">Третье начало термодинамики</span> утверждает, что <span class="highlight">энтропия</span> системы стремится к нулю при стремлении температуры к абсолютному нулю:</p>
+    <p class="formula">
+        \[
+        S = k \cdot \ln(\Gamma) \to 0, \quad \text{при } T \to 0
+        \]
+    </p>
+    <p>Где:</p>
+    <ul>
+        <li>\( S \) — энтропия;</li>
+        <li>\( k \) — постоянная Больцмана;</li>
+        <li>\( \Gamma \) — статистический вес состояния (для основного состояния \( \Gamma = 1 \)).</li>
+    </ul>
+    <p>Энергия \( E \) является монотонно возрастающей функцией температуры при постоянном объеме:</p>
+    <p class="formula">
+        \[
+        C_V = T \left( \frac{\partial S}{\partial T} \right)_V = \left( \frac{\partial E}{\partial T} \right)_V
+        \]
+    </p>
+    <div class ="definition-block">
+    <h2>Следствия теоремы Нернста</h2>
+    
+    <ul>
+        <li><span class="highlight">Абсолютный ноль температуры</span> (\( T = 0 \)) недостижим никакими способами.</li>
+        <li>При \( T \to 0 \), теплоемкости \( C_V \) и \( C_P \) стремятся к нулю:</li>
+        <p class="formula">
+            \[
+            C_V \to 0, \quad C_P \to 0
+            \]
+        </p>
+    </ul>
+    </div>
+    <div class ="definition-block">
+    <h2>Примеры противоречий</h2>
+    
+    <ol>
+        <li>
+            <p>Рассмотрим <span class="highlight">теплоемкость</span> \( C \):</p>
+            <p class="formula">
+                \[
+                C = T \frac{\partial S}{\partial T} = T \frac{\partial S}{\partial t} \cdot \frac{\partial t}{\partial T} = \frac{\partial S}{\partial \ln(T)}, \quad t = \ln(T)
+                \]
+            </p>
+            <p>Поскольку \( S \to 0 \) и \( \ln(T) \to -\infty \), получаем противоречие.</p>
+        </li>
+        <li>
+            <p><span class="highlight">Коэффициент теплового расширения</span> \( \alpha \) также стремится к нулю:</p>
+            <p class="formula">
+                \[
+                \alpha = \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P = -\frac{1}{V} \left( \frac{\partial S}{\partial P} \right)_T
+                \]
+            </p>
+            <p>Поскольку \( S \to 0 \), получаем противоречие.</p>
+        </li>
+        <li>
+            <p>Поведение <span class="highlight">производной давления</span> по температуре при фиксированном объеме:</p>
+            <p class="formula">
+                \[
+                \left( \frac{\partial P}{\partial T} \right)_V = \left( \frac{\partial S}{\partial V} \right)_T \to 0
+                \]
+            </p>
+            <p>Аналогично предыдущему случаю, возникает противоречие.</p>
+        </li>
+    </ol>
+    </div>
+    <p><span class="highlight">Теорема Нернста</span>, установленная экспериментально, демонстрирует, что при \( T \to 0 \) <span class="highlight">термодинамические величины</span>, такие как <span class="highlight">теплоемкость</span>, <span class="highlight">коэффициент теплового расширения</span> и <span class="highlight">энтропия</span>, асимптотически стремятся к нулю. Это подчеркивает фундаментальное ограничение на достижение абсолютного нуля температуры.</p>
+    <h1>14.Термодинамическая шкала температур.</h1>
+    <p>Если рассмотреть тело как произвольно градуированный термометр со шкалой температур \( \tau \), то можно установить зависимость \( T(\tau) \):</p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial Q}{\partial P} \right)_T = T \cdot \left( \frac{\partial S}{\partial P} \right)_T = -T \cdot \left( \frac{\partial V}{\partial T} \right)_P
+        \]
+    </p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial Q}{\partial P} \right)_T = \left( \frac{\partial Q}{\partial P} \right)_\tau
+        \]
+    </p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial V}{\partial T} \right)_P = \left( \frac{\partial V}{\partial \tau} \right)_P \cdot \frac{d\tau}{dT}
+        \]
+    </p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial Q}{\partial P} \right)_\tau = T \cdot \left( \frac{\partial V}{\partial \tau} \right)_P \cdot \frac{d\tau}{dT}
+        \]
+    </p>
+    <p class="formula">
+        \[
+        \frac{d(\ln(T))}{d\tau} = \frac{1}{T} \cdot \frac{dT}{d\tau} = - \frac{\left( \frac{\partial V}{\partial \tau} \right)_P}{\left( \frac{\partial Q}{\partial P} \right)_\tau}
+        \]
+    </p>
+    <p>Из данного выражения следует:</p>
+    <ul>
+        <li>Величины в правой части уравнения можно измерить.</li>
+        <li>\( \left( \frac{\partial V}{\partial \tau} \right)_P \) можно определить, измеряя изменение объема тела при нагревании.</li>
+        <li>\( \left( \frac{\partial Q}{\partial P} \right)_\tau \) можно измерить, определяя количество тепла, необходимое для расширения тела при \( T = const \).</li>
+    </ul>
+    <p>Таким образом определяется искомая зависимость \( T = T(\tau) \).</p>
+
+    <h1>15.Процесс Джоуля — Томсона.</h1>
+    <img src="1.png" alt="Схема процесса Джоуля — Томсона" style="width: 500px; height: auto;">
+    <p><span class="highlight">Условия:</span></p>
+    <ul>
+        <li>\( P_1, P_2 = const \)</li>
+        <li>\( a \) — пористая перегородка</li>
+        <li>Процесс <span class="highlight">необратимый</span>.</li>
+    </ul>
+    <p>Уравнение энергий:</p>
+    <p class="formula">
+        \[
+        E_2 - E_1 = P_1V_1 - P_2V_2
+        \]
+    </p>
+    <p>Также:</p>
+    <p class="formula">
+        \[
+        E_1 + P_1V_1 = E_2 + P_2V_2
+        \]
+    </p>
+    <p>При \( W_1 = W_2 \), \( W = const \), процесс остается <span class="highlight">необратимым</span>.</p>
+
+    <h2>Изменение температуры при малом изменении давления:</h2>
+    <p class="formula">
+        \[
+        \left( \frac{\partial T}{\partial P} \right)_W = \frac{\partial(T, W)}{\partial(P, W)} = \frac{\partial(T, W)}{\partial(P, T)} \cdot \frac{\partial(P, T)}{\partial(P, W)}
+        \]
+    </p>
+    <p>Преобразовав:</p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial T}{\partial P} \right)_W = -\frac{\left( \frac{\partial W}{\partial P} \right)_T}{\left( \frac{\partial W}{\partial T} \right)_P}
+        \]
+    </p>
+    <p>С учетом:</p>
+    <p class="formula">
+        \[
+        C_P = \left( \frac{\partial W}{\partial T} \right)_P, \quad \left( \frac{\partial W}{\partial P} \right)_T = V - T \cdot \left( \frac{\partial V}{\partial T} \right)_P
+        \]
+    </p>
+    <p>Получим:</p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial T}{\partial P} \right)_W = \frac{1}{C_P} \cdot \left( T \cdot \left( \frac{\partial V}{\partial T} \right)_P - V \right)
+        \]
+    </p>
+
+    <h2>Изменение энтропии \( dS \):</h2>
+    <p>Используем уравнение:</p>
+    <p class="formula">
+        \[
+        dW = T \cdot dS + V \cdot dP
+        \]
+    </p>
+    <p>Следовательно:</p>
+    <p class="formula">
+        \[
+        dS = \frac{dW}{T} - \frac{V}{T} \cdot dP
+        \]
+    </p>
+    <p>При \( W = const \):</p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial S}{\partial P} \right)_W = -\frac{V}{T}
+        \]
+    </p>
+    <p>Переход газа к меньшему давлению в ходе <span class="highlight">необратимого процесса Джоуля — Томсона</span> сопровождается увеличением энтропии.</p>
+
+    <h2>Пример процесса:</h2>
+    <p>Газ, первоначально находящийся в одном из двух сообщающихся сосудов, расширяется во второй:</p>
+    <ul>
+        <li>Процесс <span class="highlight">нестационарен</span>; давления меняются, пока не уравновесятся.</li>
+        <li>Энергия \( E \) сохраняется.</li>
+        <li>Если \( V \) изменяется незначительно:</li>
+    </ul>
+    <p class="formula">
+        \[
+        \Delta T = \left( \frac{\partial T}{\partial V} \right)_E = \frac{1}{C_V} \cdot \left( P - T \cdot \left( \frac{\partial P}{\partial T} \right)_V \right)
+        \]
+    </p>
+    <p class="formula">
+        \[
+        \left( \frac{\partial S}{\partial V} \right)_E = \frac{P}{T}
+        \]
+    </p>
+    <p><span class="highlight">Энтропия возросла</span> при расширении.</p>
+
+
+
+    <h1>16. Максимальная и минимальная работа. Прямой и обратный цикл Карно.</h1>
+
+    <p>Пусть \( V = \text{const} \), \( Q = 0 \)</p>
+    <p>Считаем \( A_{\text{над}} > 0 \), \( A_{\text{сист}} < 0 \); </p>
+    <p>|\( A_{\text{max}} \)| = \( E_1(S_1, V_1) - E(S, V_1) \)</p>
+    
+    <div class="formula">
+        \[
+        \frac{d(A_{\text{max}})}{dS} = - \left( \frac{dE}{dS} \right)_V = -T < 0
+        \]
+    </div>
+    <p> \( A_{\text{max}} \) при \( S = \text{const} \).</p>
+    <div class ="definition-block">
+    <h2>Цикл Карно</h2>
+    <ul>
+        <li>2 тела, с \( T_1 \) и \( T_2 \), \( T_1 > T_2 \)</li>
+        <li>Рабочее тело, совершающее обратимый круговой процесс</li>
+    </ul>
+    </div>
+    <p><img src="2.png" alt="График цикла Карно в T-S координатах"></p>
+    
+    <ul>
+        <li>1 - 2: \( Q_1 = T_1 (S_2 - S_1) \)</li>
+        <li>3 - 4: \( Q_2 = -T_2(S_1 - S_2) \)</li>
+    </ul>
+    
+    <div class="formula">
+        \[
+        \frac{Q_1}{T_1} = \frac{Q_2}{T_2} = (S_2 - S_1)
+        \]
+    </div>
+    
+    <div class = "formula">\[Q_1 > Q_2 => | A_{\text{max}} | = Q_1 - Q_2 = (T_1 - T_2)(S_2 - S_1) \]</div>
+    <div class ="definition-block">
+    <h3>КПД:</h3>
+    <div class="formula">
+        \[
+        \eta = \frac{|A_{\text{max}}|}{Q_1} = \frac{Q_1 - Q_2}{Q_1} = 1 - \frac{Q_2}{Q_1} = 1 - \frac{T_2}{T_1}
+        \]
+    </div>
+    </div>
+    <h1>17. Максимальная и минимальная работа при учете взаимодействия с окружающей средой (термостатом)</h1>
+
+    <p><span class="highlight">Термостат</span> — тело, обладающее настолько большим \( V \) и \( E \), что процессы не приводят к значительным изменениям \( P \).</p>
+    
+    <p>Окружающая среда характеризуется \( T_0 \), \( P_0 \), телом имеет \( T \) и \( P \), где \( T \neq T_0 \), \( P \neq P_0 \). Тело может совершать работу над третьим телом.</p>
+    
+    <p>Изменение внутренней энергии:</p>
+    <div class="formula">
+        \[
+        P_0 \Delta V_0 - T_0 \Delta S_0
+        \]
+    </div>
+    <p>При этом:</p>
+    <div class="formula">
+        \[
+        \Delta V_0 = - \Delta V
+        \]
+    </div>
+    
+    <p>С учетом второго закона термодинамики:</p>
+    <div class="formula">
+        \[
+        \Delta S_0 + \Delta S \geq 0 \quad \Rightarrow \quad \Delta S \geq - \Delta S_0
+        \]
+    </div>
+    
+    <p>Работа:</p>
+    <div class="formula">
+        \[
+        A = \Delta E - P_0 \Delta V_0 + T_0 \Delta S_0 \geq \Delta E + P_0 \Delta V - T_0 \Delta S
+        \]
+    </div>
+    
+    <p>Максимальная работа (\( A_{\text{max}} \)) может быть получена только в обратимом процессе, при условии:</p>
+    <div class="formula">
+        \[
+        P_0 = \text{const}, \quad T_0 = \text{const}
+        \]
+    </div>
+    <div class="formula">
+        \[
+        A_{\text{min}} = \Delta (E - T_0 S + P_0 V)
+        \]
+    </div>
+    <div class="formula">
+        \[
+        |A_{\text{max}}| = - \Delta (E - T_0 S + P_0 V)
+        \]
+    </div>
+    <div class = "definition-block">
+    <div class = "formula">
+    <p><span class="highlight">Частный случай:</span></p>
+    <ul>
+        <p>
+            \[ T = \text{const}, \, P = \text{const} \quad \Rightarrow \quad A_{\text{min}} = (T - T_0) \Delta S - (P - P_0) \Delta V \]
+        </p>
+        <p>
+            \[ T = T_0, \, P = \text{const} \quad \Rightarrow \quad A_{\text{min}} = \Delta (E - TS) = \Delta F \]
+        </p>
+        <p>
+            \[ T = T_0, \, P = P_0 \quad \Rightarrow \quad A_{\text{min}} = \Delta (E - TS + PV) = \Delta \Phi \]
+        </p>
+    </ul>
+    </div>
+    </div>
+
+
+
+    <h1>18. Зависимость термодинамических величин от числа частиц. Выражение для дифференциалов термодинамических функций. Химический потенциал.</h1>
+
+    <p>Считаем, что система состоит из одинаковых частиц. <span class="highlight"> Количество частиц аддитивным величинам </span>(энергия, энтропия, энтальпия, термодинамический потенциал, свободная энергия).</p>
+    
+    <p>Если взять замену:</p>
+    <div class="formula">
+        \[
+        s = \frac{S}{N}, \quad v = \frac{V}{N}
+        \]
+    </div>
+    <p>Тогда:</p>
+    <div class="formula">
+        \[
+        E = N f_1(s, v)
+        \]
+    </div>
+    <div class="formula">
+        \[
+        F = N f_2(v, T)
+        \]
+    </div>
+    <div class="formula">
+        \[
+        W = N f_3(s, P)
+        \]
+    </div>
+    <div class="formula">
+        \[
+        \Phi = N f_4(T, P)
+        \]
+    </div>
+    
+    <p>Считаем, что \(N\) является переменной величиной на уровне макропараметра.</p>
+    
+    <p>Тогда дифференциал энергии примет вид:</p>
+    <div class="formula">
+        \[
+        dE = TdS - PdV + \mu dN
+        \]
+    </div>
+    
+    <p>Частные производные:</p>
+    <div class="formula">
+        \[
+        \left( \frac{\partial E}{\partial S} \right)_{V, N} = T
+        \]
+    </div>
+    <div class="formula">
+        \[
+        \left( \frac{\partial E}{\partial V} \right)_{S, N} = -P
+        \]
+    </div>
+    <div class="formula">
+        \[
+        \left( \frac{\partial E}{\partial N} \right)_{S, V} = \mu
+        \]
+    </div>
+    
+    <p>Для остальных термодинамических потенциалов:</p>
+    <div class="formula">
+        \[
+        dW = d(E + PV) = dE + PdV + VdP = TdS + VdP + \mu dN \quad \Rightarrow \quad W = W(S, P, N)
+        \]
+    </div>
+    
+    <div class="formula">
+        \[
+        dF = d(E - TS) = dE - TdS - SdT = -SdT - PdV + \mu dN \quad \Rightarrow \quad F = F(T, V, N)
+        \]
+    </div>
+    
+    <div class="formula">
+        \[
+        d\Phi = d(F + PV) = dF + PdV + VdP = -SdT + VdP + \mu dN \quad \Rightarrow \quad \Phi = \Phi(T, P, N)
+        \]
+    </div>
+    <div class = "definition-block">
+    <p><span class="highlight">Химический потенциал</span> выражается как:</p>
+    <div class="formula">
+        \[
+        \mu = \left( \frac{\partial W}{\partial N} \right)_{S, P} = \left( \frac{\partial F}{\partial N} \right)_{T, V} = \left( \frac{\partial \Phi}{\partial N} \right)_{T, P}
+        \]
+    </div>
+</div>
+    <p><span class="highlight">Химический смысл</span> химического потенциала заключается в том, что это энергия, которая может быть поглощена или высвобождена вследствие изменения количества частиц данного вещества.</p>
+    
+
+
+    <h1>19. Химический потенциал как параметр равновесия, связанного с обменом частицами.</h1>
+
+    <p>При установившемся равновесии между подсистемами, связанным с обменом частицами, <span class="highlight">химический потенциал</span> всех частей системы одинаков.</p>
+    
+    <p>Считаем, что число частиц в системе не меняется, а меняется лишь в подсистемах:</p>
+    <div class="formula">
+        \[
+        N = N_1 + N_2
+        \]
+    </div>
+    
+    <p>Дифференциал энтропии с учетом обмена частицами:</p>
+    <div class="formula">
+        \[
+        \frac{dS}{dN_1} = \frac{dS_1}{dN_1} + \frac{dS_2}{dN_2} \cdot \frac{dN_2}{dN_1} = \frac{dS_1}{dN_1} - \frac{dS_2}{dN_2} = 0
+        \]
+    </div>
+    
+    <p>Отсюда следует:</p>
+    <div class="formula">
+        \[
+        \frac{dS_1}{dN_1} = \frac{dS_2}{dN_2}
+        \]
+    </div>
+    
+    <p>Если выразить <span class="highlight">dS</span> из уравнения для <span class="highlight">dE</span>, то:</p>
+    <div class="formula">
+        \[
+        dS = \frac{1}{T} \cdot dE + \frac{P}{T} \cdot dV - \frac{\mu}{T} \cdot dN
+        \]
+    </div>
+    <div class="definition-block">
+    <p>Тогда получаем:</p>
+    <div class="formula">
+        \[
+        \left( \frac{\partial S}{\partial N} \right)_{E, V} = -\frac{\mu}{T}
+        \]
+    </div>
+    </div>
+    <p>Отсюда следует равенство химических потенциалов в подсистемах в равновесии:</p>
+    <div class="formula">
+        \[
+        \mu = \left( \frac{\partial \Phi}{\partial N} \right)_{T, P} = f_4(T, P)
+        \]
+    </div>
+    <div class="definition-block">
+    <p>Ф — термодинамический потенциал тела, представленный как его термодинамический потенциал Ф, отнесенный к одной частице:</p>
+    <div class="formula">
+        \[
+        \Phi = N \cdot \mu
+        \]
+    </div>
+    </div>
+
+    <div class="definition-block">
+    <p><span class="highlight">Химический потенциал</span> тела представляет собой его термодинамический потенциал Ф, отнесенный к одной частице. <span class="highlight">Химический потенциал</span> \(\mu\) является функцией только <span class="highlight">температуры</span> и <span class="highlight">давления</span>, он не зависит от числа частиц. Тогда:</p>
+    <div class="formula">
+        \[
+        d\mu = -s \cdot dT + v \cdot dP
+        \]
+    </div>
+    </div>
+    <h1>20. Термодинамический потенциал \(Ω\) и его свойства.</h1>
+    <div class = "definition-block">
+    <p>Термодинамический потенциал \(Ω\) определяется как:</p>
+    <div class="formula">
+        \[
+        \Omega = \Omega(T, V, \mu) : \quad \Omega = E - TS - \mu N = F - \mu N = W - PV - TS - \mu N = \Phi - PV - \mu N = - PV
+        \]
+    </div>
+    </div>
+    <p>Дифференциал термодинамического потенциала \(Ω\):</p>
+    <div class="formula">
+        \[
+        d\Omega = d(F - \mu N) = dF - \mu dN - N d\mu = -S dT - P dV - N d\mu
+        \]
+    </div>
+    <div class = "definition-block">
+    <p>Частные производные термодинамического потенциала \(Ω\):</p>
+    <div class="formula">
+        \[
+        \left( \frac{\partial \Omega}{\partial T} \right)_{V, \mu} = -S
+        \]
+    </div>
+    <div class="formula">
+        \[
+        \left( \frac{\partial \Omega}{\partial V} \right)_{T, \mu} = -P
+        \]
+    </div>
+    <div class="formula">
+        \[
+        \left( \frac{\partial \Omega}{\partial \mu} \right)_{T, V} = -N
+        \]
+    </div>
+    </div>
+    <p>Из аддитивности <span class="highlight">энергии</span>, <span class="highlight">энтальпии</span>, <span class="highlight">свободной энергии</span>, <span class="highlight">термодинамического потенциала</span> \(Ω\), а также <span class="highlight">энтропии</span>, <span class="highlight">объема</span> и <span class="highlight">числа частиц</span> следует аддитивность термодинамического потенциала \(Ω\).</p>
+    
+    <p>Основное термодинамическое неравенство:</p>
+    <div class="formula">
+        \[
+        dE \leq TdS - PdV + \mu dN
+        \]
+    </div>
+    
+    <p>При \(T = const\), \(P = const\), \(μ = const\)</span>:</p>
+    <div class="formula">
+        \[
+        dE - TdS + PdV - \mu dN \leq 0
+        \]
+    </div>
+    
+    <p>Дифференциал термодинамического потенциала \(Ω\) при этом:</p>
+    <div class="formula">
+        \[
+        d\Omega = d(E - TS + PV - \mu N) \leq 0
+        \]
+    </div>
+    
+    <p>Термодинамический потенциал \(Ω\) имеет тенденцию <span class = "highlight">уменьшаться</span>, достигая минимума в равновесии.</p>
+    
+
+</body>
+</html>
